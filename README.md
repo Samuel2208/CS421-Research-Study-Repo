@@ -6,6 +6,6 @@ S. Zahiri and J. D. Choi. Emotion Detection on TV Show Transcripts with Sequence
 
 S. Poria, D. Hazarika, N. Majumder, G. Naik, E. Cambria, R. Mihalcea. MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversation. ACL 2019.
 
-T. Saha, A. Patra, S. Saha, P. Bhattacharyya. Towards Emotion-aided Multi-modal Dialogue Act Classification. ACL 2020. 
+T. Saha, A. Patra, S. Saha, P. Bhattacharyya. Towards Emotion-aided Multi-modal Dialogue Act Classification. ACL 2020.
 
 <https://github.com/sahatulika15/EMOTyDA/tree/master> (provides dataset we will use)
