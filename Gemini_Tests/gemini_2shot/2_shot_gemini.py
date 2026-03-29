@@ -9,7 +9,7 @@ load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=API_KEY)
 
-meld_path = "../../Dataset/MELD.csv"
+meld_path = "../../Dataset/MELD_28_dialogues.csv"
 df = pd.read_csv(meld_path)
 
 dialog_id_col = "Dialogue_ID"
@@ -19,7 +19,7 @@ utterance_index_col = "Utterance_ID"
 
 df = df.sort_values([dialog_id_col, utterance_index_col])
 
-N = 1
+N = 28
 dialog_ids = df[dialog_id_col].unique()[:N]
 
 results = []
@@ -81,7 +81,7 @@ for dialog_id in dialog_ids:
         try:
 
             response = client.models.generate_content(
-                model="gemini-3-flash-preview",
+                model="gemini-2.5-flash",
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     temperature=0.7,
@@ -91,25 +91,21 @@ for dialog_id in dialog_ids:
 
             gemini_emotion = response.text.strip() if response.text else ""
 
-            # placeholder for testing
-            # gemini_emotion = "neutral"
-
             results.append(
                 {
-                    "dialog_id": dialog_id,
-                    "context_len": n,
-                    "gemini_emotion": gemini_emotion,
-                    "actual_emotion": actual_emotion,
-                    "utterances": context,
-                    "tested_utterance_idx": len(context) - 1,
-                    "tested_utterance": context[-1] if context else "",
+                    "dialogue_id": dialog_id,
+                    "window_size": n,
+                    "prediction": gemini_emotion,
+                    "label": actual_emotion,
+                    "prompt_type": "few_shot_reverse_window",
+                    "model": "gemini",
                 }
             )
 
             print(f"Dialog ID: {dialog_id}")
-            print(f"Context length: {n}")
-            print(f"Gemini: {gemini_emotion}")
-            print(f"Actual: {actual_emotion}\n")
+            print(f"Window size: {n}")
+            print(f"Prediction: {gemini_emotion}")
+            print(f"Label: {actual_emotion}\n")
 
         except Exception as e:
             print(f"Error at dialog {dialog_id}, context length {n}: {e}")
@@ -117,4 +113,10 @@ for dialog_id in dialog_ids:
         time.sleep(2)
 
 results_df = pd.DataFrame(results)
+
+# Ensure column order exactly matches required headers
+results_df = results_df[
+    ["dialogue_id", "window_size", "prediction", "label", "prompt_type", "model"]
+]
+
 results_df.to_csv("gemini_meld_emotion_results.csv", index=False)
