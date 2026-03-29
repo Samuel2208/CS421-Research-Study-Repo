@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 import pandas as pd
 import time
@@ -6,9 +7,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+BASE_DIR = Path(__file__).resolve().parent
+REPO_DIR = BASE_DIR.parent.parent
+DATASET_DIR = REPO_DIR / "Dataset"
+SUBSET_PATH = DATASET_DIR / "MELD_28_dialogues.csv"
 
-# Load the MELD CSV file into a pandas DataFrame.
-def load_meld(path="/Users/dj/Desktop/CS421-Research-Study-Repo/Dataset/MELD.csv"): #need to fix this path later
+
+# Load the reduced MELD subset CSV file into a pandas DataFrame.
+def load_meld_subset(path=SUBSET_PATH):
     return pd.read_csv(path)
 
 
@@ -42,9 +48,9 @@ def clean_text(text):
     return text
 
 
-# Load MELD, keep only needed columns, sort dialogue order, and clean utterances.
-def prepare_meld_dataframe(path="/Users/dj/Desktop/CS421-Research-Study-Repo/Dataset/MELD.csv"):
-    df = load_meld(path)
+# Load the reduced MELD subset, keep only needed columns, sort dialogue order, and clean utterances.
+def prepare_meld_dataframe(path=SUBSET_PATH):
+    df = load_meld_subset(path)
 
     meld_df = df[["Dialogue_ID", "Utterance_ID", "Speaker", "Utterance", "Emotion"]].copy()
     meld_df = meld_df.sort_values(["Dialogue_ID", "Utterance_ID"]).reset_index(drop=True)
@@ -52,31 +58,23 @@ def prepare_meld_dataframe(path="/Users/dj/Desktop/CS421-Research-Study-Repo/Dat
 
     return meld_df
 
-
 # Return the target utterance with the requested amount of dialogue context.
 # k=0 -> target only
 # k=n -> previous n utterances + target
 # k=None -> full dialogue history up to the target
-def get_context_window(dataframe, dialogue_id, utterance_id, k=None):
+# Get the last `window_size` utterances from a dialogue.
+# The target for prediction will always be the last utterance in this window.
+def get_last_window(dataframe, dialogue_id, window_size):
     dialogue = dataframe[dataframe["Dialogue_ID"] == dialogue_id]
     dialogue = dialogue.sort_values("Utterance_ID").reset_index(drop=True)
 
-    target_row = dialogue[dialogue["Utterance_ID"] == utterance_id]
-
-    if target_row.empty:
+    if dialogue.empty:
         return None
 
-    target_index = target_row.index[0]
+    # Take the last `window_size` utterances from the dialogue
+    window_df = dialogue.tail(window_size).reset_index(drop=True)
 
-    if k is None:
-        context_df = dialogue.iloc[:target_index + 1]
-    elif k == 0:
-        context_df = dialogue.iloc[target_index:target_index + 1]
-    else:
-        start_index = max(0, target_index - k)
-        context_df = dialogue.iloc[start_index:target_index + 1]
-
-    return context_df
+    return window_df
 
 
 # Convert a context window DataFrame into prompt-ready dialogue text.
@@ -148,77 +146,66 @@ def normalize_prediction(prediction):
 
     return "INVALID"
 
-# Run the full zero-shot pipeline for one utterance.
-def classify_meld_utterance(dataframe, dialogue_id, utterance_id, k=None):
-    context_df = get_context_window(dataframe, dialogue_id, utterance_id, k)
+# Run the zero-shot pipeline for one dialogue window.
+# The target is always the last utterance in the window.
+def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="zero_shot", model_name="gemini"):
+    window_df = get_last_window(dataframe, dialogue_id, window_size)
 
-    if context_df is None or context_df.empty:
+    if window_df is None or window_df.empty:
         return None
 
-    formatted_context = format_context_for_prompt(context_df)
-    target_utterance = context_df.iloc[-1]["Utterance"]
-    true_label = context_df.iloc[-1]["Emotion"]
+    formatted_context = format_context_for_prompt(window_df)
+    target_utterance = window_df.iloc[-1]["Utterance"]
+    true_label = window_df.iloc[-1]["Emotion"]
 
     prompt = build_zero_shot_prompt(formatted_context, target_utterance)
     prediction = get_gemini_prediction(prompt)
 
     return {
-        "Dialogue_ID": dialogue_id,
-        "Utterance_ID": utterance_id,
-        "k": "full_context" if k is None else k,
-        "target_utterance": target_utterance,
-        "true_label": true_label,
-        "prediction": prediction
+        "dialogue_id": dialogue_id,
+        "window_size": window_size,
+        "prediction": prediction,
+        "label": true_label,
+        "prompt_type": prompt_type,
+        "model": model_name
     }
 
-# Run one truncation condition across the dataset and return a results DataFrame.
-# def run_experiment_for_k(dataframe, k, max_rows=None):
-#     results = []
 
-#     if max_rows is not None:
-#         rows_to_process = dataframe.head(max_rows)
-#     else:
-#         rows_to_process = dataframe
+# Run zero-shot experiments over selected dialogues and window sizes.
+# Saves progress after each result so the run can resume later.
+def run_zero_shot_resumable(dataframe, output_file, window_sizes, max_dialogues=None, sleep_seconds=0):
+    dialogue_ids = sorted(dataframe["Dialogue_ID"].unique())
 
-#     for _, row in rows_to_process.iterrows():
-#         result = classify_meld_utterance(
-#             dataframe,
-#             dialogue_id=row["Dialogue_ID"],
-#             utterance_id=row["Utterance_ID"],
-#             k=k
-#         )
+    if max_dialogues is not None:
+        dialogue_ids = dialogue_ids[:max_dialogues]
 
-#         if result:
-#             results.append(result)
+    # Build the full list of tasks: one task per (dialogue_id, window_size)
+    tasks = []
+    for dialogue_id in dialogue_ids:
+        for window_size in window_sizes:
+            tasks.append((dialogue_id, window_size))
 
-#     return pd.DataFrame(results)
-
-
-def run_experiment_for_k_resumable(dataframe, k, output_file, max_rows=None, sleep_seconds=0):
+    # Check how many tasks are already saved
     if os.path.exists(output_file):
         existing_df = pd.read_csv(output_file)
         completed = len(existing_df)
-        print(f"Resuming {output_file} from row {completed}...")
+        print(f"Resuming {output_file} from task {completed}...")
     else:
         completed = 0
         print(f"Starting new file: {output_file}")
 
-    if max_rows is not None:
-        rows_to_process = dataframe.iloc[:max_rows]
-    else:
-        rows_to_process = dataframe
+    total_tasks = len(tasks)
 
-    total_rows = len(rows_to_process)
-
-    for idx in range(completed, total_rows):
-        row = rows_to_process.iloc[idx]
+    for idx in range(completed, total_tasks):
+        dialogue_id, window_size = tasks[idx]
 
         try:
-            result = classify_meld_utterance(
-                dataframe,
-                dialogue_id=row["Dialogue_ID"],
-                utterance_id=row["Utterance_ID"],
-                k=k
+            result = classify_dialogue_window(
+                dataframe=dataframe,
+                dialogue_id=dialogue_id,
+                window_size=window_size,
+                prompt_type="zero_shot",
+                model_name="gemini"
             )
 
             if result:
@@ -229,64 +216,28 @@ def run_experiment_for_k_resumable(dataframe, k, output_file, max_rows=None, sle
                 else:
                     result_df.to_csv(output_file, index=False)
 
-                print(f"Saved row {idx + 1}/{total_rows} for k={k}")
+                print(f"Saved task {idx + 1}/{total_tasks}: dialogue_id={dialogue_id}, window_size={window_size}")
 
             time.sleep(sleep_seconds)
 
         except Exception as e:
-            print(f"Stopped at row {idx} for k={k} due to error: {e}")
+            print(f"Stopped at task {idx} (dialogue_id={dialogue_id}, window_size={window_size}) due to error: {e}")
             break
 
-
-# def main():
-#     meld_df = prepare_meld_dataframe()
-
-#     # Truncation settings for the study
-#     truncation_settings = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, None]
-
-#     all_results = []
-
-#     for k in truncation_settings:
-#         if k is None:
-#             print("\nRunning full context condition...")
-#             file_name = "results/results_full_context.csv"
-#         else:
-#             print(f"\nRunning k={k} condition...")
-#             file_name = f"results/results_k{k}.csv"
-
-#         results_df = run_experiment_for_k(meld_df, k=k, max_rows=5)
-
-#         print(results_df.head())
-
-#         results_df.to_csv(file_name, index=False)
-#         print(f"Saved: {file_name}")
-
-#         all_results.append(results_df)
-
-#     combined_results_df = pd.concat(all_results, ignore_index=True)
-#     combined_results_df.to_csv("results/results_all_conditions.csv", index=False)
-#     print("\nSaved: results_all_conditions.csv")
 
 def main():
     meld_df = prepare_meld_dataframe()
 
-    # Choose one truncation setting at a time.
-    # Examples: 0, 1, 2, 12, or None for full context
-    k = 0
+    output_file = "results/gemini_zero_shot_results.csv"
+    window_sizes = [1, 3, 5, 7, 9, 11]
 
-    if k is None:
-        output_file = "results/results_full_context.csv"
-    else:
-        output_file = f"results/results_k{k}.csv"
-
-    run_experiment_for_k_resumable(
+    run_zero_shot_resumable(
         dataframe=meld_df,
-        k=0,
         output_file=output_file,
-        max_rows=None,
+        window_sizes=window_sizes,
+        max_dialogues=None,
         sleep_seconds=0
     )
-
 
 if __name__ == "__main__":
     main()
