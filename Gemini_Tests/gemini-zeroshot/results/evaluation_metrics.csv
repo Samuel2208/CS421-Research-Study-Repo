@@ -1,2 +1,0 @@
-file,accuracy,macro_precision,macro_recall,macro_f1
-gemini_zero_shot_results.csv,0.5416666666666666,0.5176254826811195,0.4761904761904762,0.46423926805036997
