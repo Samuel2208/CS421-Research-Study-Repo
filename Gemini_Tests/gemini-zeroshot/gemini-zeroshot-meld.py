@@ -84,6 +84,7 @@ def format_context_for_prompt(context_df):
 
     lines = []
 
+    # Format each utterance as "Speaker: Utterance" and join them with newlines
     for _, row in context_df.iterrows():
         speaker = row["Speaker"]
         utterance = row["Utterance"]
@@ -107,7 +108,11 @@ Dialogue:
 Target utterance:
 {target_utterance}
 
-Answer with only one emotion label.
+Explain your reasoning in one or two sentences behind your decision and then choose one label from the list above.
+
+Return your answer in this format:
+Reasoning: <your reasoning>
+Label: <one emotion label>
 """
     return prompt
 
@@ -122,11 +127,36 @@ def get_gemini_prediction(prompt):
     client = genai.Client(api_key=api_key)
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3-flash-preview",
         contents=prompt
     )
 
     return response.text.strip()
+
+# Split Gemini's response into reasoning text and final label.
+def parse_gemini_response(response_text):
+    reasoning = ""
+    prediction = "INVALID"
+
+    if not response_text:
+        return reasoning, prediction
+
+    lines = response_text.strip().splitlines()
+
+    for line in lines:
+        lower_line = line.lower().strip()
+
+        if lower_line.startswith("reasoning:"):
+            reasoning = line.split(":", 1)[1].strip()
+
+        elif lower_line.startswith("label:"):
+            prediction = line.split(":", 1)[1].strip().lower()
+
+    # Fallback in case Gemini doesn't follow the exact format
+    if prediction == "INVALID":
+        prediction = normalize_prediction(response_text)
+
+    return reasoning, prediction
 
 # Use this in case we get lengthy and results that aren't one word. Normalize Gemini's raw response so it matches one of the valid MELD labels.
 def normalize_prediction(prediction):
@@ -159,7 +189,10 @@ def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="z
     true_label = window_df.iloc[-1]["Emotion"]
 
     prompt = build_zero_shot_prompt(formatted_context, target_utterance)
-    prediction = get_gemini_prediction(prompt)
+    raw_response = get_gemini_prediction(prompt)
+
+    reasoning, prediction = parse_gemini_response(raw_response)
+    accuracy = prediction == true_label
 
     return {
         "dialogue_id": dialogue_id,
@@ -167,9 +200,10 @@ def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="z
         "prediction": prediction,
         "label": true_label,
         "prompt_type": prompt_type,
-        "model": model_name
+        "model": model_name,
+        "reasoning": reasoning,
+        "accuracy": accuracy
     }
-
 
 # Run zero-shot experiments over selected dialogues and window sizes.
 # Saves progress after each result so the run can resume later.
@@ -238,6 +272,7 @@ def main():
         max_dialogues=None,
         sleep_seconds=0
     )
+
 
 if __name__ == "__main__":
     main()

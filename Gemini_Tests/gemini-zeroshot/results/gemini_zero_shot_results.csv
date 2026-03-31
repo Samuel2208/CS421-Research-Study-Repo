@@ -1,169 +1,169 @@
-dialogue_id,window_size,prediction,label,prompt_type,model
-20,1,neutral,neutral,zero_shot,gemini
-20,3,neutral,neutral,zero_shot,gemini
-20,5,neutral,neutral,zero_shot,gemini
-20,7,neutral,neutral,zero_shot,gemini
-20,9,neutral,neutral,zero_shot,gemini
-20,11,neutral,neutral,zero_shot,gemini
-62,1,sadness,neutral,zero_shot,gemini
-62,3,anger,neutral,zero_shot,gemini
-62,5,neutral,neutral,zero_shot,gemini
-62,7,disgust,neutral,zero_shot,gemini
-62,9,disgust,neutral,zero_shot,gemini
-62,11,anger,neutral,zero_shot,gemini
-94,1,anger,joy,zero_shot,gemini
-94,3,anger,joy,zero_shot,gemini
-94,5,joy,joy,zero_shot,gemini
-94,7,anger,joy,zero_shot,gemini
-94,9,joy,joy,zero_shot,gemini
-94,11,joy,joy,zero_shot,gemini
-145,1,anger,surprise,zero_shot,gemini
-145,3,anger,surprise,zero_shot,gemini
-145,5,surprise,surprise,zero_shot,gemini
-145,7,surprise,surprise,zero_shot,gemini
-145,9,neutral,surprise,zero_shot,gemini
-145,11,surprise,surprise,zero_shot,gemini
-177,1,neutral,neutral,zero_shot,gemini
-177,3,neutral,neutral,zero_shot,gemini
-177,5,neutral,neutral,zero_shot,gemini
-177,7,sadness,neutral,zero_shot,gemini
-177,9,sadness,neutral,zero_shot,gemini
-177,11,neutral,neutral,zero_shot,gemini
-180,1,fear,fear,zero_shot,gemini
-180,3,anger,fear,zero_shot,gemini
-180,5,fear,fear,zero_shot,gemini
-180,7,fear,fear,zero_shot,gemini
-180,9,joy,fear,zero_shot,gemini
-180,11,surprise,fear,zero_shot,gemini
-184,1,surprise,anger,zero_shot,gemini
-184,3,surprise,anger,zero_shot,gemini
-184,5,surprise,anger,zero_shot,gemini
-184,7,surprise,anger,zero_shot,gemini
-184,9,surprise,anger,zero_shot,gemini
-184,11,anger,anger,zero_shot,gemini
-347,1,surprise,neutral,zero_shot,gemini
-347,3,surprise,neutral,zero_shot,gemini
-347,5,surprise,neutral,zero_shot,gemini
-347,7,surprise,neutral,zero_shot,gemini
-347,9,sadness,neutral,zero_shot,gemini
-347,11,sadness,neutral,zero_shot,gemini
-349,1,sadness,surprise,zero_shot,gemini
-349,3,sadness,surprise,zero_shot,gemini
-349,5,sadness,surprise,zero_shot,gemini
-349,7,sadness,surprise,zero_shot,gemini
-349,9,sadness,surprise,zero_shot,gemini
-349,11,sadness,surprise,zero_shot,gemini
-358,1,anger,sadness,zero_shot,gemini
-358,3,anger,sadness,zero_shot,gemini
-358,5,sadness,sadness,zero_shot,gemini
-358,7,joy,sadness,zero_shot,gemini
-358,9,neutral,sadness,zero_shot,gemini
-358,11,anger,sadness,zero_shot,gemini
-374,1,neutral,neutral,zero_shot,gemini
-374,3,neutral,neutral,zero_shot,gemini
-374,5,anger,neutral,zero_shot,gemini
-374,7,sadness,neutral,zero_shot,gemini
-374,9,anger,neutral,zero_shot,gemini
-374,11,neutral,neutral,zero_shot,gemini
-388,1,anger,anger,zero_shot,gemini
-388,3,anger,anger,zero_shot,gemini
-388,5,anger,anger,zero_shot,gemini
-388,7,anger,anger,zero_shot,gemini
-388,9,anger,anger,zero_shot,gemini
-388,11,anger,anger,zero_shot,gemini
-414,1,neutral,neutral,zero_shot,gemini
-414,3,neutral,neutral,zero_shot,gemini
-414,5,neutral,neutral,zero_shot,gemini
-414,7,neutral,neutral,zero_shot,gemini
-414,9,neutral,neutral,zero_shot,gemini
-414,11,neutral,neutral,zero_shot,gemini
-445,1,sadness,sadness,zero_shot,gemini
-445,3,sadness,sadness,zero_shot,gemini
-445,5,sadness,sadness,zero_shot,gemini
-445,7,sadness,sadness,zero_shot,gemini
-445,9,sadness,sadness,zero_shot,gemini
-445,11,sadness,sadness,zero_shot,gemini
-448,1,neutral,neutral,zero_shot,gemini
-448,3,neutral,neutral,zero_shot,gemini
-448,5,neutral,neutral,zero_shot,gemini
-448,7,neutral,neutral,zero_shot,gemini
-448,9,neutral,neutral,zero_shot,gemini
-448,11,neutral,neutral,zero_shot,gemini
-482,1,surprise,joy,zero_shot,gemini
-482,3,surprise,joy,zero_shot,gemini
-482,5,surprise,joy,zero_shot,gemini
-482,7,surprise,joy,zero_shot,gemini
-482,9,joy,joy,zero_shot,gemini
-482,11,joy,joy,zero_shot,gemini
-486,1,neutral,joy,zero_shot,gemini
-486,3,anger,joy,zero_shot,gemini
-486,5,anger,joy,zero_shot,gemini
-486,7,sadness,joy,zero_shot,gemini
-486,9,sadness,joy,zero_shot,gemini
-486,11,anger,joy,zero_shot,gemini
-665,1,disgust,anger,zero_shot,gemini
-665,3,anger,anger,zero_shot,gemini
-665,5,anger,anger,zero_shot,gemini
-665,7,anger,anger,zero_shot,gemini
-665,9,anger,anger,zero_shot,gemini
-665,11,anger,anger,zero_shot,gemini
-678,1,sadness,neutral,zero_shot,gemini
-678,3,neutral,neutral,zero_shot,gemini
-678,5,sadness,neutral,zero_shot,gemini
-678,7,neutral,neutral,zero_shot,gemini
-678,9,neutral,neutral,zero_shot,gemini
-678,11,sadness,neutral,zero_shot,gemini
-699,1,neutral,neutral,zero_shot,gemini
-699,3,surprise,neutral,zero_shot,gemini
-699,5,neutral,neutral,zero_shot,gemini
-699,7,surprise,neutral,zero_shot,gemini
-699,9,surprise,neutral,zero_shot,gemini
-699,11,neutral,neutral,zero_shot,gemini
-717,1,anger,anger,zero_shot,gemini
-717,3,anger,anger,zero_shot,gemini
-717,5,anger,anger,zero_shot,gemini
-717,7,anger,anger,zero_shot,gemini
-717,9,anger,anger,zero_shot,gemini
-717,11,anger,anger,zero_shot,gemini
-823,1,sadness,surprise,zero_shot,gemini
-823,3,surprise,surprise,zero_shot,gemini
-823,5,surprise,surprise,zero_shot,gemini
-823,7,joy,surprise,zero_shot,gemini
-823,9,surprise,surprise,zero_shot,gemini
-823,11,surprise,surprise,zero_shot,gemini
-887,1,neutral,neutral,zero_shot,gemini
-887,3,sadness,neutral,zero_shot,gemini
-887,5,sadness,neutral,zero_shot,gemini
-887,7,sadness,neutral,zero_shot,gemini
-887,9,sadness,neutral,zero_shot,gemini
-887,11,sadness,neutral,zero_shot,gemini
-930,1,anger,anger,zero_shot,gemini
-930,3,anger,anger,zero_shot,gemini
-930,5,anger,anger,zero_shot,gemini
-930,7,anger,anger,zero_shot,gemini
-930,9,anger,anger,zero_shot,gemini
-930,11,anger,anger,zero_shot,gemini
-946,1,anger,surprise,zero_shot,gemini
-946,3,surprise,surprise,zero_shot,gemini
-946,5,surprise,surprise,zero_shot,gemini
-946,7,surprise,surprise,zero_shot,gemini
-946,9,surprise,surprise,zero_shot,gemini
-946,11,surprise,surprise,zero_shot,gemini
-947,1,neutral,joy,zero_shot,gemini
-947,3,neutral,joy,zero_shot,gemini
-947,5,neutral,joy,zero_shot,gemini
-947,7,joy,joy,zero_shot,gemini
-947,9,joy,joy,zero_shot,gemini
-947,11,joy,joy,zero_shot,gemini
-1005,1,joy,disgust,zero_shot,gemini
-1005,3,joy,disgust,zero_shot,gemini
-1005,5,joy,disgust,zero_shot,gemini
-1005,7,joy,disgust,zero_shot,gemini
-1005,9,joy,disgust,zero_shot,gemini
-1005,11,joy,disgust,zero_shot,gemini
-1022,1,surprise,joy,zero_shot,gemini
-1022,3,surprise,joy,zero_shot,gemini
-1022,5,joy,joy,zero_shot,gemini
-1022,7,joy,joy,zero_shot,gemini
-1022,9,joy,joy,zero_shot,gemini
-1022,11,joy,joy,zero_shot,gemini
+dialogue_id,window_size,prediction,label,prompt_type,model,reasoning,accuracy
+20,1,neutral,neutral,zero_shot,gemini,"The utterance is a simple acknowledgement or agreement that lacks any specific indicators of strong emotion. Given the lack of context suggesting otherwise, it serves as a functional, non-expressive response.",True
+20,3,neutral,neutral,zero_shot,gemini,"Joey is providing a straightforward and simple agreement to Rachel's request, lacking any strong emotional inflection or expressive tone.",True
+20,5,neutral,neutral,zero_shot,gemini,"Joey is simply providing a straightforward agreement to Rachel's request, lacking any strong emotional inflection or reaction in his response.",True
+20,7,neutral,neutral,zero_shot,gemini,"Joey is providing a simple, straightforward agreement to Rachel's request without expressing any significant emotional intensity or specific sentiment.",True
+20,9,neutral,neutral,zero_shot,gemini,"Joey is simply providing a straightforward agreement to Rachel's request for him not to get married before she does, showing no strong emotional indicators.",True
+20,11,neutral,neutral,zero_shot,gemini,"Joey's response is a straightforward agreement to Rachel's playful request, serving as a simple acknowledgment without any strong emotional intensity.",True
+62,1,neutral,neutral,zero_shot,gemini,"Chandler is making a matter-of-fact observation or comparison regarding the difficulty level of a situation, which lacks the strong affective markers required for the other emotion categories.",True
+62,3,neutral,neutral,zero_shot,gemini,"Chandler is using a deadpan, sarcastic logic to justify his claim that Bob shouldn't be hired, delivering the line in a mock-serious manner without expressing strong personal emotion.",True
+62,5,neutral,neutral,zero_shot,gemini,"Chandler is providing a deadpan, mock-serious justification for his opinion using absurd logic, and he lacks any clear indicators of strong emotion like anger or joy.",True
+62,7,neutral,neutral,zero_shot,gemini,"Chandler is providing a deadpan, mock-logical justification for why Bob shouldn't be hired, using a calm tone to mask his personal reluctance. The statement lacks strong indicators of intense emotions like anger, joy, or sadness, making it a neutral delivery of a witty remark.",True
+62,9,neutral,neutral,zero_shot,gemini,"Chandler is using deadpan sarcasm and absurd logic to discourage his boss from hiring Bob, delivering the line in a matter-of-fact manner without displaying strong primary emotions like anger or joy.",True
+62,11,neutral,neutral,zero_shot,gemini,"Chandler is making a dismissive and logical, albeit sarcastic, argument to prevent Bob from being hired on his floor, maintaining a deadpan and composed demeanor. There is no strong display of the other primary emotions like anger, joy, or sadness.",True
+94,1,anger,joy,zero_shot,gemini,"The use of an imperative command and an exclamation mark suggests a high level of intensity and urgency, indicating that the speaker is likely feeling impatient or irritated.",False
+94,3,neutral,joy,zero_shot,gemini,"Joanna is issuing a direct, authoritative command to her subordinate to enter the room, which serves a functional purpose in the professional context and lacks clear indicators of strong positive or negative emotion.",False
+94,5,joy,joy,zero_shot,gemini,"Joanna is eagerly and enthusiastically granting all of Rachel's requests in order to convince her to stay at the company, demonstrating a high-energy and positive demeanor.",True
+94,7,joy,joy,zero_shot,gemini,"Joanna is enthusiastically granting Rachel's request for an assistant as part of a series of generous offers, demonstrating an eager and upbeat demeanor.",True
+94,9,neutral,joy,zero_shot,gemini,"Joanna is issuing a direct, authoritative command to her subordinate to fulfill a specific requirement of the agreement she just made with Rachel, which is a functional and business-oriented action without a clear display of strong emotion.",False
+94,11,neutral,joy,zero_shot,gemini,"Joanna is issuing a direct, authoritative command to her subordinate to fulfill the terms of the agreement she just reached with Rachel, reflecting a bu siness-oriented and decisive tone without a specific emotional charge.",False
+145,1,surprise,surprise,zero_shot,gemini,"Chandler is reacting to being the sudden center of attention with defensive confusion, indicating he is startled by the group's expectation that he would know the information. This combination of being caught off guard and protesting his ignorance aligns best with surprise.",True
+145,3,surprise,surprise,zero_shot,gemini,"Chandler is reacting to the group's sudden and unexpected focus on him, expressing defensive confusion that they would assume he was aware of Joey's naked cooking habits. His response reflects his shock at both the new information and the group's collective gaze.",True
+145,5,surprise,surprise,zero_shot,gemini,Chandler is reacting with shock to both the group's assumption that he was aware of Joey's habit and the revelation of the bizarre habit itself.,True
+145,7,surprise,surprise,zero_shot,gemini,"Chandler is expressing shock and defensiveness because the group is looking at him for an explanation regarding Joey's strange habit, which Chandler himself was unaware of. His reaction combines the shock of the revelation with the unexpectedness of being singled out by the group.",True
+145,9,surprise,surprise,zero_shot,gemini,"Chandler is reacting with shock and defensiveness because the others are looking at him as if he should have known about Joey's habit, while he is also expressing his own unexpected discovery of the fact.",True
+145,11,surprise,surprise,zero_shot,gemini,"Chandler is expressing shock and defensiveness because the others are looking at him as if he should have known about Joey's habit of cooking naked, which he was also unaware of.",True
+177,1,neutral,neutral,zero_shot,gemini,"The utterance is a simple acknowledgment or agreement that lacks any specific indicators of strong emotion. Without additional context or expressive punctuation, it serves as a matter-of-fact response.",True
+177,3,neutral,neutral,zero_shot,gemini,"Rachel is simply acknowledging Tag's statement and conceding to his point, showing a lack of strong emotional reaction.",True
+177,5,neutral,neutral,zero_shot,gemini,"Rachel provides a brief, non-committal response to Tag's persistence, likely to acknowledge his statement or end the conversation without expressing any strong emotional state.",True
+177,7,neutral,neutral,zero_shot,gemini,"Rachel provides a brief and flat acknowledgment to Tag's statement to end the conversation, without expressing any strong positive or negative emotion.",True
+177,9,neutral,neutral,zero_shot,gemini,"Rachel gives a brief, flat acknowledgment to Tag's insistence in order to end the awkward conversation, without displaying any strong emotional state.",True
+177,11,neutral,neutral,zero_shot,gemini,"Rachel's response is a flat, non-committal acknowledgment of Tag's statement, lacking any strong emotional intensity or specific sentiment.",True
+180,1,fear,fear,zero_shot,gemini,Chandler displays visible nervousness and anxiety through his repetitive stuttering and focused questioning about the pain of labor. This apprehension indicates a sense of fear or worry regarding the physical reality and intensity of the birth process.,True
+180,3,fear,fear,zero_shot,gemini,"Chandler's stammering and repetitive questioning indicate significant anxiety and nervousness regarding the pain of childbirth, which aligns with the category of fear. His attempt to dismiss Janice's comment with ""That's funny"" is a defensive reaction to his obvious discomfort.",True
+180,5,neutral,fear,zero_shot,gemini,"After the initial shock of Janice's joke wears off, Chandler acknowledges the humor and shifts to a conversational tone by asking about the physical pain of labor. His response lacks the intense emotional markers of surprise or joy, settling into a more inquisitive and calm state.",False
+180,7,neutral,fear,zero_shot,gemini,"Chandler is reacting to Janice's joke with a brief acknowledgement and then asks a follow-up question about the pain of labor, expressing a sense of awkward curiosity rather than a strong, specific emotion.",False
+180,9,neutral,fear,zero_shot,gemini,"Chandler is reacting to the revelation that Janice's claim was a joke and shifts the conversation to a straightforward, albeit slightly awkward, inquiry about the pain of her labor. He is no longer in a state of shock or fear, and his questions do not convey any strong, distinct emotion from the provided list.",False
+180,11,neutral,fear,zero_shot,gemini,"Chandler acknowledges Janice's joke with a brief comment and then pivots to an inquiry about her labor pain. Although he displays a slight stutter that suggests nervousness, the utterance primarily functions as a conversational question rather than a strong expression of a specific emotion.",False
+184,1,surprise,anger,zero_shot,gemini,"The use of the interjection ""OH!"" and the exclamation point indicates a sudden recollection or realization of a specific memory. This abrupt discovery of a past event to use in the conversation is characteristic of surprise.",False
+184,3,surprise,anger,zero_shot,gemini,"Rachel's sudden realization and recollection of another unusual activity planned by Joey is marked by the exclamation ""OH!"", which conveys a sense of shock and sudden discovery.",False
+184,5,surprise,anger,zero_shot,gemini,"Rachel is expressing a sudden realization and shock as she connects the dots between Joey's current admission and his past suspicious behavior, specifically his odd choice of a button factory tour.",False
+184,7,surprise,anger,zero_shot,gemini,"Rachel is experiencing a sudden epiphany as she connects Joey's current confession to past events, using the exclamation ""OH!"" to express her shock and disbelief at the realization.",False
+184,9,surprise,anger,zero_shot,gemini,"Rachel has a sudden realization as she connects Joey's current behavior to a recurring pattern of past deceptions, expressing shock at the absurdity of the events he arranged to trick them. The exclamation ""OH!"" and the context of uncovering a long-held secret point toward a state of epiphany and shock.",False
+184,11,surprise,anger,zero_shot,gemini,"Rachel is experiencing a sudden realization as she connects Joey's past deceptive actions to his secret party, using the exclamation ""OH!"" to express her shock and epiphany. Her discovery of another instance where they were tricked highlights her state of surprised indignation.",False
+347,1,neutral,neutral,zero_shot,gemini,"The utterance ""Oh"" is a brief, standard acknowledgement without any contextual indicators of strong emotion or specific inflection. As a simple reaction or filler word in this context, it lacks the intensity required for labels like surprise or joy.",True
+347,3,neutral,neutral,zero_shot,gemini,"Monica's utterance is a simple acknowledgment in response to Phoebe calling her name, serving as a realization that she needs to stop or listen without expressing a strong emotional state.",True
+347,5,neutral,neutral,zero_shot,gemini,"Monica's response is a brief acknowledgment to Phoebe calling her name, serving as a simple reaction without conveying any strong or distinct emotional intensity.",True
+347,7,neutral,neutral,zero_shot,gemini,"Monica's response is a simple acknowledgment of Phoebe calling her name as she attempts to leave, serving as a realization of the situation without expressing a strong or distinct emotion.",True
+347,9,neutral,neutral,zero_shot,gemini,"Monica’s response ""Oh"" is a brief acknowledgment of Phoebe's distress and her request for space, acting as a simple realization rather than an expression of a strong, specific emotion.",True
+347,11,neutral,neutral,zero_shot,gemini,"Monica is responding to Phoebe’s firm request for space and her visible distress with a simple acknowledgment of the situation. This ""Oh"" functions as a quiet realization of Phoebe's emotional state rather than an expression of a strong, distinct emotion.",True
+349,1,surprise,surprise,zero_shot,gemini,"Phoebe expresses shock and disbelief because the news of the divorce contradicts her specific expectation or belief that it wouldn't happen for another seven years. The use of ""Oh no!"" and exclamation marks highlights her sudden astonishment at the unexpected timing.",True
+349,3,surprise,surprise,zero_shot,gemini,"Phoebe is shocked and taken aback because she misinterprets Chandler’s mention of a ""surprise"" and ""packing bags"" as a sign of an impending divorce, reacting with sudden alarm to this unexpected conclusion.",True
+349,5,surprise,surprise,zero_shot,gemini,"Phoebe is startled by Chandler's sudden announcement and reacts with shock because she misinterprets his ""surprise"" as an indication of a divorce. This immediate, alarmed reaction to unexpected news is best characterized as surprise.",True
+349,7,surprise,surprise,zero_shot,gemini,"Phoebe reacts with sudden shock and alarm to Chandler's statement, misinterpreting his ""surprise"" as an unexpected announcement that he and Monica are getting divorced.",True
+349,9,surprise,surprise,zero_shot,gemini,"Phoebe is startled and reacts with immediate alarm to Chandler's unexpected announcement, misinterpreting his mention of a ""surprise"" and packing bags as a sign of an impending divorce.",True
+349,11,surprise,surprise,zero_shot,gemini,"Phoebe reacts with shock and an illogical leap to a conclusion after Chandler announces he has a ""surprise,"" indicating she is startled and caught off guard by the news. Her exclamation ""Oh no!"" reflects her immediate and unexpected distress at what she perceives to be a sudden life change.",True
+358,1,anger,sadness,zero_shot,gemini,"Phoebe uses a sharp, sarcastic tone to dismiss a suggestion, demonstrating irritability and a confrontational attitude toward the person she is speaking to.",False
+358,3,anger,sadness,zero_shot,gemini,"Phoebe is responding with frustration and a sharp, sarcastic tone to Ross's dismissal of her concerns, using a confrontational ""gotcha"" logic to defend her belief.",False
+358,5,anger,sadness,zero_shot,gemini,"Phoebe is using a sarcastic and sharp retort to dismiss Ross's logic, expressing frustration and irritation that he doesn't believe her superstition.",False
+358,7,anger,sadness,zero_shot,gemini,"Phoebe is using a sharp, sarcastic retort to dismiss Ross's logical explanation, expressing irritation and defensiveness because her superstitious belief is being challenged.",False
+358,9,neutral,sadness,zero_shot,gemini,"Phoebe is matter-of-factly countering Ross's logical explanation with a sarcastic retort to support her superstitious claim, delivering the line with a sense of finality rather than intense anger or sadness.",False
+358,11,neutral,sadness,zero_shot,gemini,"Phoebe is rebutting Ross's logical explanation with a sarcastic and matter-of-fact retort. While her tone is sharp, she is stating her personal belief as a finality rather than expressing strong hostility or emotional distress.",False
+374,1,neutral,neutral,zero_shot,gemini,"The utterance is a straightforward statement of fact or necessity, delivered without any clear indicators of intense positive or negative emotion. It functions as a simple request or observation in a calm manner.",True
+374,3,neutral,neutral,zero_shot,gemini,"Chandler is making a blunt, matter-of-fact statement to prioritize material benefits over sentimental feelings, delivering the line with a pragmatic and direct tone rather than a strong emotional outburst.",True
+374,5,neutral,neutral,zero_shot,gemini,"Chandler is providing a blunt, matter-of-fact contradiction to the previous speaker's romantic sentiment, focusing on practical needs without expressing a strong specific emotion.",True
+374,7,neutral,neutral,zero_shot,gemini,"Chandler is making a direct, matter-of-fact statement about their priorities in contrast to the other couple's sentimental attitude, lacking any strong display of specific emotion.",True
+374,9,neutral,neutral,zero_shot,gemini,"Chandler provides a blunt and matter-of-fact contradiction to the woman's romantic sentiment, stating his and Monica's desire for material perks without displaying high emotional arousal.",True
+374,11,neutral,neutral,zero_shot,gemini,"Chandler is providing a blunt, deadpan response to contrast the woman's romantic sentiment, stating their desire for material perks in a matter-of-fact way without strong emotional display.",True
+388,1,anger,anger,zero_shot,gemini,Monica uses heavy sarcasm and a biting insult to express her intense irritation and hostility toward the situation or object being discussed. This aggressive tone and the nature of the remark indicate she is feeling provoked and annoyed.,True
+388,3,anger,anger,zero_shot,gemini,"Monica is expressing intense frustration and hostility through sarcasm and a graphic threat after Joey damaged her floor, which characterizes her emotional state as angry.",True
+388,5,anger,anger,zero_shot,gemini,"Monica uses heavy sarcasm and a graphic, hostile threat of physical violence to express her intense frustration and irritation with Joey for damaging her floor.",True
+388,7,anger,anger,zero_shot,gemini,Monica uses heavy sarcasm and a violent threat to express her intense frustration and hostility toward Joey for damaging her floor and acting dismissive about it.,True
+388,9,anger,anger,zero_shot,gemini,"Monica is expressing intense frustration and hostility toward Joey for damaging her floor, using a sarcastic and aggressive threat to convey her irritation.",True
+388,11,anger,anger,zero_shot,gemini,"Monica is expressing intense frustration and hostility toward Joey for damaging her floor, using a sarcastic and aggressive threat to convey her fury.",True
+414,1,neutral,neutral,zero_shot,gemini,"The utterance ""Okay"" is a simple acknowledgment that lacks any specific emotional indicators or contextual cues pointing toward a strong feeling. It functions as a standard, calm agreement or confirmation.",True
+414,3,neutral,neutral,zero_shot,gemini,"Monica is simply acknowledging Joey's statement about seeing her the next morning, serving as a standard and non-emotive confirmation of their plans.",True
+414,5,neutral,neutral,zero_shot,gemini,"Monica's response is a simple acknowledgement of Joey's statement about seeing her in the morning, serving as a routine conclusion to the conversation without any strong emotional overtones.",True
+414,7,neutral,neutral,zero_shot,gemini,"Monica is acknowledging Joey's statement about seeing them in the morning as he leaves, serving as a standard and routine conversational closing. There is no indication of strong or specific emotion in this simple acknowledgment.",True
+414,9,neutral,neutral,zero_shot,gemini,"Monica is providing a standard acknowledgment to Joey's statement about seeing them in the morning, which serves as a functional conversational closure without expressing any strong emotion.",True
+414,11,neutral,neutral,zero_shot,gemini,"Monica is providing a standard acknowledgement to Joey's statement that he is going to bed, which serves as a routine and non-emotional conversational closing.",True
+445,1,sadness,sadness,zero_shot,gemini,"Rachel is repeating a hurtful and derogatory remark about herself, which conveys a sense of rejection and low self-worth. This expression of emotional pain and being undervalued aligns most closely with sadness.",True
+445,3,sadness,sadness,zero_shot,gemini,"Rachel is repeating a deeply hurtful and insulting comment about herself, reflecting feelings of rejection, dejection, and emotional pain.",True
+445,5,sadness,sadness,zero_shot,gemini,"Rachel responds to her father's aggressive questioning by using a self-deprecating and hurtful phrase (""damaged goods""), which characterizes a sense of rejection and low self-worth. Although she is being sarcastic in the context of the show, the content of her statement reflects a state of emotional distress and misery.",True
+445,7,sadness,sadness,zero_shot,gemini,"Rachel uses the self-deprecating phrase ""damaged goods"" to describe herself while lying to her father, adopting a pitiable tone to explain her situation and deflect his anger. This expression of low self-worth and rejection aligns with the emotion of sadness.",True
+445,9,sadness,sadness,zero_shot,gemini,"Rachel describes herself using the self-deprecating term ""damaged goods,"" which conveys a sense of rejection, low self-worth, and sorrow in the context of her relationship.",True
+445,11,sadness,sadness,zero_shot,gemini,"Rachel uses the self-deprecating term ""damaged goods"" to describe how she is being treated, conveying a sense of rejection, devaluation, and profound unhappiness.",True
+448,1,neutral,neutral,zero_shot,gemini,"The speaker is making a practical observation about the time to ensure they keep their plans, expressing no significant emotional charge or sentiment.",True
+448,3,neutral,neutral,zero_shot,gemini,"Phoebe completely ignores Rachel's dramatic outburst and focuses on the practical task of making their dinner reservations, delivering the line in a matter-of-fact manner.",True
+448,5,neutral,neutral,zero_shot,gemini,"Phoebe is making a practical, matter-of-fact statement to redirect the conversation and ensure the group stays on schedule for their plans, showing no strong emotional indicators.",True
+448,7,neutral,neutral,zero_shot,gemini,"Phoebe is making a practical observation about the time and their schedule to transition the group to their next activity, showing no strong emotional reaction to the previous exchange.",True
+448,9,neutral,neutral,zero_shot,gemini,"Phoebe is making a practical, matter-of-fact statement about the time and their dinner plans to transition away from the argument, showing no strong emotional state.",True
+448,11,neutral,neutral,zero_shot,gemini,"Phoebe is attempting to de-escalate the conflict between Rachel and Monica by redirecting the conversation toward their practical plans, showing no strong emotional bias or reaction to their argument.",True
+482,1,surprise,joy,zero_shot,gemini,"The utterance is an exclamation commonly used to express a sudden reaction or shock to an unexpected situation or piece of information. Without additional context, it primarily functions as a startle response.",False
+482,3,surprise,joy,zero_shot,gemini,"Phoebe's reaction comes immediately after finding a shocking item (a positive pregnancy test), expressing a high level of shock and disbelief at the discovery. This sudden realization of unexpected information is a clear indication of surprise.",False
+482,5,anger,joy,zero_shot,gemini,"Phoebe is expressing high levels of frustration and exasperation after her attempt to fix a situation (likely the beeping smoke detector) fails, which characterizes the emotion of anger in this context.",False
+482,7,surprise,joy,zero_shot,gemini,"Phoebe is in a frantic state searching for the reset button, and her final exclamation reflects the sudden shock and realization upon finding and interacting with it.",False
+482,9,surprise,joy,zero_shot,gemini,Phoebe is in a state of high agitation and frantic energy as she tries to disable the fire alarm. This exclamation reflects her overwhelmed shock and disbelief as she finally interacts with the reset button after her long struggle.,False
+482,11,surprise,joy,zero_shot,gemini,"Phoebe is reacting with shock and realization after finally finding the reset button she had been struggling to locate, expressing her overwhelmed state of mind.",False
+486,1,neutral,joy,zero_shot,gemini,"The utterance is a standard safety instruction or piece of advice delivered as a straightforward directive. It lacks any specific indicators of strong emotion such as excitement, anger, or distress.",False
+486,3,neutral,joy,zero_shot,gemini,"Joey is reflexively repeating Chandler's patronizing advice back to him in a mimicking or matter-of-fact manner as he prepares to leave, without displaying any strong primary emotion.",False
+486,5,neutral,joy,zero_shot,gemini,"Joey is repeating Chandler's patronizing advice back to him in a dismissive or mocking manner, but the utterance does not convey a strong, distinct emotional state such as anger or surprise.",False
+486,7,neutral,joy,zero_shot,gemini,"Joey is repeating Chandler's safety advice back to himself as he leaves, acknowledging the practical reality of his situation without expressing any intense or specific emotion.",False
+486,9,neutral,joy,zero_shot,gemini,"Joey is repeating Chandler's sarcastic advice back to him as he leaves the room, which serves as a flat acknowledgement of his situation rather than a high-arousal emotional outburst.",False
+486,11,neutral,joy,zero_shot,gemini,"Joey is repeating the safety advice given to him by Chandler as he prepares to leave, acknowledging his new need for caution without expressing a strong or distinct emotion like anger or joy.",False
+665,1,joy,anger,zero_shot,gemini,"Frank's enthusiastic ""I know!"" combined with the use of exclamation marks suggests he is excited and upbeat about his suggestion, reflecting a lighthearted or cheerful tone.",False
+665,3,joy,anger,zero_shot,gemini,"Frank enthusiastically offers an unconventional suggestion with an upbeat and energetic tone, showing excitement about his idea rather than distress.",False
+665,5,joy,anger,zero_shot,gemini,"Frank responds with high energy and exclamation marks, suggesting an upbeat and enthusiastic, albeit misguided, tone as he offers a suggestion from his past.",False
+665,7,joy,anger,zero_shot,gemini,"Frank responds with high energy and enthusiasm, agreeing with the criticism and offering a naive suggestion with a positive, upbeat tone.",False
+665,9,joy,anger,zero_shot,gemini,"Frank responds to Phoebe's comment about his ignorance with high energy and an enthusiastic, albeit naive, suggestion, maintaining a cheerful and upbeat tone despite the stressful situation.",False
+665,11,joy,anger,zero_shot,gemini,"Frank responds with enthusiasm and uses a lighthearted, humorous anecdote to suggest a solution, indicating an upbeat and cheerful tone despite the stressful situation.",False
+678,1,neutral,neutral,zero_shot,gemini,The speaker is making a factual observation or a casual suggestion about their lifestyle without expressing any strong positive or negative emotions.,True
+678,3,neutral,neutral,zero_shot,gemini,"Chandler is making a dry, deadpan observation in response to Frank's bizarre suggestions, delivering the line with a matter-of-fact tone that lacks strong emotional intensity.",True
+678,5,neutral,neutral,zero_shot,gemini,"Chandler is making a dry, ironic observation in response to Frank's bizarre plans, using a deadpan tone that lacks strong emotional intensity. Because the statement is a calm, observational commentary rather than an expression of a specific passion, it is classified as neutral.",True
+678,7,neutral,neutral,zero_shot,gemini,"Chandler is making a dry, matter-of-fact observation about how they spend their time in the city compared to Frank's unusual tourist plans, without displaying any strong emotional intensity.",True
+678,9,neutral,neutral,zero_shot,gemini,"Chandler is making a dry, ironic observation in response to Frank's unconventional and stereotypical tourist plans, speaking in a matter-of-fact tone that lacks strong emotional arousal.",True
+678,11,neutral,neutral,zero_shot,gemini,"Chandler is making a dry, sarcastic observation in response to Frank's unconventional plans, delivering the line with his characteristic deadpan wit rather than showing a strong outward emotion.",True
+699,1,neutral,neutral,zero_shot,gemini,"The utterance is a simple acknowledgment of information or a situation, lacking any clear indicators of strong emotional intensity or specific sentiment.",True
+699,3,neutral,neutral,zero_shot,gemini,"After her initial dramatic outburst and fear of being arrested are addressed by the guard's clarification, Phoebe's intense emotions immediately subside into a calm, matter-of-fact acceptance of the situation.",True
+699,5,neutral,neutral,zero_shot,gemini,"Phoebe quickly shifts from a state of intense panic to calm acceptance after realizing her assumption about being arrested was incorrect. Her response is a simple, matter-of-fact acknowledgment of the guard's clarification.",True
+699,7,neutral,neutral,zero_shot,gemini,"Phoebe instantly calms down and accepts the situation once she realizes she is not being arrested, shifting from extreme fear to a calm, matter-of-fact tone.",True
+699,9,neutral,neutral,zero_shot,gemini,"After her panicked outburst about being arrested, Phoebe realizes the guard is merely escorting her outside, leading her to immediately drop her dramatic tone and provide a calm acknowledgment of the situation.",True
+699,11,neutral,neutral,zero_shot,gemini,"After her dramatic outburst, Phoebe realizes she is not being arrested but merely escorted outside, causing her to immediately drop her panic and respond with a calm, factual acknowledgement.",True
+717,1,anger,anger,zero_shot,gemini,Rachel is expressing intense frustration and hostility by repeatedly blaming Phoebe for a situation she finds distressing.,True
+717,3,anger,anger,zero_shot,gemini,"Rachel expresses intense frustration and places direct blame on Phoebe for the situation, using repetitive accusations and an agitated tone.",True
+717,5,anger,anger,zero_shot,gemini,"Rachel is expressing intense frustration and blaming Phoebe for a perceived escalation in Ross's relationship, using hyperbolic accusations and an agitated tone.",True
+717,7,anger,anger,zero_shot,gemini,"Rachel is expressing intense frustration and placing direct blame on Phoebe for the situation, using hyperbolic language and an accusatory tone.",True
+717,9,anger,anger,zero_shot,gemini,"Rachel expresses intense frustration and blame toward Phoebe, using accusatory language to vent her distress over the situation with Ross.",True
+717,11,anger,anger,zero_shot,gemini,"Rachel is expressing intense frustration and irritation by repeatedly blaming Phoebe for the situation, using hyperbolic statements to voice her distress and anger.",True
+823,1,neutral,surprise,zero_shot,gemini,"The speaker is making a matter-of-fact observation about her own behavior in a conversational tone. There are no clear indicators of strong positive or negative emotions like anger, joy, or sadness.",False
+823,3,joy,surprise,zero_shot,gemini,"Monica expresses enthusiasm and excitement for Joey's suggestion, showing a positive and supportive reaction to his idea over her own.",False
+823,5,joy,surprise,zero_shot,gemini,"Monica enthusiastically pivots from her previous advice to agree with Joey's more exciting suggestion, showing a sense of lightheartedness and approval.",False
+823,7,joy,surprise,zero_shot,gemini,"Monica enthusiastically shifts her position to agree with Joey's mischievous suggestion, showing excitement and lightheartedness as she abandons her previous sensible advice.",False
+823,9,joy,surprise,zero_shot,gemini,"Monica enthusiastically shifts her stance to agree with Joey's more exciting suggestion, showing a lighthearted and supportive attitude toward the idea of following the guy.",False
+823,11,joy,surprise,zero_shot,gemini,"Monica enthusiastically agrees with Joey's impulsive suggestion, showing a lighthearted and excited shift in her attitude compared to her previous sensible advice.",False
+887,1,neutral,neutral,zero_shot,gemini,The speaker is making a straightforward observation and acknowledging a negative response or a lack of affirmation without expressing strong emotional distress or excitement.,True
+887,3,neutral,neutral,zero_shot,gemini,"Ross is making a factual observation that his previous suggestion was rejected. His tone is matter-of-fact as he acknowledges a social cue, lacking the strong indicators of the other specific emotional categories.",True
+887,5,neutral,neutral,zero_shot,gemini,"Ross is acknowledging and accepting the lack of a positive response to his previous proposal, stating a matter-of-fact observation without strong emotional intensity.",True
+887,7,neutral,neutral,zero_shot,gemini,"Ross is acknowledging the rejection of his proposal to ""attack them together"" in a matter-of-fact way, stating the reality of the situation without a strong emotional display.",True
+887,9,neutral,neutral,zero_shot,gemini,"Ross is making a matter-of-fact observation and acknowledging the instructor's non-verbal rejection of his inappropriate suggestion. He is stating a conclusion about the situation without expressing a strong or distinct emotion like joy, sadness, or anger.",True
+887,11,neutral,neutral,zero_shot,gemini,"Ross is awkwardly acknowledging the instructor's silent or disapproving reaction to his suggestion, stating the outcome of the interaction in a matter-of-fact way without expressing a strong specific emotion.",True
+930,1,anger,anger,zero_shot,gemini,"The use of an insulting term like ""Bitch"" combined with a confrontational question demonstrates a high level of hostility, aggression, and intense irritation.",True
+930,3,anger,anger,zero_shot,gemini,"Joey reacts defensively and with immediate hostility to Chandler's prediction about his behavior, using an insult to express his irritation.",True
+930,5,anger,anger,zero_shot,gemini,"Joey is reacting defensively and confrontationally to Chandler's comment about him, immediately proving Chandler's point by using an insult in a hostile manner.",True
+930,7,anger,anger,zero_shot,gemini,"Joey is reacting defensively and with immediate hostility to Chandler's claim that he gets aggressive, proving Chandler's point by using the insult in a confrontational tone. This display of irritation and verbal aggression fits the category of anger.",True
+930,9,anger,anger,zero_shot,gemini,"Joey is responding to Chandler's comment in a confrontational manner, using an insult to immediately prove Chandler's point about him getting ""worked up."" The aggressive phrasing and tone signify a state of mock or reactionary anger.",True
+930,11,anger,anger,zero_shot,gemini,"Joey reacts defensively and aggressively to Chandler's comment, immediately proving him right by using a derogatory term in a hostile manner. This combination of defensiveness and verbal aggression is best characterized as anger.",True
+946,1,surprise,surprise,zero_shot,gemini,"The utterance expresses shock and disbelief regarding an unexpected action, which are primary indicators of being startled or taken aback.",True
+946,3,surprise,surprise,zero_shot,gemini,Phoebe's reaction expresses astonishment and amazement that Monica actually followed through with the action they were both excited about.,True
+946,5,surprise,surprise,zero_shot,gemini,Phoebe is reacting with shock and astonishment because Monica actually followed through with the action she was being pressured to do.,True
+946,7,surprise,surprise,zero_shot,gemini,Phoebe expresses shock and astonishment because Monica finally gave in and performed the action after repeatedly refusing her persistent urging.,True
+946,9,surprise,surprise,zero_shot,gemini,Phoebe expresses disbelief and shock because Monica finally gave in to her repeated pestering and made the noise after adamantly refusing several times.,True
+946,11,surprise,surprise,zero_shot,gemini,Phoebe is shocked and taken aback because Monica actually followed her suggestion and made a whistling sound after repeatedly refusing to do so.,True
+947,1,neutral,joy,zero_shot,gemini,"The utterance ""Okay"" serves as a simple acknowledgment or filler word without any contextual or tonal indicators suggesting a strong emotional state. In the absence of additional information, it represents a baseline, non-emotional response.",False
+947,3,joy,joy,zero_shot,gemini,"Monica has just been praised by her teacher and invited to the head of the class, so her response reflects her happiness and satisfaction at being recognized as the best student.",True
+947,5,joy,joy,zero_shot,gemini,"Monica is being praised for her correct answer and told to go to the head of the class, which brings her a sense of pride and satisfaction.",True
+947,7,joy,joy,zero_shot,gemini,"Monica has just been praised for her knowledge and told to go to the head of the class, so her response reflects the satisfaction and happiness of being recognized as the top student.",True
+947,9,joy,joy,zero_shot,gemini,"Monica has just been praised for her knowledge and invited to the head of the class, so her response reflects her satisfaction and happiness at being recognized as the top student.",True
+947,11,joy,joy,zero_shot,gemini,"Monica is being praised by the teacher and invited to move to the front of the class, which makes her feel successful and satisfied.",True
+1005,1,neutral,disgust,zero_shot,gemini,"Phoebe is making a helpful but quirky suggestion to redirect the other person's energy, delivering the line in a calm and matter-of-fact way that lacks strong emotional arousal.",False
+1005,3,neutral,disgust,zero_shot,gemini,"Phoebe is making a lighthearted and quirky suggestion in a matter-of-fact manner to help the other person relax, without expressing strong emotional intensity.",False
+1005,5,joy,disgust,zero_shot,gemini,"Phoebe is in a lighthearted and playful mood after successfully convincing Larry to be lenient, and she uses a witty joke about a nose-picking vendor to maintain their positive rapport.",False
+1005,7,joy,disgust,zero_shot,gemini,"Phoebe is relieved and in a lighthearted mood after successfully persuading Larry to be less strict, and she makes a playful joke to satisfy his professional urge to ""bust"" someone.",False
+1005,9,neutral,disgust,zero_shot,gemini,"Phoebe has successfully resolved the tension with Larry and is making a lighthearted, matter-of-fact suggestion to satisfy his professional urges later, speaking in a calm and helpful tone.",False
+1005,11,neutral,disgust,zero_shot,gemini,"Phoebe is calmly suggesting an alternative target for Larry's inspections to appease him and move past the current conflict, speaking in a matter-of-fact and helpful tone.",False
+1022,1,surprise,joy,zero_shot,gemini,Joey is reacting with shock and excitement to the unexpected discovery of free adult content on his television.,False
+1022,3,surprise,joy,zero_shot,gemini,"Joey reacts with a sudden, enthusiastic realization and excitement upon discovering that Rachel has erotica, which he bluntly reinterprets as porn.",False
+1022,5,joy,joy,zero_shot,gemini,"Joey is excitedly repeating his discovery to tease Rachel, expressing amusement and a sense of triumph rather than anger or shock.",True
+1022,7,joy,joy,zero_shot,gemini,"Joey is expressing a sense of amusement and glee as he teases Rachel about his discovery, finding the situation funny rather than being genuinely shocked or upset.",True
+1022,9,joy,joy,zero_shot,gemini,"Joey is enthusiastically teasing Rachel about her book, showing amusement and a sense of playful triumph in his discovery.",True
+1022,11,joy,joy,zero_shot,gemini,"Joey is playfully teasing Rachel and expressing amusement and excitement over his discovery of her book, repeating the phrase to mock her more sophisticated explanation.",True
