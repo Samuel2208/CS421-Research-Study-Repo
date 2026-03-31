@@ -1,0 +1,448 @@
+Sr No.,Utterance,Speaker,Emotion,Dialogue_ID,Utterance_ID,Season,Episode,StartTime,EndTime,Dialogue Act
+203,How did it go with Erin?,Rachel,neutral,20,0,7,7,"00:10:56,155","00:10:59,157",q
+204,"Oh, unbelievable! We had the best time!",Joey,joy,20,1,7,7,"00:10:59,408","00:11:01,368",s
+205,"Yay!! Oh so, you're not, you're not mad at us anymore?",Phoebe,joy,20,2,7,7,"00:11:01,535","00:11:06,164",q
+206,No!,Joey,joy,20,3,7,7,"0:11:02,703","0:11:03,538",ans
+207,No!,Joey,joy,20,4,7,7,"0:11:03,538","0:11:04,760",ans
+208,No!,Joey,joy,20,5,7,7,"0:11:04,760","0:11:05,303",ans
+209,You guys were totally right!,Joey,joy,20,6,7,7,"0:11:05,303","0:11:06,298",o
+210,This is so much better than the first time we went out.,Joey,joy,20,7,7,7,"00:11:06,374","00:11:08,625",o
+211,Y'know?,Joey,neutral,20,8,7,7,"00:11:08,625","00:11:08,834",oth
+212,"That was so awkward, we were really nervous.",Joey,neutral,20,9,7,7,"00:11:08,834","00:11:11,378",o
+213,Didn't you sleep together?,Phoebe,neutral,20,10,7,7,"0:11:11,629","0:11:12,811",q
+214,"Yeah, that really calms me down.",Joey,neutral,20,11,7,7,"0:11:12,811","0:11:14,723",ans
+215,And!,Joey,joy,20,12,7,7,"0:11:16,801","0:11:18,595",b
+216,We have so much in common!,Joey,joy,20,13,7,7,"0:11:18,595","0:11:18,734",s
+217,"She loves sandwiches, sports, although she is a Met fan, not much of an issue now but if we were ever to have kids, well that's a",Joey,joy,20,14,7,7,"00:11:18,928","00:11:31,356",s
+218,"Oh my God! Listen to you talkin' about having kids. Oh my Joey. Oh, please don't get married before I do.",Rachel,surprise,20,15,7,7,"00:11:27,228","00:11:37,862",o
+219,Okay.,Joey,neutral,20,16,7,7,"00:11:41,742","00:11:43,493",ag
+665,Hey Bob.,Chandler,neutral,62,0,8,5,"00:02:34,362","00:02:37,698",g
+666,Hey! How's my pal Toby doing today?,Bob,joy,62,1,8,5,"00:07:23,484","00:07:26,736",q
+667,"If I see him, I'll ask.",Chandler,neutral,62,2,8,5,"00:07:26,904","00:07:29,364",ans
+668,Toby!,Bob,joy,62,3,8,5,"00:07:29,532","00:07:32,033",oth
+670,Yeah!,Chandler,joy,62,5,8,5,"0:07:36,664","0:07:37,166",b
+671,Oh then you know each other.,Mr. Franklin,neutral,62,6,8,5,"0:07:37,166","0:07:38,543",s
+672,We're on a semi-first name basis.,Chandler,neutral,62,7,8,5,"00:07:38,666","00:07:41,126",s
+673,What do you think of adding him to our team?,Mr. Franklin,neutral,62,8,8,5,"00:07:41,711","00:07:43,837",q
+674,"Bob? Ooh, working here with us? Everyday? Yeah, I don't know if he has what it takes.",Chandler,surprise,62,9,8,5,"00:07:44,005","00:07:51,761",ans
+675,Really? They love him down on six.,Mr. Franklin,surprise,62,10,8,5,"00:07:51,929","00:07:55,807",s
+676,But this is eleven. It's almost twice as hard up here.,Chandler,neutral,62,11,8,5,"00:07:56,601","00:08:04,024",s
+932,My drinking?,Rachel,neutral,94,0,4,9,"00:11:38,948","00:11:40,198",oth
+933,"Oh, I must've said that after you left.",Joanna,neutral,94,1,4,9,"00:11:41,617","00:11:44,244",o
+934,Said what? Exactly.,Rachel,fear,94,2,4,9,"00:11:45,579","00:11:46,955",q
+935,That you enjoyed the occasional drink¬Öing binge.,Joanna,neutral,94,3,4,9,"00:11:47,123","00:11:48,915",ans
+936,"Oh my God!! Ohh, that is it! I'm leaving! You are just a horrible person!",Rachel,disgust,94,4,4,9,"00:11:52,211","00:11:58,299",s
+937,Wait-wait-wait-wait-wait-wait-wait-wait!!,Joanna,fear,94,5,4,9,"00:11:54,964","00:11:58,299",c
+938,If you're gonna get all sensitive about it!,Joanna,anger,94,6,4,9,"00:11:58,467","00:12:01,386",s
+939,I don't want to lose you.,Joanna,sadness,94,7,4,9,"00:12:01,554","00:12:02,929",o
+940,"What if I, create a position for you?",Joanna,neutral,94,8,4,9,"00:12:03,097","00:12:05,640",q
+941,I'll make you an assistant buyer in this department.,Joanna,neutral,94,9,4,9,"00:12:05,808","00:12:08,810",ans
+942,Say more things like that.,Rachel,joy,94,10,4,9,"00:12:10,229","00:12:12,731",c
+943,"You can have your own office, and a raise! Effective tomorrow.",Joanna,joy,94,11,4,9,"00:12:13,524","00:12:16,526",o
+944,I'd need an expense account.,Rachel,neutral,94,12,4,9,"0:12:17,319","0:12:18,779",s
+945,Done!,Joanna,joy,94,13,4,9,"0:12:18,779","0:12:19,983",ag
+946,And an assistant.,Rachel,neutral,94,14,4,9,"0:12:20,448","0:12:21,491",oth
+947,"Sophie, get in here!",Joanna,joy,94,15,4,9,"0:12:21,491","0:12:23,063",ag
+1389,"Oh, Danielle! I wasn't expecting the machine... Give me a call when you get a chance. Bye-bye. Oh God!",Chandler,surprise,145,0,1,20,"00:05:09,309","00:05:21,320",s
+1390,That's,Monica,neutral,145,1,1,20,"00:05:25,116","00:05:28,535",oth
+1391,"Hey, I've been honing!",Chandler,anger,145,2,1,20,"00:05:29,162","00:05:30,871",s
+1392,What was with the dishes?,Ross,neutral,145,3,1,20,"00:05:31,831","00:05:32,998",q
+1393,"Oh, uh..",Chandler,fear,145,4,1,20,"0:05:33,166","0:05:33,959",b
+1394,I want her to think I might be in a restaurant.. y'know?,Chandler,fear,145,5,1,20,"0:05:33,959","0:05:36,229",ans
+1395,"I might have some kind of life, like I haven't been sitting around here honing for the past few hours.",Chandler,anger,145,6,1,20,"00:05:36,336","00:05:42,966",o
+1396,"Look look! He's doing it again, the guy with the telescope!",Monica,surprise,145,7,1,20,"00:05:43,301","00:05:52,934",s
+1397,Oh my God! Go away! Stop looking in here!,Phoebe,anger,145,8,1,20,"00:05:45,720","00:05:52,934",c
+1398,"Great, now he's waving back.",Monica,disgust,145,9,1,20,"00:05:53,102","00:05:55,729",s
+1399,"Man, we gotta do something about that guy.",Joey,disgust,145,10,1,20,"00:05:57,148","00:05:58,815",o
+1400,"This morning, I caught him looking into our apartment.",Joey,disgust,145,11,1,20,"00:05:58,983","00:06:01,318",s
+1401,It creeps me out!,Joey,anger,145,12,1,20,"0:06:01,486","0:06:02,654",o
+1402,I feel like I can't do stuff!,Joey,anger,145,13,1,20,"0:06:02,654","0:06:04,181",o
+1403,What kinda stuff?,Monica,joy,145,14,1,20,"00:06:05,031","00:06:07,240",q
+1404,"Will you grow up? I'm not talking about sexy stuff, but, like, when I'm cooking naked.",Joey,disgust,145,15,1,20,"00:06:08,993","00:06:14,664",ans
+1405,You cook naked?,Phoebe,surprise,145,16,1,20,"00:06:17,043","00:06:18,377",q
+1406,"Yeah, toast, oatmeal... nothing that spatters.",Joey,neutral,145,17,1,20,"00:06:18,544","00:06:21,713",ans
+1407,What are you looking at me for? I didn't know that.,Chandler,surprise,145,18,1,20,"00:06:25,176","00:06:27,719",q
+1745,"So, what's this about?",Tag,joy,177,0,8,2,"00:15:57,122","00:15:58,790",q
+1746,"Rachel has something that she wants to tell you and umm, I believe that this is your red sweater.",Phoebe,neutral,177,1,8,2,"00:15:58,999","00:16:05,922",ans
+1747,No. This is my red sweater.,Tag,neutral,177,2,8,2,"00:16:06,090","00:16:10,218",dag
+1748,Oh no. Could I get anyone a coffee or¬Öpoison? No? Just for me? Okay.,Phoebe,fear,177,3,8,2,"00:16:12,513","00:16:23,940",q
+1749,What's going on Rach?,Tag,joy,177,4,8,2,"00:16:25,359","00:16:27,235",q
+1750,"Nothing! Phoebe kinda made a mistake. But y'know you do wear that sweater a lot, are you involved in some kind of dare?",Rachel,fear,177,5,8,2,"00:16:27,403","00:16:40,331",ans
+1751,"Y'know, I'm actually glad Phoebe called.",Tag,joy,177,6,8,2,"00:16:37,663","00:16:40,331",o
+1752,"I know we broke up because you thought I wasn't mature enough, but I've really grown up and think we should get back together.",Tag,joy,177,7,8,2,"00:16:45,838","00:16:52,468",o
+1753,"Oh, it's just not the right time.",Rachel,sadness,177,8,8,2,"00:16:52,761","00:16:54,804",dag
+1754,It is the right time.,Tag,joy,177,9,8,2,"0:16:55,014","0:16:56,266",ag
+1755,Okay.,Rachel,neutral,177,10,8,2,"0:16:56,266","0:16:57,703",b
+1781,Hey!,Monica,joy,180,0,8,24,"0:02:27,844","0:02:28,971",g
+1785,I can't believe this is taking so long. How are you doing?,Monica,sadness,180,4,8,24,"00:02:29,220","00:02:32,098",q
+1786,Oh not bad. Do you know that feeling when you're trying to blow a Saint Bernard out your ass?,Rachel,sadness,180,5,8,24,"00:02:32,265","00:02:37,478",ans
+1787,Weirdest thing. Did I hear¬ó¬óMother of God it's true!,Chandler,surprise,180,6,8,24,"00:02:40,565","00:02:45,987",s
+1788,Chandler Bing!,Janice,surprise,180,7,8,24,"00:02:46,904","00:02:50,908",oth
+1789,Janice,Joey,surprise,180,8,8,24,"00:02:51,075","00:02:52,076",oth
+1790,"Not just Janice, Janice in labor, contracting and everything.",Ross,joy,180,9,8,24,"00:02:52,243","00:02:56,789",s
+1791,"Oh, this should be easy. I have a very wide pelvis. You remember Chandler.",Janice,neutral,180,10,8,24,"00:02:58,249","00:03:01,586",o
+1792,Janice I didn't even know you were pregnant! Who's the unwitting human who's essence you've stolen?,Chandler,surprise,180,11,8,24,"00:03:07,258","00:03:13,473",q
+1793,It's you. This is yours.,Janice,neutral,180,12,8,24,"00:03:15,516","00:03:19,604",ans
+1794,What?!,Chandler,surprise,180,13,8,24,"00:03:20,146","00:03:21,397",q
+1795,Look how nervous he gets! We haven't slept together in years!,Janice,joy,180,14,8,24,"00:03:21,564","00:03:25,234",s
+1796,That's funny. Does it-does it hurt? Does the labor hurt?,Chandler,fear,180,15,8,24,"00:03:28,905","00:03:31,699",q
+1839,"Hi Joey it's Jane Rogers, can't wait for your party tonight.",Jane,joy,184,0,9,20,"00:05:46,751","00:05:49,462",o
+1840,"Listen, I forgot your address, can you give me a call?",Jane,neutral,184,1,9,20,"0:05:49,629","0:05:52,341",q
+1841,"Thanks, bye.",Jane,neutral,184,2,9,20,"0:05:52,341","0:05:54,322",g
+1842,Hey!,Joey,joy,184,3,9,20,"0:05:55,676","0:05:56,344",g
+1843,Hey!,Rachel,joy,184,4,9,20,"0:05:56,344","0:05:57,613",g
+1844,What's happening?,Joey,joy,184,5,9,20,"00:05:57,720","00:05:58,888",q
+1845,"Yeah, it's a real shame you can't make it to that one-woman show tonight.",Rachel,sadness,184,6,9,20,"00:05:59,138","00:06:03,351",o
+1846,"Oh, I'd love to, but I gotta get up so early the next day and so, you know me, work comes first",Joey,neutral,184,7,9,20,"00:06:03,518","00:06:10,441",s
+1847,"Oh, yeah, yeah, yeah...",Rachel,neutral,184,8,9,20,"00:06:06,729","00:06:10,441",ag
+1848,"""Hi Joey, it's Jane Rogers can't wait for your party tonight""",Message,joy,184,9,9,20,"00:06:11,943","00:06:15,488",s
+1849,Stupid Jane Rogers!!,Joey,anger,184,10,9,20,"00:06:17,281","00:06:19,575",o
+1850,You are having a party tonight??,Rachel,surprise,184,11,9,20,"00:06:20,576","00:06:22,578",q
+1851,Kinda have a... a thing for the Days Of Our Life's people.,Joey,neutral,184,12,9,20,"00:06:23,120","00:06:26,290",ans
+1852,And you weren't going to tell us? How did you think you were gonna get away with that?,Rachel,anger,184,13,9,20,"00:06:26,457","00:06:32,421",q
+1853,I do it every year.,Joey,neutral,184,14,9,20,"00:06:30,586","00:06:32,421",ans
+1854,You do that every year??,Rachel,surprise,184,15,9,20,"00:06:34,048","00:06:36,092",q
+1855,I didn't have to tell you that!! I'm stupider than Jane Rogers!!,Joey,anger,184,16,9,20,"00:06:36,259","00:06:41,472",o
+1856,"Oh, that's why you got these tickets to that play, to get rid of us??",Rachel,anger,184,17,9,20,"00:06:42,473","00:06:45,685",q
+1857,Yeah...,Joey,neutral,184,18,9,20,"00:06:45,852","00:06:46,936",ans
+1858,And last year is that why you sent us to that medieval times restaurant?,Rachel,anger,184,19,9,20,"00:06:47,103","00:06:50,565",q
+1859,Yeah...,Joey,neutral,184,20,9,20,"00:06:50,731","00:06:51,941",ans
+1860,"OH! And the year before that, when you set up that nighttime tour of that button factory?",Rachel,anger,184,21,9,20,"00:06:52,817","00:06:57,446",q
+3478,Shoot! We're out of soda.,Monica,sadness,347,0,4,1,"00:04:32,188","00:04:34,273",s
+3479,"Oh, I'll go out and get you some.",Chandler,neutral,347,1,4,1,"00:04:34,440","00:04:36,191",s
+3480,Really?!,Monica,surprise,347,2,4,1,"00:04:36,359","00:04:39,278",q
+3481,"Nope! Because I'm not your boyfriend. Hey Pheebs, how did it go?",Chandler,neutral,347,3,4,1,"00:04:41,489","00:04:49,246",q
+3482,"Well, umm, my Mom's friend, Phoebe, is actually my birth Mom.",Phoebe,sadness,347,4,4,1,"00:04:45,785","00:04:49,246",ans
+3483,I found a dried up seashores.,Chandler,neutral,347,5,4,1,"00:04:52,709","00:04:55,002",s
+3484,"Sweety, what are you talking about?",Monica,surprise,347,6,4,1,"00:04:55,795","00:04:57,379",q
+3485,"Oh, my new Mom, who-who's a big, fat abandoner!",Phoebe,sadness,347,7,4,1,"00:04:57,547","00:05:00,632",ans
+3486,"Whoa, wait, Pheebs, wait a second! Don't you wanna stay here and talk about it?",Joey,surprise,347,8,4,1,"00:05:01,009","00:05:05,387",q
+3487,"No. I'm just, I wanna, I need to be alone.",Phoebe,sadness,347,9,4,1,"00:05:05,555","00:05:09,641",ans
+3488,Monica!,Phoebe,sadness,347,10,4,1,"0:05:12,270","0:05:13,022",oth
+3489,Oh.,Monica,neutral,347,11,4,1,"0:05:13,022","0:05:14,362",b
+3496,Hey!,Monica,joy,349,0,9,19,"0:01:52,488","0:01:53,420",g
+3497,Hey!,Phoebe,joy,349,1,9,19,"0:01:53,420","0:01:54,342",g
+3498,Hi!,Ross,joy,349,2,9,19,"0:01:54,342","0:01:55,405",g
+3499,"So, do you guys wanna come and eat dinner at the restaurant sometime in the next few weeks?",Monica,neutral,349,3,9,19,"00:01:55,491","00:01:58,953",q
+3500,Sure!,Phoebe,joy,349,4,9,19,"0:01:59,161","0:02:00,253",ans
+3501,I'd love to!,Ross,joy,349,5,9,19,"0:02:00,253","0:02:00,463",ag
+3502,Well you,Monica,neutral,349,6,9,19,"00:02:00,663","00:02:01,872",oth
+3503,"Well, I can't give you a massage, because my licence has been revoked again!",Phoebe,sadness,349,7,9,19,"00:02:04,000","00:02:10,381",s
+3504,"Phoebe, what happened?",Ross,neutral,349,8,9,19,"00:02:10,548","00:02:14,135",q
+3505,"Well, it was an accident...You know, it's a lot of oil and sometimes the hand just slips!",Phoebe,neutral,349,9,9,19,"00:02:14,301","00:02:17,721",ans
+3506,Have I got a surprise for you? Pack your bags!,Chandler,joy,349,10,9,19,"00:02:19,515","00:02:22,309",s
+3507,Oh no!You guys aren't supposed to get divorced for 7 years!,Phoebe,surprise,349,11,9,19,"00:02:22,476","00:02:26,897",o
+3591,Here you go Pheebs. Who else wants one of my special homemade brownies?,Rachel,neutral,358,0,3,8,"00:00:03,712","00:00:06,338",q
+3592,I will have one.,Chandler,neutral,358,1,3,8,"00:00:06,548","00:00:07,589",ans
+3593,"Okay, I'm not gonna have one.",Chandler,neutral,358,2,3,8,"00:00:10,135","00:00:12,177",s
+3595,"No, no, it's just my tooth.",Phoebe,sadness,358,3,3,8,"00:00:12,887","00:00:14,888",dag
+3596,All right I'll have one.,Chandler,neutral,358,4,3,8,"00:00:15,140","00:00:16,974",ag
+3597,"So what's a matter, you need a dentist? I've got a good one.",Ross,neutral,358,5,3,8,"00:00:18,101","00:00:20,686",q
+3598,"No thanks, I have a good one too. I just, I, I can't see him.",Phoebe,fear,358,6,3,8,"00:00:20,854","00:00:25,107",ans
+3599,See that is the problem with invisible dentists.,Chandler,neutral,358,7,3,8,"00:00:25,358","00:00:28,193",s
+3600,Why? Why can't you go to him?,Ross,surprise,358,8,3,8,"00:00:30,030","00:00:31,280",q
+3601,"Because, every time I go to the dentist, somebody dies.",Phoebe,anger,358,9,3,8,"00:00:31,448","00:00:36,368",ans
+3602,"That is so weird, because every time I go to the dentist, I look down the hygienist's blouse.",Chandler,joy,358,10,3,8,"00:00:37,662","00:00:46,295",s
+3603,"Phoebe, what? Umm...what?!",Rachel,surprise,358,11,3,8,"00:00:43,918","00:00:46,295",q
+3604,"Yeah, yeah, first there was my aunt Mary, and then there was umm, John, my mailman, and then my, my cowboy friend ¬ëAlbino Bob'.",Phoebe,neutral,358,12,3,8,"00:00:47,714","00:00:54,887",ans
+3605,And all these people actually died?,Rachel,surprise,358,13,3,8,"00:00:55,889","00:00:58,307",q
+3606,"Yes, while I was in the chair!",Phoebe,sadness,358,14,3,8,"00:00:58,475","00:01:00,684",ans
+3607,"That's why I take such good care of my teeth now, y'know, it's not about oral hygiene, I floss to save lives!",Phoebe,neutral,358,15,3,8,"00:01:00,852","00:01:09,151",s
+3608,"Pheebs, come on, you didn't kill anybody, these people just happened to die when you went to the dentist.",Ross,neutral,358,16,3,8,"00:01:07,317","00:01:13,072",dag
+3609,"It's, it's, it's just ah, a coincidence.",Ross,neutral,358,17,3,8,"00:01:13,281","00:01:14,740",s
+3610,"Well tell that to them. Oh! You can't, their dead.",Phoebe,sadness,358,18,3,8,"00:01:14,949","00:01:17,743",s
+3743,I can't believe we're here.,Monica,joy,374,0,8,3,"0:15:21,629","0:15:23,173",s
+3744,Oh you've got to be kidding me.,Chandler,surprise,374,1,8,3,"0:15:23,173","0:15:25,429",dag
+3745,What?,Monica,surprise,374,2,8,3,"00:15:25,591","00:15:27,091",q
+3746,"As a wedding gift to you, the hotel would like to give you the honeymoon suite.",Front Desk Clerk,neutral,374,3,8,3,"00:15:28,677","00:15:32,722",s
+3747,No!! You have been screwing us all day!,Monica,anger,374,4,8,3,"00:15:32,973","00:15:36,392",dag
+3748,Who are you?,Man,surprise,374,5,8,3,"0:15:36,685","0:15:37,520",q
+3749,We're you just ten seconds later!,Chandler,neutral,374,6,8,3,"0:15:37,520","0:15:40,742",ans
+3751,You already got the first class tickets.. you got the lounge!,Monica,anger,374,7,8,3,"0:15:42,316","0:15:44,736",s
+3752,I mean we should get free stuff too!,Monica,anger,374,8,8,3,"0:15:44,736","0:15:46,293",o
+3753,I mean you're not the only ones on your honeymoon!,Monica,anger,374,9,8,3,"00:15:46,487","00:15:49,530",s
+3754,Well you can have the suite if you want.,Woman,neutral,374,10,8,3,"0:15:50,658","0:15:52,827",s
+3755,We don't care about where we stay.,Woman,neutral,374,11,8,3,"0:15:52,827","0:15:55,061",s
+3756,We're here to celebrate our love together.,Woman,anger,374,12,8,3,"0:15:55,245","0:15:57,177",s
+3757,We don't have to get free stuff.,Woman,anger,374,13,8,3,"0:15:57,177","0:15:59,641",s
+3758,We just want to be together.,Woman,joy,374,14,8,3,"00:15:59,792","00:16:02,043",s
+3759,We need the stuff.,Chandler,neutral,374,15,8,3,"00:16:04,713","00:16:06,673",s
+3834,Hey! Where ¬ëya headin' in those pants? 1982?,Monica,joy,388,0,3,5,"00:05:45,261","00:05:48,972",q
+3835,"Oh Monica, listen, I ah, I saw down at the hardware store, they got those designer tiles on sale.",Joey,neutral,388,1,3,5,"00:05:50,725","00:05:55,604",s
+3836,If you ever want to redo the bathroom floor.,Joey,neutral,388,2,3,5,"00:05:50,725","00:05:57,689",s
+3837,"Why, what's wrong with my bathroom floor?",Monica,surprise,388,3,3,5,"00:05:58,107","00:06:00,233",q
+3838,"Nothing. It's just old and dingy, that's all.",Joey,disgust,388,4,3,5,"00:06:00,401","00:06:03,320",ans
+3839,I highly doubt that.,Monica,anger,388,5,3,5,"00:06:04,197","00:06:07,491",s
+3840,"Oh yeah. If you ah, move your hamper, you see what color the tile used to be. Yeah.",Joey,disgust,388,6,3,5,"00:06:07,658","00:06:14,748",s
+3841,I can't live like this! What are we gonna do? What are we gonna do?,Monica,fear,388,7,3,5,"00:06:16,000","00:06:18,710",q
+3842,Relax. Here hold this . This old stuff just comes right off.,Joey,neutral,388,8,3,5,"00:06:18,878","00:06:23,632",ans
+3843,That's a little more than I wanted to see.,Monica,disgust,388,9,3,5,"00:06:26,094","00:06:28,470",s
+3844,Aw!,Joey,surprise,388,10,3,5,"00:06:29,972","00:06:31,223",a
+3845,"Look at that, every inch of this stuff is glued down.",Joey,surprise,388,11,3,5,"00:06:31,391","00:06:34,393",o
+3846,It'd take forever to pry this up.,Joey,joy,388,12,3,5,"0:06:34,560","0:06:36,312",s
+3847,"You should ah, you should just leave it.",Joey,neutral,388,13,3,5,"0:06:36,312","0:06:38,219",c
+3848,I can't leave it! You gouged a hole in my dingy floor.,Monica,anger,388,14,3,5,"00:06:40,024","00:06:44,778",dag
+3849,Eh! There you go.,Joey,neutral,388,15,3,5,"00:06:53,329","00:06:55,997",s
+3850,"You know that's nice, y'know we could put it back there after the surgeons remove it from your colon!",Monica,anger,388,16,3,5,"00:06:56,165","00:07:01,378",s
+4050,Hey!,Joey,neutral,414,0,5,16,"0:00:08,174","0:00:09,236",g
+4051,Hey!,Chandler,neutral,414,1,5,16,"0:00:09,236","0:00:09,458",g
+4052,Hey!,Monica,neutral,414,2,5,16,"0:00:09,458","0:00:09,600",g
+4053,What are you guys doing up?,Joey,surprise,414,3,5,16,"00:00:10,635","00:00:13,929",q
+4054,"Oh, we wanted to finish the crossword before we went to bed. Hey, do you know a six-letter word for red?",Chandler,neutral,414,4,5,16,"00:00:10,635","00:00:17,766",ans
+4056,"Yeah, I think that's wrong, but there's a Connect the Dots in here for you later. Hey, how about maroon?",Chandler,neutral,414,6,5,16,"00:00:21,604","00:00:29,111",q
+4057,"Yes, you are so smart!",Monica,joy,414,7,5,16,"00:00:30,363","00:00:32,865",ans
+4058,"Aww, you guys are so cute!",Joey,joy,414,8,5,16,"00:00:33,366","00:00:36,076",o
+4059,I know.,Monica,neutral,414,9,5,16,"00:00:36,244","00:00:37,953",ag
+4060,"All right, I'll see you in the morning.",Joey,neutral,414,10,5,16,"00:00:38,496","00:00:40,205",s
+4061,Okay.,Monica,neutral,414,11,5,16,"00:00:40,373","00:00:41,999",ag
+4340,"I'm sorry I won't be able to make it to your imaginary wedding, but I'm",Phoebe,neutral,445,0,8,8,"00:07:46,632","00:07:49,176",ap
+4341,"I know. I know. I panicked, I panicked. I didn't want him to start yelling at me like I was some '74 Latour.",Rachel,surprise,445,1,8,8,"00:08:00,313","00:08:07,110",a
+4342,It's Lafite. The '74 Latour is actually drinking quite nicely.,Phoebe,sadness,445,2,8,8,"00:08:07,361","00:08:12,991",s
+4343,"All right here he comes. I'm gonna do this, I'm gonna tell him, I'm gonna be strong.",Rachel,fear,445,3,8,8,"00:08:14,911","00:08:18,246",s
+4344,I just called a friend of mine.,Dr. Green,neutral,445,4,8,8,"0:08:18,915","0:08:20,417",s
+4345,Yeah?,Rachel,surprise,445,5,8,8,"0:08:20,417","0:08:21,283",b
+4346,I think I may be able to book,Dr. Green,neutral,445,6,8,8,"00:08:21,375","00:08:24,461",s
+4347,Really?!,Rachel,surprise,445,7,8,8,"00:08:26,631","00:08:28,298",q
+4348,What is it sweetie?,Dr. Green,joy,445,8,8,8,"00:08:33,846","00:08:37,724",q
+4349,There's not gonna be a wedding. Ross and I are not getting married.,Rachel,sadness,445,9,8,8,"00:08:39,435","00:08:42,312",ans
+4351,I'm sorry daddy.,Rachel,sadness,445,10,8,8,"0:08:42,522","0:08:43,794",ap
+4352,I don't believe this!!,Dr. Green,neutral,445,11,8,8,"0:08:43,794","0:08:44,998",s
+4353,"Oh now daddy, stay calm. Please.",Rachel,fear,445,12,8,8,"0:08:45,149","0:08:46,331",c
+4354,Stay calm?!!,Dr. Green,anger,445,13,8,8,"0:08:46,331","0:08:46,537",q
+4355,How do you expect me to stay calm?!,Dr. Green,anger,445,14,8,8,"00:08:46,651","00:08:48,777",q
+4356,This is unacceptable Rachel!,Dr. Green,anger,445,15,8,8,"0:08:48,945","0:08:50,697",dag
+4357,And I wanna know why?!!,Dr. Green,anger,445,16,8,8,"0:08:50,697","0:08:52,914",q
+4358,Is it because that punk Ross won't marry you?!,Dr. Green,anger,445,17,8,8,"00:08:53,074","00:08:55,450",q
+4359,That's it!,Dr. Green,anger,445,18,8,8,"0:08:55,618","0:08:56,286",o
+4360,Is that it?,Dr. Green,anger,445,19,8,8,"0:08:56,286","0:08:58,975",q
+4362,"Yes. Yes, he says I'm damaged goods.",Rachel,sadness,445,20,8,8,"00:08:55,618","00:08:58,912",ans
+4387,"Yeah, I think it was better when you guys were sad. Hey, uh, remember the roller blades?",Phoebe,neutral,448,0,6,6,"00:10:06,689","00:10:12,986",q
+4388,You know what else I'm not gonna miss?,Rachel,anger,448,1,6,6,"0:10:14,822","0:10:16,783",q
+4389,"""I'm Monica.",Rachel,anger,448,2,6,6,"0:10:16,783","0:10:17,392",ans
+4390,I wash the toilet 17 times a day.,Rachel,anger,448,3,6,6,"0:10:17,491","0:10:19,160",ans
+4391,"Even if people are on it!""",Rachel,anger,448,4,6,6,"0:10:19,160","0:10:20,934",s
+4392,"""Hi I'm Rachel, is my sweater too tight? No? Oh, I'd better wash it and shrink it!""",Monica,anger,448,5,6,6,"00:10:22,163","00:10:27,542",oth
+4393,"""I'm Monica, I don't get phone messages from interesting people. Ever!""",Rachel,anger,448,6,6,6,"00:10:28,419","00:10:31,963",s
+4394,Hey! I call her!,Phoebe,joy,448,7,6,6,"00:10:32,131","00:10:33,632",s
+4395,"""Oh my God, I love Ross! I hate Ross! I love Ross! I hate Ross!""",Monica,anger,448,8,6,6,"00:10:34,842","00:10:40,388",s
+4396,"""Oh my God, I can't find a boyfriend!",Rachel,anger,448,9,6,6,"00:10:41,307","00:10:43,099",s
+4397,"So I guess I'll just stumble across the hall and sleep with the first guy I find in there!""",Rachel,anger,448,10,6,6,"00:10:43,351","00:10:47,520",s
+4398,"Yeah, we should get a move on if we wanna make those dinner reservations.",Phoebe,neutral,448,11,6,6,"00:10:53,235","00:10:57,405",s
+4750,Oh my God! How did you get back here?!,Phoebe,surprise,482,0,7,12,"00:18:01,830","00:18:05,583",q
+4751,"Fire alarm? Oh! Hi, officer¬ófireman, can-can I help you?",Phoebe,surprise,482,1,7,12,"0:18:09,922","0:18:20,850",q
+4752,We found your fire alarm in the trash chute.,The Fireman,anger,482,2,7,12,"0:18:20,850","0:18:22,910",s
+4753,That's not mine.,Phoebe,neutral,482,3,7,12,"0:18:23,185","0:18:24,067",s
+4754,Yes it is.,The Fireman,neutral,482,4,7,12,"0:18:24,067","0:18:24,999",dag
+4755,How do you know?,Phoebe,fear,482,5,7,12,"00:18:25,104","00:18:26,104",q
+4756,"The next time you want to dump a fire alarm in a trash chute, don't wrap it in a blanket that says, ""Property of Phoebe Buffay not Monica.""",The Fireman,disgust,482,6,7,12,"00:18:29,483","00:18:32,401",ans
+4757,"Okay do you¬óOkay, do you have a search warrant? Because the last time I checked this was still America!",Phoebe,anger,482,7,7,12,"00:18:33,403","00:18:38,783",q
+4758,"Please reattach this, it's against the law to disconnect them.",The Fireman,neutral,482,8,7,12,"00:18:39,910","00:18:42,912",c
+4759,Fine! But please God.. tell me how to stop them from going off!,Phoebe,anger,482,9,7,12,"00:18:43,122","00:18:47,208",q
+4760,There's a reset button under the plastic cover.,The Fireman,neutral,482,10,7,12,"00:18:49,211","00:18:52,839",ans
+4761,There's a reset button?!,Phoebe,surprise,482,11,7,12,"00:18:53,048","00:18:55,925",q
+4765,My God!,Phoebe,surprise,482,12,7,12,"00:18:56,176","00:18:58,177",oth
+4766,Why didn't I see that!,Phoebe,surprise,482,13,7,12,"00:18:58,428","00:18:59,971",s
+4767,"Reset button, reset button, where is there a reset button?",Phoebe,neutral,482,14,7,12,"00:19:02,391","00:19:08,396",q
+4768,Oh here it is!,Phoebe,joy,482,15,7,12,"0:19:05,227","0:19:07,069",ans
+4769,Oh!,Phoebe,surprise,482,16,7,12,"0:19:07,069","0:19:08,449",b
+4770,"Ohh, God!",Phoebe,joy,482,17,7,12,"00:19:21,034","00:19:22,712",b
+4791,Hey.,Chandler,neutral,486,0,6,4,"00:06:13,164","00:06:14,289",g
+4792,Hey! Any good mail?,Joey,neutral,486,1,6,4,"00:06:14,457","00:06:15,916",q
+4793,"Yes, you got something from the Screen Actor's Guild.",Chandler,neutral,486,2,6,4,"00:06:16,084","00:06:18,293",ans
+4794,"Ooh, it's probably a residual check, hey can you open it for me, I'm kinda¬Ö.",Joey,neutral,486,3,6,4,"00:06:18,461","00:06:22,422",q
+4795,"""Benefits lapsed.""",Chandler,neutral,486,4,6,4,"00:06:24,008","00:06:27,219",s
+4796,Hmm that's weird. I don't remember being in a move called benefits lapsed.,Joey,neutral,486,5,6,4,"00:06:24,008","00:06:30,430",s
+4797,"Okay, it's not a check. They're saying your health insurance expired because, you didn't work enough last year.",Chandler,neutral,486,6,6,4,"00:06:31,057","00:06:38,563",s
+4798,Let me see that!,Joey,surprise,486,7,6,4,"00:06:36,020","00:06:38,563",oth
+4799,All right.,Chandler,neutral,486,8,6,4,"00:06:38,731","00:06:40,107",a
+4800,"Oh, I can't believe this!",Joey,surprise,486,9,6,4,"00:06:40,274","00:06:42,734",o
+4801,This sucks!,Joey,anger,486,10,6,4,"00:06:42,902","00:06:44,653",o
+4802,"When I had insurance I could get hit by a bus or catch on fire, y'know?",Joey,fear,486,11,6,4,"00:06:45,238","00:06:50,158",s
+4803,And it wouldn't matter.,Joey,anger,486,12,6,4,"0:06:50,326","0:06:51,298",s
+4804,Now I gotta be careful?,Joey,anger,486,13,6,4,"0:06:51,298","0:06:53,292",q
+4806,"I'm sorry man, there's never a good time to stop catching on fire.",Chandler,sadness,486,14,6,4,"00:06:54,622","00:06:59,793",ap
+4807,"All right well, I guess I gotta go get a job. I'm gonna go see my agent.",Joey,sadness,486,15,6,4,"00:07:01,212","00:07:05,298",s
+4808,"Okay, make sure you look both ways before you cross the street.",Chandler,neutral,486,16,6,4,"0:07:05,466","0:07:07,510",oth
+4809,look both ways before you cross the street.,Joey,joy,486,17,6,4,"0:07:07,510","0:07:08,402",s
+6715,It looks like your uterus is ready for implantation.,Dr. Zane,neutral,665,0,4,12,"00:05:37,378","00:05:40,422",s
+6716,Oh! I knew it! I knew it! I felt really thick this morning.,Phoebe,joy,665,1,4,12,"00:05:40,590","00:05:43,300",ag
+6717,"Well, okay, so what's now¬ógo get, go get the eggs, put ¬ëem in there.",Frank,neutral,665,2,4,12,"00:05:46,054","00:05:48,513",c
+6718,"Okay, it'll take just a little while to prepare the embryos.",Dr. Zane,neutral,665,3,4,12,"00:05:48,681","00:05:52,434",s
+6719,"Embryossss? As in, ""More than one?""",Phoebe,surprise,665,4,4,12,"0:05:52,602","0:05:54,688",q
+6720,"Um-hmm, five actually.",Dr. Zane,neutral,665,5,4,12,"0:05:54,688","0:05:56,298",ans
+6721,"Five? Okay, where am I giving birth, a hospital or a big box under the stairs?",Phoebe,neutral,665,6,4,12,"00:05:56,564","00:06:00,859",q
+6722,We do five because that gives you a 25% chance that at least one will attach.,Dr. Zane,neutral,665,7,4,12,"00:06:04,781","00:06:12,537",ans
+6723,That's it! 25 percent? That means that's it's like 75 percent chance of no baby at all!,Phoebe,surprise,665,8,4,12,"00:06:06,699","00:06:14,748",s
+6724,"Hey, y'know I was thinking, what are the odds like if-if, if you stuff like 200 of them in there?",Frank,neutral,665,9,4,12,"00:06:14,916","00:06:17,709",q
+6725,"Sweety, now, she's a woman, not a gumball machine.",Alice,neutral,665,10,4,12,"00:06:21,047","00:06:22,923",o
+6726,"Okay, well y'know what, don't worry you guys, ¬ëcause I'm-I'm gonna do this as many times as it takes to get it right.",Phoebe,neutral,665,11,4,12,"00:06:26,469","00:06:31,348",s
+6727,"Well, you see, the-the thing is, we-we only got, we kinda have one shot to make it right.",Frank,neutral,665,12,4,12,"00:06:31,516","00:06:35,727",s
+6728,"Umm, it costs $16,000 each time you do this.",Alice,neutral,665,13,4,12,"00:06:35,895","00:06:39,314",s
+6729,"So, umm, we're kinda using all the money we have to do it just this one time.",Alice,neutral,665,14,4,12,"00:06:40,650","00:06:45,070",s
+6730,"Whoa!! That¬óokay, that's a",Phoebe,disgust,665,15,4,12,"00:06:45,488","00:06:51,535",ag
+6731,"No, I'm sorry.",Dr. Zane,neutral,665,16,4,12,"00:06:58,251","00:06:59,668",ap
+6732,Wow! You guys really don't know anything!,Phoebe,surprise,665,17,4,12,"00:06:59,836","00:07:02,587",s
+6733,I know! Why don't you get drunk! That worked for a lot of girls in my high school.,Frank,anger,665,18,4,12,"00:07:03,923","00:07:08,677",ag
+6887,Chandler.,Phoebe,neutral,678,0,3,5,"0:04:18,049","0:04:18,561",g
+6888,Hi.,Chandler,neutral,678,1,3,5,"0:04:18,561","0:04:19,181",g
+6889,Hi.,Frank,neutral,678,2,3,5,"0:04:19,300","0:04:20,427",g
+6890,Joey.,Phoebe,neutral,678,3,3,5,"0:04:20,427","0:04:20,565",g
+6891,Hey-hey!,Joey,joy,678,4,3,5,"0:04:20,677","0:04:21,387",g
+6892,Hey.,Frank,neutral,678,5,3,5,"0:04:21,387","0:04:22,701",g
+6893,This is Monica.,Phoebe,neutral,678,6,3,5,"0:04:22,804","0:04:23,936",g
+6894,Whoa!,Frank,surprise,678,7,3,5,"0:04:23,936","0:04:25,450",g
+6895,And this is Rachel.,Phoebe,neutral,678,8,3,5,"0:04:26,808","0:04:27,990",g
+6896,Hi!,Rachel,joy,678,9,3,5,"0:04:27,990","0:04:28,537",g
+6897,Whoa!!,Frank,surprise,678,10,3,5,"00:04:28,643","00:04:30,185",oth
+6898,I'm gonna get coffee.,Phoebe,neutral,678,11,3,5,"00:04:32,272","00:04:33,855",s
+6899,"Hey, how do you guys get anything done?",Frank,joy,678,12,3,5,"00:04:34,023","00:04:37,025",q
+6900,"We don't, really.",Chandler,neutral,678,13,3,5,"00:04:37,193","00:04:39,069",ans
+6901,"Well, so, now, do you guys have a lot of big plans?",Rachel,neutral,678,14,3,5,"00:04:40,488","00:04:42,422",q
+6902,"Oh yeah! Yeah, no, we're gonna connect, y'know bond, and everything.",Phoebe,joy,678,15,3,5,"00:04:42,490","00:04:46,410",ans
+6903,"Yeah, I was thinking that maybe we could go down to Time Square and pick up some ninja stars.",Frank,neutral,678,16,3,5,"00:04:46,577","00:04:51,373",s
+6904,"And, oh, um, my friend Larry, he wants me to take a picture of a hooker.",Frank,neutral,678,17,3,5,"00:04:51,541","00:04:55,585",s
+6905,"You know, we don't really take advantage of living in the city.",Chandler,neutral,678,18,3,5,"00:04:57,171","00:05:00,215",s
+7064,I won! I won! I finally won!,Phoebe,surprise,699,0,5,24,"00:17:01,812","00:17:04,689",s
+7065,I won! That was my quarter!,The Lurker,anger,699,1,5,24,"00:17:04,898","00:17:06,649",s
+7066,Fine! Here! Take a hike toots!,Phoebe,anger,699,2,5,24,"00:17:06,859","00:17:08,985",s
+7067,"Excuse me, sir! This lady played my quarter, this is my money.",The Lurker,anger,699,3,5,24,"00:17:10,487","00:17:14,782",s
+7068,Is that true miss?,The Security Guard,neutral,699,4,5,24,"00:17:14,992","00:17:16,284",q
+7069,Sells drugs to kids.,Phoebe,disgust,699,5,5,24,"0:17:17,786","0:17:18,954",ans
+7070,What?!,The Security Guard,surprise,699,6,5,24,"0:17:18,954","0:17:20,122",q
+7071,She sells drugs to kids.,Phoebe,disgust,699,7,5,24,"0:17:20,122","0:17:20,763",ans
+7072,It was my quarter!,The Lurker,anger,699,8,5,24,"0:17:24,918","0:17:26,520",s
+7073,Was it her quarter?,The Security Guard,neutral,699,9,5,24,"0:17:26,520","0:17:26,924",q
+7074,How about we talk about this over dinner?,Phoebe,neutral,699,10,5,24,"00:17:29,048","00:17:31,758",q
+7075,"Okay lady, you're out of here.",The Security Guard,disgust,699,11,5,24,"00:17:31,967","00:17:35,720",s
+7076,"No! No, you can't arrest me! No!! I won't go back! I won't go back to that hell hole!!",Phoebe,anger,699,12,5,24,"00:17:35,929","00:17:38,014",dag
+7077,I'm just taking you outside!,The Security Guard,anger,699,13,5,24,"00:17:39,767","00:17:42,268",s
+7078,"Oh, okay.",Phoebe,neutral,699,14,5,24,"00:17:42,478","00:17:43,978",ag
+7187,"Okay. Would you rather live in the shirt pocket of a sweaty giant, or inside his shower drain?",Phoebe,neutral,717,0,3,24,"00:16:58,100","00:17:04,439",q
+7188,"Oh my God! Phoebe look, it's Ross and that girl.",Rachel,surprise,717,1,3,24,"00:17:06,442","00:17:10,361",c
+7189,No! No! Look at that! It's a line of ants! They're working as a team!,Phoebe,surprise,717,2,3,24,"00:17:13,699","00:17:18,202",s
+7191,"Right, oh yeah.",Phoebe,neutral,717,3,3,24,"0:17:20,205","0:17:21,547",ag
+7192,"Wow, oh, it looks like Ross is breaking up with her.",Phoebe,surprise,717,4,3,24,"0:17:21,547","0:17:24,387",o
+7193,"Uff, I hope he lets her down easy.",Phoebe,neutral,717,5,3,24,"00:17:24,585","00:17:26,044",o
+7195,"Come on Phoebe, look at that!",Rachel,anger,717,6,3,24,"0:17:26,295","0:17:27,557",c
+7196,"They are not breaking up, look at them.",Rachel,neutral,717,7,3,24,"0:17:27,557","0:17:29,304",o
+7197,"Okay that's, you know what that is?",Rachel,neutral,717,8,3,24,"0:17:29,465","0:17:31,107",q
+7198,"That is a, that is a second date, that's what that is!",Rachel,sadness,717,9,3,24,"0:17:31,107","0:17:32,517",s
+7199,"Look at that, she just put her hand on his thigh...",Rachel,neutral,717,10,3,24,"00:17:33,135","00:17:35,470",c
+7200,"Oh no! That really is nothing, she is",Phoebe,neutral,717,11,3,24,"00:17:35,721","00:17:38,306",dag
+7201,"Ohh! Phoebe, this is all your fault! Now he loves her, he's gonna marry her, and this is all your fault.",Rachel,anger,717,12,3,24,"00:17:38,474","00:17:44,645",o
+8197,Hey.,All,neutral,823,0,3,3,"00:15:59,959","00:16:01,250",g
+8198,How's the maniac?,Ross,neutral,823,1,3,3,"00:16:01,418","00:16:02,669",q
+8199,"Oh, well he's yummy. We did a little kissin'.",Phoebe,joy,823,2,3,3,"00:16:02,836","00:16:06,130",ans
+8200,"Phoebe, what are you doing?",Rachel,surprise,823,3,3,3,"00:16:07,299","00:16:08,716",q
+8201,"Oh, no, no, no, no. You know what, he's not into that stuff anymore. He quit for me.",Phoebe,neutral,823,4,3,3,"00:16:08,824","00:16:13,888",ans
+8202,"Pheebs, this guy has been obsessed with your sister, for God knows how long, okay, you don't just give up something like that.",Rachel,disgust,823,5,3,3,"00:16:14,046","00:16:22,063",o
+8203,"Look, he gave me his night vision goggles and everything.",Phoebe,joy,823,6,3,3,"00:16:22,356","00:16:25,692",s
+8204,You're taking the word of a guy who has night vision goggles?,Ross,surprise,823,7,3,3,"00:16:26,694","00:16:30,655",s
+8205,"What, he's not still following her. Do you think he is still following her?",Phoebe,surprise,823,8,3,3,"00:16:30,823","00:16:34,701",q
+8206,"Pheebs, wake up and smell the restraining order.",Chandler,disgust,823,9,3,3,"00:16:34,868","00:16:37,954",s
+8207,What are you saying I should do?,Phoebe,neutral,823,10,3,3,"00:16:40,040","00:16:41,249",q
+8208,"I think, that if you really like this guy, you should just trust him.",Monica,neutral,823,11,3,3,"00:16:41,417","00:16:44,502",ans
+8209,"Thank you, Monica.",Phoebe,joy,823,12,3,3,"00:16:44,670","00:16:45,920",g
+8210,"Orrr, you could follow him and see where he goes.",Joey,neutral,823,13,3,3,"00:16:46,088","00:16:48,673",o
+8211,"Oh, that's what I would do, forget mine.",Monica,surprise,823,14,3,3,"00:16:48,841","00:16:51,175",ag
+8850,Yes that's right.,Ross,neutral,887,0,6,17,"00:19:26,165","00:19:29,083",ag
+8851,Why?,The Instructor,surprise,887,1,6,17,"00:19:30,252","00:19:31,294",q
+8852,"I tired attacking two women, did not work.",Ross,neutral,887,2,6,17,"00:19:31,461","00:19:35,047",ans
+8853,What?!,The Instructor,surprise,887,3,6,17,"00:19:35,632","00:19:37,341",q
+8854,"No, I mean it's okay, I mean, they're-they're my friends.",Ross,neutral,887,4,6,17,"00:19:35,632","00:19:42,305",ans
+8855,"In fact, I-I-I was married to one of them.",Ross,anger,887,5,6,17,"00:19:37,509","00:19:42,305",s
+8856,"Let me get this straight man, you attacked your ex-wife?!",The Instructor,anger,887,6,6,17,"00:19:42,472","00:19:44,849",q
+8857,"Oh, no!",Ross,surprise,887,7,6,17,"0:19:45,559","0:19:46,651",ans
+8858,No-no!,Ross,surprise,887,8,6,17,"0:19:46,651","0:19:47,821",ans
+8859,"No, I tired!",Ross,surprise,887,9,6,17,"00:19:47,936","00:19:49,896",ans
+8860,But I couldn't.,Ross,neutral,887,10,6,17,"0:19:51,773","0:19:53,125",dag
+8861,That's why I'm here.,Ross,anger,887,11,6,17,"0:19:53,125","0:19:54,611",s
+8862,Maybe we could attack them together?,Ross,neutral,887,12,6,17,"00:19:55,027","00:19:57,695",q
+8863,That-that's a no.,Ross,neutral,887,13,6,17,"00:19:59,823","00:20:01,908",c
+9294,Hey! Ross!,Phoebe,joy,930,0,7,6,"00:02:15,051","00:02:17,511",g
+9295,Die Hard,Chandler,neutral,930,1,7,6,"00:02:17,804","00:02:21,098",oth
+9296,"Yep. Hey, what do you say we make it a double feature?",Joey,neutral,930,2,7,6,"00:02:21,304","00:02:23,142",q
+9297,What'd you rent?,Chandler,neutral,930,3,7,6,"00:02:23,351","00:02:24,601",q
+9298,Die Hard 2,Joey,neutral,930,4,7,6,"00:02:25,186","00:02:27,187",ans
+9299,"Joey, this is",Chandler,neutral,930,5,7,6,"00:02:28,189","00:02:30,107",s
+9300,"Oh, well we watch it a second time and its",Joey,neutral,930,6,7,6,"00:02:31,526","00:02:35,571",o
+9301,"Joey, we",Ross,neutral,930,7,7,6,"0:02:36,698","0:02:37,510",s
+9302,And?,Joey,neutral,930,8,7,6,"0:02:37,510","0:02:39,472",oth
+9303,And it'll be cool to see it again! Yeah!,Ross,joy,930,9,7,6,"00:02:39,617","00:02:41,702",s
+9304,Die Hard,Ross,neutral,930,10,7,6,"00:02:41,870","00:02:44,705",s
+9305,"Dude, you didn't say",Ross,neutral,930,11,7,6,"00:02:46,374","00:02:48,375",q
+9306,"Yeah, I just got uh, got plans.",Chandler,neutral,930,12,7,6,"00:02:51,504","00:02:53,839",ans
+9307,"Well, John McClane had plans!",Ross,anger,930,13,7,6,"00:02:54,007","00:02:57,342",s
+9308,"No, see the thing is I want to get out of here before Joey gets all worked up and starts calling everybody bitch.",Chandler,neutral,930,14,7,6,"00:02:58,052","00:03:03,891",s
+9309,What are you talking about? Bitch.,Joey,anger,930,15,7,6,"00:03:05,310","00:03:08,020",q
+9487,Do you think they have yesterday's daily news?,Phoebe,neutral,946,0,1,11,"00:00:02,377","00:00:04,545",q
+9488,Why?,Monica,surprise,946,1,1,11,"0:00:04,713","0:00:05,095",q
+9489,"Just wanna check my horoscope, see if it was right.",Phoebe,neutral,946,2,1,11,"0:00:05,095","0:00:06,762",ans
+9490,Oh my God.,Monica,surprise,946,3,1,11,"0:00:09,968","0:00:13,681",ap
+9491,Phoebe.,Monica,neutral,946,4,1,11,"0:00:13,681","0:00:13,820",g
+9492,"Don't look now, but behind us is a guy who has the potential to break our hearts and plunge us into a pit of depression.",Monica,neutral,946,5,1,11,"00:00:13,930","00:00:21,103",o
+9493,"Where? Ooh, come to Momma.",Phoebe,joy,946,6,1,11,"00:00:17,058","00:00:21,103",q
+9494,"He's coming. Be cool, be cool, be cool.",Monica,anger,946,7,1,11,"00:00:21,771","00:00:24,106",ans
+9495,We should do something. Whistle.,Phoebe,joy,946,8,1,11,"0:00:27,318","0:00:28,870",o
+9496,We are not going to whistle.,Monica,anger,946,9,1,11,"0:00:28,870","0:00:30,007",dag
+9497,"Come on, do it.",Phoebe,neutral,946,10,1,11,"0:00:30,113","0:00:30,739",oth
+9498,No!,Monica,anger,946,11,1,11,"0:00:30,739","0:00:31,091",dag
+9499,Do it!,Phoebe,joy,946,12,1,11,"0:00:31,091","0:00:31,300",c
+9500,No!,Monica,anger,946,13,1,11,"0:00:31,300","0:00:31,440",dag
+9501,Do it do it do it!,Phoebe,joy,946,14,1,11,"0:00:31,489","0:00:32,449",c
+9502,Woo-woo!,Monica,joy,946,15,1,11,"0:00:32,449","0:00:33,556",oth
+9503,I can't believe you did that!,Phoebe,surprise,946,16,1,11,"00:00:38,955","00:00:41,331",a
+9504,"Hi! Umm, I'm Monica Geller, I'm the chef at Alessandro's.",Monica,neutral,947,0,8,21,"00:08:35,224","00:08:38,227",g
+9505,Still?,The Food Critic,surprise,947,1,8,21,"00:08:38,393","00:08:40,479",q
+9506,"I think the things that you said about me are really unfair, and I would like for you to give my bouillabaisse another chance.",Monica,neutral,947,2,8,21,"00:08:40,646","00:08:49,404",ans
+9507,I don't see any reason why I would do that to myself again.,The Food Critic,joy,947,3,8,21,"00:08:46,443","00:08:49,404",s
+9508,"Either eat it, or be in it.",Joey,anger,947,4,8,21,"00:08:49,571","00:08:52,282",o
+9509,"Spoon? So, what do you think?",Monica,joy,947,5,8,21,"00:08:59,706","00:09:02,292",q
+9510,"I'm torn, between my integrity and my desire to avoid a beating. But I must be honest, your soap is abysmal.",The Food Critic,disgust,947,6,8,21,"00:09:02,459","00:09:11,426",ans
+9511,Thata girl! Huh? We should get out of here.. there's a new class comin' in.,Joey,joy,947,7,8,21,"00:09:14,054","00:09:19,518",s
+9512,"Welcome to introduction to cooking. Now, before we start, can anyone tell me the difference between a hollandaise sauce and a bearnaise sauce?",The Cooking Teacher,neutral,947,8,8,21,"00:09:19,685","00:09:26,316",q
+9513,I can.,Monica,neutral,947,9,8,21,"0:09:28,902","0:09:29,664",ans
+9514,"Okay, go ahead.",The Cooking Teacher,neutral,947,10,8,21,"0:09:29,664","0:09:31,124",ag
+9515,"Well umm, they both have a egg yolk and butter base, but a bearnaise has shallots, shirvel, and most importantly tarragon.",Monica,neutral,947,11,8,21,"00:09:31,238","00:09:42,874",ans
+9516,"That's very good, what's your name?",The Cooking Teacher,neutral,947,12,8,21,"0:09:40,080","0:09:42,352",q
+9517,Monica.,Monica,neutral,947,13,8,21,"0:09:42,352","0:09:42,918",ans
+9518,"Monica, you go to the head of the class.",The Cooking Teacher,neutral,947,14,8,21,"0:09:43,041","0:09:45,002",c
+9519,Okay.,Monica,joy,947,15,8,21,"0:09:45,002","0:09:47,088",ag
+10067,"Hey, ready for dinner?",Larry,neutral,1005,0,5,7,"00:14:44,174","00:14:45,717",q
+10068,"Ooh, absolutely!",Phoebe,joy,1005,1,5,7,"00:14:45,926","00:14:47,927",ag
+10069,Great! How about you wanted to go the Italian place down on Bleaker Street right?,Larry,joy,1005,2,5,7,"00:14:45,926","00:14:50,388",q
+10070,"Ooh, I love that place! So, no.",Phoebe,neutral,1005,3,5,7,"00:14:50,556","00:14:52,265",ans
+10071,How about Mama Lisettie's?,Larry,neutral,1005,4,5,7,"00:14:55,477","00:14:56,519",q
+10072,Enh. Sure!,Phoebe,neutral,1005,5,5,7,"00:14:58,063","00:14:59,856",ans
+10073,I wonder how long that milk has been setting out.,Larry,disgust,1005,6,5,7,"00:15:00,482","00:15:03,318",s
+10074,"Oh, no-no, this place is totally healthy!",Phoebe,neutral,1005,7,5,7,"00:15:03,944","00:15:06,154",s
+10075,That¬óthis milk is mine.,Phoebe,neutral,1005,8,5,7,"00:15:06,405","00:15:08,948",s
+10076,"I bought this today, 'cause I was thirsty for milk, y'know.",Phoebe,neutral,1005,9,5,7,"00:15:06,405","00:15:12,285",s
+10077,"Okay, let's go!",Phoebe,joy,1005,10,5,7,"00:15:16,373","00:15:18,499",c
+10078,"Hey, buddy! Are you familiar with Section 11-B of the Health Code that requires all refuse material out the",Larry,anger,1005,11,5,7,"00:15:21,045","00:15:27,675",s
+10079,But then I'd have to go all the way around the dry cleaner place.,Gunther,neutral,1005,12,5,7,"00:15:27,885","00:15:30,178",s
+10080,"Oh, so you're saying you'd choose convenience over health?!",Larry,disgust,1005,13,5,7,"00:15:30,387","00:15:33,097",q
+10081,"Okay, stop!",Phoebe,anger,1005,14,5,7,"00:15:33,599","00:15:35,850",s
+10082,"Larry, okay, can't you just be Larry and not Larry the health inspector guy?",Phoebe,neutral,1005,15,5,7,"00:15:36,018","00:15:41,606",s
+10083,"Y'know I mean it was really exciting at first but now it's like, okay, so where are we gonna eat ever?",Phoebe,anger,1005,16,5,7,"00:15:41,815","00:15:48,404",s
+10084,"Well, I suppose I could give him a warning.",Larry,neutral,1005,17,5,7,"00:15:49,406","00:15:52,325",s
+10085,Thank you.,Phoebe,joy,1005,18,5,7,"00:15:52,493","00:15:54,160",g
+10087,Go!,Phoebe,neutral,1005,19,5,7,"0:15:54,954","0:15:55,766",c
+10088,Go!,Phoebe,anger,1005,20,5,7,"0:15:55,766","0:15:57,472",c
+10089,"Now, if after dinner you still really need to bust someone, I know a hot dog vendor who picks his nose.",Phoebe,disgust,1005,21,5,7,"00:15:59,917","00:16:05,713",s
+10283,"Hey Joey, what ¬ëcha doing?",Rachel,neutral,1022,0,7,2,"00:07:10,054","00:07:12,055",q
+10284,Sweepin'. Why? Turn you on?,Joey,neutral,1022,1,7,2,"00:07:12,432","00:07:16,309",ans
+10285,No.,Rachel,neutral,1022,2,7,2,"00:07:18,521","00:07:19,688",dag
+10286,Huh. What if I was sweeping a chimney?,Joey,joy,1022,3,7,2,"00:07:22,066","00:07:25,068",q
+10287,"Joey, did",Rachel,neutral,1022,4,7,2,"00:07:27,238","00:07:29,322",ans
+10288,Where are you going? The vicar won't be home for hours.,Joey,joy,1022,5,7,2,"00:07:32,618","00:07:35,454",q
+10289,"Joey, where did you learn that word?",Rachel,surprise,1022,6,7,2,"00:07:41,377","00:07:45,380",q
+10290,"Where do you think, Zelda?",Joey,neutral,1022,7,7,2,"00:07:48,050","00:07:49,718",q
+10291,You found my book?!,Rachel,anger,1022,8,7,2,"0:07:54,348","0:07:55,940",q
+10292,Yeah I did!,Joey,joy,1022,9,7,2,"0:07:55,940","0:07:57,656",ans
+10293,"Joey, what-what are you doing going into my bedroom?!",Rachel,anger,1022,10,7,2,"00:07:58,561","00:08:01,605",q
+10294,"Okay, look I'm sorry, I went in there to take a nap and I know I shouldn't have, but you got porn!",Joey,surprise,1022,11,7,2,"00:08:01,856","00:08:05,734",ans
+10295,"Hey-hey, y'know what?",Rachel,anger,1022,12,7,2,"0:08:07,612","0:08:10,824",q
+10298,There's nothing wrong with a woman enjoying a little¬Öerotica.,Rachel,neutral,1022,15,7,2,"00:08:11,115","00:08:15,952",s
+10299,"It's just a healthy expression of female sexuality, which by the way, you will never understand.",Rachel,anger,1022,16,7,2,"00:08:16,245","00:08:24,294",s
+10300,You got porn!,Joey,joy,1022,17,7,2,"00:08:26,797","00:08:28,465",s
