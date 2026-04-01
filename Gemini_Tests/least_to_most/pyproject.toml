@@ -9,4 +9,5 @@ dependencies = [
     "google-genai>=1.67.0",
     "pandas>=3.0.1",
     "python-dotenv>=1.2.2",
+    "scikit-learn>=1.8.0",
 ]

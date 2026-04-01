@@ -5,10 +5,12 @@ import random
 from collections import defaultdict
 import os
 from datetime import datetime
+import json
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
-FILENAME = f"least_to_most_results.csv"
+RESULTS_FILE = f"./results/least_to_most_results.csv"
+DATASET_FILE = "../../Dataset/MELD_28_dialogues.csv"
 
 VALID_EMOTIONS = ["neutral", "joy", "sadness", "anger", "fear", "disgust", "surprise"]
 
@@ -19,27 +21,36 @@ client = genai.Client()
 
 prompt = (
     """
-    You are given a dialogue. Your task is to determine the emotion of the LAST utterance.
+        You are given a dialogue. Your task is to determine the emotion of the LAST utterance.
 
-    Follow these steps:
+        Follow these steps internally:
+        1. Summarize each utterance briefly.
+        2. Describe how the emotions evolve.
+        3. Analyze the final utterance in context.
+        4. Choose the final emotion from:
+        [neutral, joy, sadness, anger, fear, disgust, surprise]
 
-    Step 1: Summarize each utterance briefly.
-    Step 2: Describe how the emotions or tone evolve across the dialogue.
-    Step 3: Analyze the final utterance in the context of previous ones.
-    Step 4: Predict the emotion of the final utterance from this list:
-    [neutral, joy, sadness, anger, fear, disgust, surprise]
+        IMPORTANT:
+        - Return ONLY valid JSON
+        - Do NOT include markdown (no ``` or ```json)
+        - Do NOT include any extra text
+        - Use DOUBLE quotes (") for all keys and values
 
-    Return ONLY the final emotion.
+        Output format:
+        {{
+            "reasoning": "brief explanation",
+            "emotion": "..."
+        }}
 
-    Dialogue:
-    {dialogue_here}
+        Dialogue:
+        {dialogue_here}
     """
 )
 
 
 
 def load_data():
-    df = pd.read_csv('../Dataset/MELD.csv')
+    df = pd.read_csv(DATASET_FILE)
 
     # Clean column names (sometimes MELD has weird characters)
     df.columns = df.columns.str.strip()
@@ -70,21 +81,27 @@ def build_dialogues(df):
 
     return dialogues
 
-def generate_windows(dialogues, window_sizes=[1,3,5,7,9,11]):
+def generate_windows(dialogues, window_sizes=[1,3,5,7,9,11], max_target_index=10):
     samples = []
 
     for dialogue_id, utterances in dialogues.items():
         total_len = len(utterances)
 
+        # Determine target index
+        target_idx = min(max_target_index, total_len - 1)
+
         for k in window_sizes:
-            if k <= total_len:
-                window = utterances[:k]
+            if k <= (target_idx + 1):  # ensure enough context
+
+                # Get window ending at target_idx
+                start_idx = target_idx - k + 1
+                window = utterances[start_idx:target_idx + 1]
 
                 samples.append({
                     "dialogue_id": dialogue_id,
                     "window_size": k,
-                    "context": window[:-1],   # everything before last
-                    "target": window[-1],     # last utterance
+                    "context": window[:-1],   # previous context
+                    "target": window[-1],     # ALWAYS the same target
                     "label": window[-1]["emotion"]
                 })
 
@@ -107,11 +124,14 @@ def prepare_dataset(samples):
     dataset = []
 
     for sample in samples:
+        # print("Example dialogue:", "dialogue_id =", sample["dialogue_id"], "window_size =", sample["window_size"])
+        # print(format_dialogue(sample))
+        # print()
         dataset.append({
             "dialogue_id": sample["dialogue_id"],
             "window_size": sample["window_size"],
             "input_text": format_dialogue(sample),
-            "label": sample["label"]
+            "label": sample["label"].lower()
         })
 
     return dataset
@@ -123,16 +143,32 @@ def select_dialogues(dialogues, num_dialogues=28, seed=42):
     return {k: dialogues[k] for k in selected_ids}
 
 
-def query_gemini(client, prompt_text, model="gemini-2.5-pro"):
+def query_gemini(client, prompt_text, model="gemini-3-flash-preview"):
     try:
         response = client.models.generate_content(
             model=model,
-            contents=prompt_text
+            contents=prompt_text,
+            config={
+                "response_mime_type": "application/json"
+            }
         )
-        return response.text.strip().lower()
+        return response.text.strip()
     except Exception as e:
         print("Error:", e)
         return "error"
+
+def parse_llm_output(raw_pred):
+    if raw_pred == "error":
+        return "unknown", "api_error"
+
+    try:
+        data = json.loads(raw_pred)
+        emotion = data.get("emotion", "unknown").lower()
+        reasoning = data.get("reasoning", "")
+        return emotion, reasoning
+    except Exception as e:
+        print("JSON parse error:", e)
+        return "unknown", raw_pred
     
 def run_experiment(dataset, client, max_samples=None):
     results = []
@@ -146,15 +182,21 @@ def run_experiment(dataset, client, max_samples=None):
         full_prompt = prompt.format(dialogue_here=dialogue_text)
 
         raw_pred = query_gemini(client, full_prompt)
-        prediction = clean_prediction(raw_pred)
+        # print(f"Raw prediction: {raw_pred}")
+        # print()
+        prediction, reasoning = parse_llm_output(raw_pred)
+        # print()
+        # print(f"Parsed prediction: {prediction}, Reasoning: {reasoning}")
 
         results.append({
             "dialogue_id": sample["dialogue_id"],
             "window_size": sample["window_size"],
             "prediction": prediction,
-            "label": sample["label"],
+            "label": sample["label"].lower(),
             "prompt_type": "least_to_most",
-            "model": "gemini"
+            "model": "gemini",
+            "reasoning": reasoning,
+            "accuracy": prediction == sample["label"]
         })
 
         if i % 10 == 0:
@@ -194,18 +236,18 @@ def evaluate_by_window(results):
         acc = sum(1 for r in items if r["prediction"] == r["label"]) / len(items)
         print(f"Window {window_size}: {acc:.4f}")
 
-def save_results(results, filename="results.csv"):
+def save_results(results, filename):
     df = pd.DataFrame(results)
 
     # If file exists, append (useful for multiple runs)
-    if os.path.exists(filename):
-        df.to_csv(filename, mode='a', header=False, index=False)
-    else:
-        df.to_csv(filename, index=False)
+    # if os.path.exists(filename):
+    #     df.to_csv(filename, mode='a', header=False, index=False)
+    # else:
+    df.to_csv(filename, index=False)
 
     print(f"Saved {len(results)} rows to {filename}")
 
-def load_results(filename="results.csv"):
+def load_results(filename):
     df = pd.read_csv(filename)
     print(f"Loaded {len(df)} rows from {filename}")
     return df
@@ -229,7 +271,7 @@ if __name__ == "__main__":
     dialogues = build_dialogues(df)
 
     # Limit to 28 dialogues
-    dialogues = select_dialogues(dialogues, 28)
+    # dialogues = select_dialogues(dialogues, 28)
 
     samples = generate_windows(dialogues)
     dataset = prepare_dataset(samples)
@@ -239,14 +281,14 @@ if __name__ == "__main__":
 
 
     # Run experiment (start small!)
-    # print("Running experiment...")
-    # results = run_experiment(dataset, client, max_samples=20)
-    # save_results(results, FILENAME)
+    print("Running experiment...")
+    results = run_experiment(dataset, client)
+    save_results(results, RESULTS_FILE)
 
 
-    #Evaluation Move to a different file
-    df = load_results(FILENAME)
+    # #Evaluation Move to a different file
+    # df = load_results(RESULTS_FILE)
 
-    evaluate_from_df(df)
-    evaluate_by_window_df(df)
+    # evaluate_from_df(df)
+    # evaluate_by_window_df(df)
 
