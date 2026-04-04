@@ -67,10 +67,8 @@ def main():
 
     print("Number of eligible dialogues:", len(eligible_dialogues))
 
-    # Keep only those eligible dialogues first.
     df = df[df["Dialogue_ID"].isin(eligible_dialogues["Dialogue_ID"])].copy()
 
-    # Rebuild utterance position inside each dialogue as 0,1,2,...
     df["turn_index"] = df.groupby("Dialogue_ID").cumcount()
 
     # Keep only rows 0 through 11.
@@ -79,7 +77,7 @@ def main():
     # Get target rows only (row index 11).
     target_rows = df[df["turn_index"] == 11].copy()
 
-    # Target row must be greater than 3 words.
+    # >3 words in the target utterance.
     target_rows["target_word_count"] = target_rows["Utterance"].apply(count_words)
     target_rows = target_rows[target_rows["target_word_count"] > 3].copy()
 
@@ -89,7 +87,7 @@ def main():
     print("\nAvailable target rows by emotion:")
     print(target_rows["Emotion"].value_counts())
 
-    # Instead of random 28 overall, take 4 of each emotion based on row 11.
+    # 4 of each emotion instead of randomly sampled entirely.
     sampled_dialogue_ids = (
         target_rows.groupby("Emotion", group_keys=False)
         .apply(lambda x: x.sample(n=4, random_state=42))
@@ -100,7 +98,6 @@ def main():
     print("\nSampled dialogue IDs:")
     print(sorted(sampled_dialogue_ids))
 
-    # Keep only rows from those sampled dialogues.
     subset_df = df[df["Dialogue_ID"].isin(sampled_dialogue_ids)].copy()
 
     subset_df.to_csv(SUBSET_PATH, index=False)
