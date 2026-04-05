@@ -47,6 +47,12 @@ def clean_text(text):
     return text
 
 
+def count_words(text):
+    if pd.isna(text):
+        return 0
+    return len(str(text).split())
+
+
 def main():
     df = load_meld()
 
@@ -56,25 +62,59 @@ def main():
 
     dialogue_counts = df.groupby("Dialogue_ID").size().reset_index(name="num_utterances")
 
-    # Keep only dialogues that have at least 11 utterances.
-    eligible_dialogues = dialogue_counts[dialogue_counts["num_utterances"] >= 11]
+    # Keep only dialogues that have at least 12 utterances.
+    eligible_dialogues = dialogue_counts[dialogue_counts["num_utterances"] >= 12]
 
     print("Number of eligible dialogues:", len(eligible_dialogues))
 
-    # Randomly sample 28 dialogue IDs with a fixed seed for reproducibility.
-    sampled_dialogue_ids = eligible_dialogues["Dialogue_ID"].sample(n=28, random_state=42).tolist()
+    df = df[df["Dialogue_ID"].isin(eligible_dialogues["Dialogue_ID"])].copy()
+
+    df["turn_index"] = df.groupby("Dialogue_ID").cumcount()
+
+    # Keep only rows 0 through 11.
+    df = df[df["turn_index"] <= 11].copy()
+
+    # Get target rows only (row index 11).
+    target_rows = df[df["turn_index"] == 11].copy()
+
+    # >3 words in the target utterance.
+    target_rows["target_word_count"] = target_rows["Utterance"].apply(count_words)
+    target_rows = target_rows[target_rows["target_word_count"] > 3].copy()
+
+    emotions = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
+    target_rows = target_rows[target_rows["Emotion"].isin(emotions)].copy()
+
+    print("\nAvailable target rows by emotion:")
+    print(target_rows["Emotion"].value_counts())
+
+    # 4 of each emotion instead of randomly sampled entirely.
+    sampled_dialogue_ids = (
+        target_rows.groupby("Emotion", group_keys=False)
+        .apply(lambda x: x.sample(n=4, random_state=42))
+        ["Dialogue_ID"]
+        .tolist()
+    )
 
     print("\nSampled dialogue IDs:")
     print(sorted(sampled_dialogue_ids))
 
-    # Keep only rows from those sampled dialogues.
     subset_df = df[df["Dialogue_ID"].isin(sampled_dialogue_ids)].copy()
 
     subset_df.to_csv(SUBSET_PATH, index=False)
     print("\nSaved subset to:")
     print(SUBSET_PATH)
 
-    ids_df = pd.DataFrame({"dialogue_id": sorted(sampled_dialogue_ids)})
+    ids_df = (
+    target_rows[target_rows["Dialogue_ID"].isin(sampled_dialogue_ids)][["Dialogue_ID", "Emotion", "Utterance"]]
+    .drop_duplicates()
+    .sort_values("Dialogue_ID")
+    .rename(columns={
+        "Dialogue_ID": "dialogue_id",
+        "Emotion": "target_emotion",
+        "Utterance": "target_utterance"
+    })
+)
+
     ids_df.to_csv(IDS_PATH, index=False)
 
     print("\nSaved dialogue ID list to:")

@@ -1,29 +1,29 @@
-dialogue_id
-20
-62
-94
-145
-177
-180
-184
-347
-349
-358
-374
-388
-414
-445
-448
-482
-486
-665
-678
-699
-717
-823
-887
-930
-946
-947
-1005
-1022
+dialogue_id,target_emotion,target_utterance
+4,sadness,"Listen, I'm ah, I'm sorry I've been so crazy and jealous and, it's just that I like you a lot, so..."
+21,disgust,You have no idea how loud they are!
+26,sadness,"Man, this is gonna be kinda weird."
+30,fear,"Umm, but I think if you give me umm, one chance I can, I can change your mind."
+40,surprise,Hello? It's the deli again!
+167,neutral,"I Really Loved When We Were Singing Partners, And I Shouldn't Have Left You That Way."
+168,anger,"Ross, I am a human doodle!!"
+180,joy,Look how nervous he gets! We haven't slept together in years!
+211,fear,"You tell her Jack, I can't do it."
+295,anger,"Okay, well my girl from the other night was special. She was a scientist too!"
+336,neutral,"So, how many have you sold so far?"
+338,neutral,"Well, we were going to do that after¬óI mean umm, next."
+388,surprise,"Look at that, every inch of this stuff is glued down."
+401,sadness,"Phoebe. Phoebe. Phoebe, yeah. She named me after you I guess."
+449,joy,Oh God you're right.
+561,disgust,"Oh my god, what were you thinking?"
+615,anger,"And Monica, with that snort when she laughs?"
+625,anger,Ah yeah¬ówait a second now!
+676,surprise,What are you doing?
+682,neutral,You guys wanna get some coffee?
+699,disgust,"Okay lady, you're out of here."
+700,sadness,"All right. All right, I'll do it."
+730,surprise,"Whoa, whoa, whoa! Slow down, you go"
+884,disgust,"Well, I'm upset¬ófor you. I mean, having sex with an endless line of beautiful women must be very unfulfilling for you."
+989,fear,Go! Go! Go! Go! Go! Go! Go! Go! Go! Go!
+1009,joy,And-and a power tie?
+1017,joy,"Okay, I¬óit's the best thing I've ever had wrapped around me, including Phil Huntley!"
+1025,fear,"This is the only dessert and if I screw it up everybody's gonna be like ¬ìOh, remember that Thanksgiving when Rachel screwed up the trifle?¬î"
