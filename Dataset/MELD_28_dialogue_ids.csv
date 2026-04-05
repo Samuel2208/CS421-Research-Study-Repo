@@ -1,29 +1,57 @@
 dialogue_id,target_emotion,target_utterance
 4,sadness,"Listen, I'm ah, I'm sorry I've been so crazy and jealous and, it's just that I like you a lot, so..."
+20,neutral,"Yeah, that really calms me down."
 21,disgust,You have no idea how loud they are!
 26,sadness,"Man, this is gonna be kinda weird."
 30,fear,"Umm, but I think if you give me umm, one chance I can, I can change your mind."
 40,surprise,Hello? It's the deli again!
+89,disgust,They rushed into this thing so fast it's ridiculous!
+99,anger,Shrill?! The wedding is back on!
+130,surprise,Really? ¬ëCause I could kinda use the money.
+145,disgust,"This morning, I caught him looking into our apartment."
 167,neutral,"I Really Loved When We Were Singing Partners, And I Shouldn't Have Left You That Way."
 168,anger,"Ross, I am a human doodle!!"
+175,sadness,Yes. It's very difficult to appreciate a Thanksgiving dinner once you've seen it in reverse.
 180,joy,Look how nervous he gets! We haven't slept together in years!
+208,joy,"Okay, bye! Oh my God!!"
 211,fear,"You tell her Jack, I can't do it."
 295,anger,"Okay, well my girl from the other night was special. She was a scientist too!"
+301,disgust,"What are you talking about?! Mindy, the guy is the devil! He's Satan in a smock!"
+311,neutral,"And also, we don't know what to do with this."
 336,neutral,"So, how many have you sold so far?"
 338,neutral,"Well, we were going to do that after¬óI mean umm, next."
 388,surprise,"Look at that, every inch of this stuff is glued down."
 401,sadness,"Phoebe. Phoebe. Phoebe, yeah. She named me after you I guess."
+412,surprise,"Ahh, Gepeto, $5,000 dollars? Are you insane?"
 449,joy,Oh God you're right.
+486,fear,"When I had insurance I could get hit by a bus or catch on fire, y'know?"
+493,neutral,"Oh, we have some"
+506,sadness,Then how come it is?
+508,surprise,"Oh, what did I say?"
+509,anger,And this is not the only hospital in this city and we have no problem to¬óWhoa!
+554,disgust,He's taking off her coat!
 561,disgust,"Oh my god, what were you thinking?"
+596,fear,"He's got something plastic lodged in his throat, we've got to go to the hospital."
 615,anger,"And Monica, with that snort when she laughs?"
+623,surprise,"And-and another one had never been to a party before, so"
 625,anger,Ah yeah¬ówait a second now!
 676,surprise,What are you doing?
 682,neutral,You guys wanna get some coffee?
 699,disgust,"Okay lady, you're out of here."
 700,sadness,"All right. All right, I'll do it."
 730,surprise,"Whoa, whoa, whoa! Slow down, you go"
+820,neutral,"Yeah, there's this guy from Chicago who's supposed to be the next Martin Scorcese, all right?"
+827,fear,God. Do think it really doesn't hurt? ¬ëCause how can they do that?
+832,sadness,Were you so late because you were burring this woman?
 884,disgust,"Well, I'm upset¬ófor you. I mean, having sex with an endless line of beautiful women must be very unfulfilling for you."
+886,joy,"Oh this, well I'm glad you asked."
+902,joy,Don't you see? Everyone's looking at me! The plan's working! I didn't even have to take off my top yet!
+936,sadness,"You're going because you hope he's gonna say, ""Yeah, I love you too, Rach."
+945,joy,And you can go back to enjoying your little hamburger.
 989,fear,Go! Go! Go! Go! Go! Go! Go! Go! Go! Go!
 1009,joy,And-and a power tie?
+1011,anger,"Hey, it's my list."
+1016,fear,"Listen Ross, we ran out of gas, and we don't know where we are, so we can't get a tow truck."
 1017,joy,"Okay, I¬óit's the best thing I've ever had wrapped around me, including Phil Huntley!"
 1025,fear,"This is the only dessert and if I screw it up everybody's gonna be like ¬ìOh, remember that Thanksgiving when Rachel screwed up the trifle?¬î"
+1026,anger,"Oh, y'know I-I can't hear that enough."

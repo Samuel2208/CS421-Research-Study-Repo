@@ -90,7 +90,7 @@ def main():
     # 4 of each emotion instead of randomly sampled entirely.
     sampled_dialogue_ids = (
         target_rows.groupby("Emotion", group_keys=False)
-        .apply(lambda x: x.sample(n=4, random_state=42))
+        .apply(lambda x: x.sample(n=8, random_state=42))
         ["Dialogue_ID"]
         .tolist()
     )
