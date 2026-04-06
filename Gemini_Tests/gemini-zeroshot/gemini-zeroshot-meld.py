@@ -10,7 +10,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
 DATASET_DIR = REPO_DIR / "Dataset"
-SUBSET_PATH = DATASET_DIR / "MELD_28_dialogues.csv"
+SUBSET_PATH = DATASET_DIR / "MELD_56_dialogues.csv"
 
 
 # Load the reduced MELD subset CSV file into a pandas DataFrame.
@@ -189,6 +189,8 @@ def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="z
     true_label = window_df.iloc[-1]["Emotion"]
 
     prompt = build_zero_shot_prompt(formatted_context, target_utterance)
+    prompt_length = len(prompt)
+    prompt_word_count = len(prompt.split())
     raw_response = get_gemini_prediction(prompt)
 
     reasoning, prediction = parse_gemini_response(raw_response)
@@ -202,7 +204,9 @@ def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="z
         "prompt_type": prompt_type,
         "model": model_name,
         "reasoning": reasoning,
-        "accuracy": accuracy
+        "accuracy": accuracy,
+        "prompt_word_count": prompt_word_count,
+        "prompt_character_count": prompt_length
     }
 
 # Run zero-shot experiments over selected dialogues and window sizes.
