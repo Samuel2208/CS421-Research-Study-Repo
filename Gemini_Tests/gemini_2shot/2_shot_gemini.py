@@ -21,7 +21,7 @@ speaker_col = "Speaker"
 
 df = df.sort_values([dialog_id_col, utterance_index_col])
 
-N = 28
+N = 56
 dialog_ids = df[dialog_id_col].unique()[:N]
 
 results = []
@@ -126,7 +126,9 @@ for dialog_id in dialog_ids:
                         "prompt_type": "few_shot_reverse_window",
                         "model": "gemini",
                         "reasoning": reasoning,
-                        "accuracy": accuracy
+                        "accuracy": accuracy,
+                        "prompt_word_count": len(prompt.split()),
+                        "prompt_character_count": len(prompt)
                     }
                 )
 
@@ -150,7 +152,8 @@ results_df = pd.DataFrame(results)
 
 results_df = results_df[
     ["dialogue_id", "window_size", "prediction", "label",
-     "prompt_type", "model", "reasoning", "accuracy"]
+     "prompt_type", "model", "reasoning", "accuracy",
+     "prompt_word_count", "prompt_character_count"] 
 ]
 
 results_df.to_csv("gemini_meld_emotion_results.csv", index=False)
