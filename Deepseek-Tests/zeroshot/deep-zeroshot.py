@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 import pandas as pd
 import time
-from google import genai
+from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -117,24 +117,28 @@ Label: <one emotion label>
     return prompt
 
 
-# Send the prompt to Gemini and return the model's response text.
-def get_gemini_prediction(prompt):
-    api_key = os.getenv("GEMINI_API_KEY")
+def get_deepseek_prediction(prompt):
+    api_key = os.getenv("DEEPSEEK_API_KEY")
 
     if not api_key:
-        raise ValueError("GEMINI_API_KEY is not set in your environment.")
+        raise ValueError("DEEPSEEK_API_KEY is not set in your environment.")
 
-    client = genai.Client(api_key=api_key)
-
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=prompt
+    client = OpenAI(
+        api_key=api_key,
+        base_url="https://api.deepseek.com"
     )
 
-    return response.text.strip()
+    response = client.chat.completions.create(
+        model="deepseek-chat",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    return response.choices[0].message.content.strip()
 
 # Split Gemini's response into reasoning text and final label.
-def parse_gemini_response(response_text):
+def parse(response_text):
     reasoning = ""
     prediction = "INVALID"
 
@@ -178,7 +182,7 @@ def normalize_prediction(prediction):
 
 # Run the zero-shot pipeline for one dialogue window.
 # The target is always the last utterance in the window.
-def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="zero_shot", model_name="gemini"):
+def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="zero_shot", model_name="deepseek"):
     window_df = get_last_window(dataframe, dialogue_id, window_size)
 
     if window_df is None or window_df.empty:
@@ -191,9 +195,9 @@ def classify_dialogue_window(dataframe, dialogue_id, window_size, prompt_type="z
     prompt = build_zero_shot_prompt(formatted_context, target_utterance)
     prompt_length = len(prompt)
     prompt_word_count = len(prompt.split())
-    raw_response = get_gemini_prediction(prompt)
+    raw_response = get_deepseek_prediction(prompt)
 
-    reasoning, prediction = parse_gemini_response(raw_response)
+    reasoning, prediction = parse(raw_response)
     accuracy = prediction == true_label
 
     return {
@@ -243,7 +247,7 @@ def run_zero_shot_resumable(dataframe, output_file, window_sizes, max_dialogues=
                 dialogue_id=dialogue_id,
                 window_size=window_size,
                 prompt_type="zero_shot",
-                model_name="gemini"
+                model_name="deepseek"
             )
 
             if result:
@@ -266,7 +270,7 @@ def run_zero_shot_resumable(dataframe, output_file, window_sizes, max_dialogues=
 def main():
     meld_df = prepare_meld_dataframe()
 
-    output_file = "results/gemini_zero_shot_results.csv"
+    output_file = "results/deepseek_zero_shot_results.csv"
     window_sizes = [1, 3, 5, 7, 9, 11]
 
     run_zero_shot_resumable(

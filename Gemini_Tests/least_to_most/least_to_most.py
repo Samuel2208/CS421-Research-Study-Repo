@@ -10,7 +10,7 @@ import json
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
 RESULTS_FILE = f"./results/least_to_most_results.csv"
-DATASET_FILE = "../../Dataset/MELD_28_dialogues.csv"
+DATASET_FILE = "../../Dataset/MELD_56_dialogues.csv"
 
 VALID_EMOTIONS = ["neutral", "joy", "sadness", "anger", "fear", "disgust", "surprise"]
 
@@ -81,7 +81,7 @@ def build_dialogues(df):
 
     return dialogues
 
-def generate_windows(dialogues, window_sizes=[1,3,5,7,9,11], max_target_index=10):
+def generate_windows(dialogues, window_sizes=[1,3,5,7,9,11], max_target_index=11):
     samples = []
 
     for dialogue_id, utterances in dialogues.items():
@@ -196,7 +196,9 @@ def run_experiment(dataset, client, max_samples=None):
             "prompt_type": "least_to_most",
             "model": "gemini",
             "reasoning": reasoning,
-            "accuracy": prediction == sample["label"]
+            "accuracy": prediction == sample["label"],
+            "prompt_word_count": len(full_prompt.split()),
+            "prompt_character_count" : len(full_prompt)
         })
 
         if i % 10 == 0:
@@ -238,13 +240,7 @@ def evaluate_by_window(results):
 
 def save_results(results, filename):
     df = pd.DataFrame(results)
-
-    # If file exists, append (useful for multiple runs)
-    # if os.path.exists(filename):
-    #     df.to_csv(filename, mode='a', header=False, index=False)
-    # else:
     df.to_csv(filename, index=False)
-
     print(f"Saved {len(results)} rows to {filename}")
 
 def load_results(filename):
