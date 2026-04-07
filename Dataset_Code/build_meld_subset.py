@@ -11,8 +11,8 @@ REPO_DIR = BASE_DIR.parent
 DATASET_DIR = REPO_DIR / "Dataset"
 
 MELD_PATH = DATASET_DIR / "MELD.csv"
-SUBSET_PATH = DATASET_DIR / "MELD_28_dialogues.csv"
-IDS_PATH = DATASET_DIR / "MELD_28_dialogue_ids.csv"
+SUBSET_PATH = DATASET_DIR / "MELD_56_dialogues.csv"
+IDS_PATH = DATASET_DIR / "MELD_56_dialogue_ids.csv"
 
 def load_meld(path=MELD_PATH):
     return pd.read_csv(path)
