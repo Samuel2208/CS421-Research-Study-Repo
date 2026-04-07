@@ -56,25 +56,6 @@ def prepare_meld_dataframe(path=SUBSET_PATH):
     return meld_df
 
 
-# Return the target utterance with the requested amount of dialogue context.
-# k=0 -> target only
-# k=n -> previous n utterances + target
-# k=None -> full dialogue history up to the target
-# Get the last `window_size` utterances from a dialogue.
-# The target for prediction will always be the last utterance in this window.
-def get_last_window(dataframe, dialogue_id, window_size):
-    dialogue = dataframe[dataframe["Dialogue_ID"] == dialogue_id]
-    dialogue = dialogue.sort_values("Utterance_ID").reset_index(drop=True)
-
-    if dialogue.empty:
-        return None
-
-    # Take the last `window_size` utterances from the dialogue
-    window_df = dialogue.tail(window_size).reset_index(drop=True)
-
-    return window_df
-
-
 # Convert a context window DataFrame into prompt-ready dialogue text.
 def format_context_for_prompt(context_df):
     if context_df is None or context_df.empty:
@@ -89,30 +70,6 @@ def format_context_for_prompt(context_df):
         lines.append(f"{speaker}: {utterance}")
 
     return "\n".join(lines)
-
-
-# Build the zero-shot prompt messages using the dialogue context and target utterance.
-def build_zero_shot_prompt_messages(context_text, target_utterance):
-    prompt = f"""You are an emotion classification assistant.
-
-Your task is to classify the emotion of the target utterance in the dialogue below.
-
-Choose exactly one label from this list:
-anger, disgust, fear, joy, neutral, sadness, surprise
-
-Dialogue:
-{context_text}
-
-Target utterance:
-{target_utterance}
-
-Explain your reasoning in one or two sentences behind your decision and then choose one label from the list above.
-
-Return your answer in this format:
-Reasoning: <your reasoning>
-Label: <one emotion label>
-"""
-    return [{"role": "user", "content": prompt}]
 
 
 # Split the model's response into reasoning text and final label.
@@ -167,7 +124,9 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
     llm = LLM(
         model="Qwen/Qwen2.5-7B-Instruct-AWQ", 
         quantization="awq",
-        max_model_len=4096
+        max_model_len=4096,
+        gpu_memory_utilization=0.85,    # Prevents VRAM thrashing
+        enable_prefix_caching=True      # CRITICAL: Reuses KV cache for static instructions
     )
     tokenizer = llm.get_tokenizer()
     
@@ -177,22 +136,52 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
     if max_dialogues is not None:
         dialogue_ids = dialogue_ids[:max_dialogues]
 
+    df_filtered = dataframe[dataframe["Dialogue_ID"].isin(dialogue_ids)]
+
     prompts = []
     metadata = []
 
     print("Building prompts...")
-    for dialogue_id in dialogue_ids:
+
+    system_instruction = (
+        "You are an emotion classification assistant.\n\n"
+        "Your task is to classify the emotion of the target utterance in the dialogue below.\n\n"
+        "Choose exactly one label from this list:\n"
+        "anger, disgust, fear, joy, neutral, sadness, surprise"
+    )
+
+    user_template = (
+        "Dialogue:\n"
+        "{context_text}\n\n"
+        "Target utterance:\n"
+        "{target_utterance}\n\n"
+        "Explain your reasoning in one or two sentences behind your decision and then choose one label from the list above.\n\n"
+        "Return your answer in this format:\n"
+        "Reasoning: <your reasoning>\n"
+        "Label: <one emotion label>"
+    )
+
+    for dialogue_id, dialog in df_filtered.groupby("Dialogue_ID"):
         for window_size in window_sizes:
-            window_df = get_last_window(dataframe, dialogue_id, window_size)
+            # Efficiently grab the last `window_size` items
+            window_df = dialog.tail(window_size).reset_index(drop=True)
             
-            if window_df is None or window_df.empty:
+            if window_df.empty:
                 continue
 
             formatted_context = format_context_for_prompt(window_df)
             target_utterance = window_df.iloc[-1]["Utterance"]
             true_label = window_df.iloc[-1]["Emotion"]
 
-            messages = build_zero_shot_prompt_messages(formatted_context, target_utterance)
+            user_msg = user_template.format(
+                context_text=formatted_context,
+                target_utterance=target_utterance
+            )
+
+            messages = [
+                {"role": "system", "content": system_instruction},
+                {"role": "user", "content": user_msg}
+            ]
             
             formatted_prompt = tokenizer.apply_chat_template(
                 messages, 
