@@ -125,8 +125,8 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
         model="Qwen/Qwen2.5-7B-Instruct-AWQ", 
         quantization="awq",
         max_model_len=4096,
-        gpu_memory_utilization=0.85,    # Prevents VRAM thrashing
-        enable_prefix_caching=True      # CRITICAL: Reuses KV cache for static instructions
+        gpu_memory_utilization=0.85,
+        enable_prefix_caching=True
     )
     tokenizer = llm.get_tokenizer()
     

@@ -28,8 +28,8 @@ def main():
         model="Qwen/Qwen2.5-7B-Instruct-AWQ", 
         quantization="awq",
         max_model_len=4096,
-        gpu_memory_utilization=0.85,    # Prevents VRAM thrashing
-        enable_prefix_caching=True      # CRITICAL: Reuses KV cache for static few-shot examples
+        gpu_memory_utilization=0.85,
+        enable_prefix_caching=True
     )
     tokenizer = llm.get_tokenizer()
     
@@ -80,7 +80,6 @@ def main():
         "Label: surprise\n"
     )
 
-    # 2. CREATE A LEAN USER TEMPLATE FOR PLAIN TEXT OUTPUT
     user_template = (
         "Now, classify the following:\n\n"
         "Dialogue:\n"
