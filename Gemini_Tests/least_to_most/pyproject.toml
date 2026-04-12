@@ -8,6 +8,7 @@ dependencies = [
     "google>=3.0.0",
     "google-genai>=1.67.0",
     "matplotlib>=3.10.8",
+    "nltk>=3.9.4",
     "pandas>=3.0.1",
     "python-dotenv>=1.2.2",
     "scikit-learn>=1.8.0",

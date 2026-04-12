@@ -1,4 +1,4 @@
-import pprint 
+import pprint
 
 from google import genai
 from dotenv import load_dotenv
@@ -8,6 +8,7 @@ from collections import defaultdict
 import os
 from datetime import datetime
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
@@ -21,33 +22,29 @@ load_dotenv()
 client = genai.Client()
 
 
-prompt = (
-    """
-        You are given a dialogue. Your task is to determine the emotion of the LAST utterance.
+prompt = """
+You are given structured dialogue data.
 
-        Follow these steps internally:
-        1. Summarize each utterance briefly.
-        2. Describe how the emotions evolve.
-        3. Analyze the final utterance in context.
-        4. Choose the final emotion from:
-        [neutral, joy, sadness, anger, fear, disgust, surprise]
+Follow these steps internally:
+1. Summarize each utterance briefly.
+2. Describe how emotions evolve.
+3. Analyze the final utterance in context.
+4. Choose the final emotion.
 
-        IMPORTANT:
-        - Return ONLY valid JSON
-        - Do NOT include markdown (no ``` or ```json)
-        - Do NOT include any extra text
-        - Use DOUBLE quotes (") for all keys and values
+IMPORTANT:
+- Return ONLY valid JSON
+- Use DOUBLE quotes
+- No markdown
 
-        Output format:
-        {{
-            "reasoning": "brief explanation",
-            "emotion": "..."
-        }}
+Input:
+{structured_input}
 
-        Dialogue:
-        {dialogue_here}
-    """
-)
+Output format:
+{{
+    "reasoning": "...",
+    "emotion": "..."
+}}
+"""
 
 
 
@@ -124,6 +121,7 @@ def format_dialogue(sample):
 
 def prepare_dataset(samples):
     dataset = []
+    emotion_count = defaultdict(int)
 
     for sample in samples:
         # print("Example dialogue:", "dialogue_id =", sample["dialogue_id"], "window_size =", sample["window_size"])
@@ -133,16 +131,14 @@ def prepare_dataset(samples):
             "dialogue_id": sample["dialogue_id"],
             "window_size": sample["window_size"],
             "input_text": format_dialogue(sample),
-            "label": sample["label"].lower()
-        })
+            "label": sample["label"].lower(),
 
-    emotions = set()
-    emotion_count = defaultdict(int)
-    for sample in dataset:
-        emotions.add(sample["label"])
+            "context": sample["context"],
+            "target": sample["target"]
+        })
         emotion_count[sample["label"]] += 1
 
-    return dataset, emotions, emotion_count
+    return dataset, set(emotion_count.keys()), emotion_count
 
 
 def select_dialogues(dialogues, num_dialogues=28, seed=42):
@@ -181,13 +177,25 @@ def parse_llm_output(raw_pred):
 def run_experiment(dataset, client, max_samples=None):
     results = []
 
+    count = 0
+
     for i, sample in enumerate(dataset):
         if max_samples and i >= max_samples:
             break
 
-        dialogue_text = sample["input_text"]
+        # dialogue_text = sample["input_text"]
 
-        full_prompt = prompt.format(dialogue_here=dialogue_text)
+        # full_prompt = prompt.format(dialogue_here=dialogue_text)
+
+        structured_input = format_structured_dialogue(sample)
+        full_prompt = prompt.format(
+            structured_input=json.dumps(structured_input, indent=2)
+        )
+
+        print("Prompt example:")
+        pprint.pprint(full_prompt)
+
+
 
         raw_pred = query_gemini(client, full_prompt)
         # print(f"Raw prediction: {raw_pred}")
@@ -201,7 +209,7 @@ def run_experiment(dataset, client, max_samples=None):
             "window_size": sample["window_size"],
             "prediction": prediction,
             "label": sample["label"].lower(),
-            "prompt_type": "least_to_most",
+            "prompt_type": "least_to_most_structured",
             "model": "gemini",
             "reasoning": reasoning,
             "accuracy": prediction == sample["label"],
@@ -268,8 +276,69 @@ def evaluate_by_window_df(df):
         acc = (group["prediction"] == group["label"]).mean()
         print(f"Window {window_size}: {acc:.4f}")
 
-if __name__ == "__main__":
 
+def format_structured_dialogue(sample):
+    return {
+        "context": [
+            {
+                "speaker": turn["speaker"],
+                "utterance": turn["utterance"]
+            }
+            for turn in sample["context"]
+        ],
+        "target_utterance": {
+            "speaker": sample["target"]["speaker"],
+            "utterance": sample["target"]["utterance"]
+        },
+        "task": "Classify the emotion of the target utterance",
+        "emotion_options": VALID_EMOTIONS
+    }
+
+#Run experiment paralle making it run faster test function
+def run_experiment_parallel(dataset, client, max_workers=5):
+    results = []
+
+    def process_sample(sample):
+        structured_input = format_structured_dialogue(sample)
+
+        full_prompt = prompt.format(
+            structured_input=json.dumps(structured_input, indent=2)
+        )
+
+        raw_pred = query_gemini(client, full_prompt)
+        prediction, reasoning = parse_llm_output(raw_pred)
+
+        return {
+            "dialogue_id": sample["dialogue_id"],
+            "window_size": sample["window_size"],
+            "prediction": prediction,
+            "label": sample["label"].lower(),
+            "prompt_type": "least_to_most_structured",
+            "model": "gemini",
+            "reasoning": reasoning,
+            "accuracy": prediction == sample["label"],
+            "prompt_word_count": len(full_prompt.split()),
+            "prompt_character_count": len(full_prompt),
+        }
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [executor.submit(process_sample, sample) for sample in dataset]
+
+        for i, future in enumerate(as_completed(futures)):
+            try:
+                results.append(future.result())
+            except Exception as e:
+                print("Error in thread:", e)
+
+            if i % 10 == 0:
+                print(f"Processed {i} samples")
+
+    return results
+
+
+
+######################################### MAIN #########################################
+def main():
     # Load + prepare
     df = load_data()
     dialogues = build_dialogues(df)
@@ -278,18 +347,19 @@ if __name__ == "__main__":
     # dialogues = select_dialogues(dialogues, 28)
 
     samples = generate_windows(dialogues)
-    dataset, emotion, emotion_count = prepare_dataset(samples)
+    dataset, emotions, emotion_count = prepare_dataset(samples)
+    print(dataset[0].keys())
+    # return 
+
 
     print(f"Total dataset size: {len(dataset)}")
     print(f"Total API calls to be made: {len(dataset)}")
     pprint.pprint(emotion_count)
 
-     
-
-
     # Run experiment (start small!)
-    # print("Running experiment...")
-    # results = run_experiment(dataset, client)
+    print("Running experiment...")
+    results = run_experiment(dataset, client, max_samples=1)
+    results_parallel = run_experiment_parallel(dataset[:10], client, max_workers=5)
     # save_results(results, RESULTS_FILE)
 
 
@@ -299,3 +369,9 @@ if __name__ == "__main__":
     # evaluate_from_df(df)
     # evaluate_by_window_df(df)
 
+
+
+if __name__ == "__main__":
+    main()
+
+    
