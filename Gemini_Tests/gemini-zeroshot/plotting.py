@@ -5,10 +5,36 @@ import numpy as np
 
 
 BASE_DIR = Path(__file__).resolve().parent
-RESULTS_DIR = BASE_DIR / "results"
+RESULTS_DIR = BASE_DIR / "baseline-results"
 
 evaluation_file = RESULTS_DIR / "gemini_zero_shot_results_evaluation.csv"
 df = pd.read_csv(evaluation_file)
+
+
+def add_line_labels(xvals, yvals, decimals=3):
+    for x, y in zip(xvals, yvals):
+        plt.text(
+            x,
+            y + 0.01,
+            f"{y:.{decimals}f}",
+            ha="center",
+            va="bottom",
+            fontsize=9
+        )
+
+
+def add_bar_labels(bars, decimals=3):
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(
+            bar.get_x() + bar.get_width() / 2,
+            height + 0.01,
+            f"{height:.{decimals}f}",
+            ha="center",
+            va="bottom",
+            fontsize=8
+        )
+
 
 # keep only window-size rows
 window_df = df[df["metric_group"] == "window_size"].copy()
@@ -20,6 +46,7 @@ accuracy_df = accuracy_df.sort_values("group_value")
 
 plt.figure(figsize=(8, 5))
 plt.plot(accuracy_df["group_value"], accuracy_df["metric_value"], marker="o")
+add_line_labels(accuracy_df["group_value"], accuracy_df["metric_value"])
 plt.xlabel("Window Size")
 plt.ylabel("Accuracy")
 plt.title("Gemini Zero-Shot Accuracy by Window Size")
@@ -36,6 +63,7 @@ f1_df = f1_df.sort_values("group_value")
 
 plt.figure(figsize=(8, 5))
 plt.plot(f1_df["group_value"], f1_df["metric_value"], marker="o")
+add_line_labels(f1_df["group_value"], f1_df["metric_value"])
 plt.xlabel("Window Size")
 plt.ylabel("Macro F1")
 plt.title("Gemini Zero-Shot Macro F1 by Window Size")
@@ -59,10 +87,15 @@ x = np.arange(len(window_pivot["group_value"]))
 width = 0.2
 
 plt.figure(figsize=(10, 6))
-plt.bar(x - 1.5 * width, window_pivot["accuracy"], width, label="Accuracy")
-plt.bar(x - 0.5 * width, window_pivot["macro_precision"], width, label="Macro Precision")
-plt.bar(x + 0.5 * width, window_pivot["macro_recall"], width, label="Macro Recall")
-plt.bar(x + 1.5 * width, window_pivot["macro_f1"], width, label="Macro F1")
+bars1 = plt.bar(x - 1.5 * width, window_pivot["accuracy"], width, label="Accuracy")
+bars2 = plt.bar(x - 0.5 * width, window_pivot["macro_precision"], width, label="Macro Precision")
+bars3 = plt.bar(x + 0.5 * width, window_pivot["macro_recall"], width, label="Macro Recall")
+bars4 = plt.bar(x + 1.5 * width, window_pivot["macro_f1"], width, label="Macro F1")
+
+add_bar_labels(bars1)
+add_bar_labels(bars2)
+add_bar_labels(bars3)
+add_bar_labels(bars4)
 
 plt.xlabel("Window Size")
 plt.ylabel("Metric Value")
@@ -75,7 +108,6 @@ plt.tight_layout()
 plt.savefig(RESULTS_DIR / "gemini_zero_shot_metrics_by_window_bar.png")
 plt.show()
 
-
 # overall metrics bar chart
 overall_df = df[df["metric_group"] == "overall"].copy()
 
@@ -84,7 +116,8 @@ overall_df["metric_name"] = pd.Categorical(overall_df["metric_name"], categories
 overall_df = overall_df.sort_values("metric_name")
 
 plt.figure(figsize=(8, 5))
-plt.bar(overall_df["metric_name"], overall_df["metric_value"])
+bars = plt.bar(overall_df["metric_name"], overall_df["metric_value"])
+add_bar_labels(bars)
 plt.xlabel("Metric")
 plt.ylabel("Score")
 plt.title("Gemini Zero-Shot Overall Metrics")
@@ -93,7 +126,6 @@ plt.grid(True, axis="y")
 plt.tight_layout()
 plt.savefig(RESULTS_DIR / "gemini_zero_shot_overall_metrics_bar.png")
 plt.show()
-
 
 # grouped bar chart for all metrics by label
 label_df = df[df["metric_group"] == "label"].copy()
@@ -110,10 +142,15 @@ x = np.arange(len(label_pivot["group_value"]))
 width = 0.2
 
 plt.figure(figsize=(12, 6))
-plt.bar(x - 1.5 * width, label_pivot["accuracy"], width, label="Accuracy")
-plt.bar(x - 0.5 * width, label_pivot["macro_precision"], width, label="Macro Precision")
-plt.bar(x + 0.5 * width, label_pivot["macro_recall"], width, label="Macro Recall")
-plt.bar(x + 1.5 * width, label_pivot["macro_f1"], width, label="Macro F1")
+bars1 = plt.bar(x - 1.5 * width, label_pivot["accuracy"], width, label="Accuracy")
+bars2 = plt.bar(x - 0.5 * width, label_pivot["macro_precision"], width, label="Macro Precision")
+bars3 = plt.bar(x + 0.5 * width, label_pivot["macro_recall"], width, label="Macro Recall")
+bars4 = plt.bar(x + 1.5 * width, label_pivot["macro_f1"], width, label="Macro F1")
+
+add_bar_labels(bars1)
+add_bar_labels(bars2)
+add_bar_labels(bars3)
+add_bar_labels(bars4)
 
 plt.xlabel("Emotion Label")
 plt.ylabel("Metric Value")

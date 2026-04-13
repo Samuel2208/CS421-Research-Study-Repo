@@ -4,7 +4,7 @@ from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 
 BASE_DIR = Path(__file__).resolve().parent
-RESULTS_DIR = BASE_DIR / "results"
+RESULTS_DIR = BASE_DIR / "structured-results"
 
 # Compute all metrics for a DataFrame.
 def all_metrics(df):
@@ -70,7 +70,7 @@ def compute_metrics_by_label(df):
 
 
 def main():
-    input_file = RESULTS_DIR / "gemini_zero_shot_results.csv"
+    input_file = RESULTS_DIR / "gemini_structured_zero_shot_results.csv"
     df = pd.read_csv(input_file)
 
     input_stem = input_file.stem
