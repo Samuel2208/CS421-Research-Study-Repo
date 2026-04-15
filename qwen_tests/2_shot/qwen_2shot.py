@@ -1,6 +1,14 @@
 import pandas as pd
 import re
 from vllm import LLM, SamplingParams
+import re
+import os
+import sys
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
+REPO_DIR = BASE_DIR.parent.parent
+sys.path.append(str(REPO_DIR))
+from utils import lexicon_analysis
 
 def parse_text_output(raw_pred):
     """Extracts reasoning and emotion from plain text output."""
@@ -127,7 +135,8 @@ def main():
                 "window_size": n,
                 "label": actual_emotion,
                 "prompt_character_count": len(formatted_prompt),
-                "prompt_word_count": len(formatted_prompt.split())
+                "prompt_word_count": len(formatted_prompt.split()),
+                "target_utterance": target_text
             })
 
     print(f"Running inference on {len(prompts)} prompts simultaneously...")
@@ -155,6 +164,7 @@ def main():
             "prompt_word_count": meta["prompt_word_count"],
             "prompt_character_count": meta["prompt_character_count"]
         })
+        lexicon_analysis.process_utterance(meta["target_utterance"], prediction)
 
     results_df = pd.DataFrame(results)
     results_df = results_df[
@@ -165,6 +175,7 @@ def main():
 
     output_filename = "qwen_2_shot_results.csv"
     results_df.to_csv(output_filename, index=False)
+    lexicon_analysis.export_lexicons("qwen_2_shot")
     print(f"Finished! Results saved to {output_filename}")
 
 if __name__ == "__main__":

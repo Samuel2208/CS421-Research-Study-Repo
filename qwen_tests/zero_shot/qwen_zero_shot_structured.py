@@ -4,6 +4,14 @@ import json
 import pandas as pd
 import re
 from vllm import LLM, SamplingParams
+import re
+import os
+import sys
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
+REPO_DIR = BASE_DIR.parent.parent
+sys.path.append(str(REPO_DIR))
+from utils import lexicon_analysis
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
@@ -194,7 +202,8 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
                 "window_size": window_size,
                 "label": true_label,
                 "prompt_character_count": len(formatted_prompt),
-                "prompt_word_count": len(formatted_prompt.split())
+                "prompt_word_count": len(formatted_prompt.split()),
+                "target_utterance": target_row["Utterance"]
             })
 
     print(f"Running batched inference on {len(prompts)} prompts simultaneously...")
@@ -222,12 +231,14 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
             "prompt_word_count": meta["prompt_word_count"],
             "prompt_character_count": meta["prompt_character_count"]
         })
+        lexicon_analysis.process_utterance(meta["target_utterance"], prediction)
 
     results_df = pd.DataFrame(results)
     
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     
     results_df.to_csv(output_file, index=False)
+    lexicon_analysis.export_lexicons("qwen_zero_shot_structured")
     print(f"Finished! Results saved to {output_file}")
 
 

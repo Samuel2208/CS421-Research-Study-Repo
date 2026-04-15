@@ -70,7 +70,7 @@ def compute_metrics_by_label(df):
 
 
 def main():
-    input_file = RESULTS_DIR / "gemma_vllm_zero_shot_results.csv"
+    input_file = RESULTS_DIR / "gemma_zero_shot_results.csv"
     df = pd.read_csv(input_file)
 
     input_stem = input_file.stem
