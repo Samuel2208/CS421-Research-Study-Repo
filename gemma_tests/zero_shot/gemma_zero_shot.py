@@ -237,7 +237,7 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
 def main():
     meld_df = prepare_meld_dataframe()
 
-    output_file = "results/gemma_vllm_zero_shot_results.csv"
+    output_file = "results/gemma_zero_shot_results.csv"
     window_sizes = [1, 3, 5, 7, 9, 11]
 
     run_vllm_zero_shot(

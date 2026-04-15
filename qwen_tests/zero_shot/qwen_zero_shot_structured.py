@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import json
 import pandas as pd
 import re
 from vllm import LLM, SamplingParams
@@ -9,6 +10,7 @@ REPO_DIR = BASE_DIR.parent.parent
 DATASET_DIR = REPO_DIR / "Dataset"
 SUBSET_PATH = DATASET_DIR / "MELD_filtered_dialogues.csv"
 
+VALID_EMOTIONS = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
 
 # Load the reduced MELD subset CSV file into a pandas DataFrame.
 def load_meld_subset(path=SUBSET_PATH):
@@ -56,44 +58,21 @@ def prepare_meld_dataframe(path=SUBSET_PATH):
     return meld_df
 
 
-# Convert a context window DataFrame into prompt-ready dialogue text.
-def format_context_for_prompt(context_df):
-    if context_df is None or context_df.empty:
-        return ""
-
-    lines = []
-
-    # Format each utterance as "Speaker: Utterance" and join them with newlines
-    for _, row in context_df.iterrows():
-        speaker = row["Speaker"]
-        utterance = row["Utterance"]
-        lines.append(f"{speaker}: {utterance}")
-
-    return "\n".join(lines)
-
-
-# Split the model's response into reasoning text and final label.
+# Extract JSON from vLLM output and split it into reasoning and label
 def parse_vllm_response(response_text):
-    reasoning = ""
-    prediction = "INVALID"
+    match = re.search(r'\{.*\}', response_text.strip(), re.DOTALL)
+    json_str = match.group(0) if match else response_text.strip()
 
-    if not response_text:
-        return reasoning, prediction
+    try:
+        data = json.loads(json_str)
+        prediction = str(data.get("emotion", "INVALID")).strip().lower()
+        reasoning = str(data.get("reasoning", "")).strip()
+    except json.JSONDecodeError:
+        prediction = "INVALID"
+        reasoning = "JSON Parsing Error"
 
-    lines = response_text.strip().splitlines()
-
-    for line in lines:
-        lower_line = line.lower().strip()
-
-        if lower_line.startswith("reasoning:"):
-            reasoning = line.split(":", 1)[1].strip()
-
-        elif lower_line.startswith("label:"):
-            prediction = line.split(":", 1)[1].strip().lower()
-
-    # Fallback in case the model doesn't follow the exact format
-    if prediction == "INVALID":
-        prediction = normalize_prediction(response_text)
+    if prediction == "INVALID" or prediction not in VALID_EMOTIONS:
+        prediction = normalize_prediction(prediction)
 
     return reasoning, prediction
 
@@ -144,21 +123,26 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
     print("Building prompts...")
 
     system_instruction = (
-        "You are an emotion classification assistant.\n\n"
-        "Your task is to classify the emotion of the target utterance in the dialogue below.\n\n"
-        "Choose exactly one label from this list:\n"
-        "anger, disgust, fear, joy, neutral, sadness, surprise"
+        "You are given structured dialogue data.\n\n"
+        "Classify the emotion of the target utterance.\n\n"
+        "IMPORTANT:\n"
+        "- Use the dialogue context only if it helps interpret the target utterance\n"
+        "- Focus on the emotional meaning of the target utterance\n"
+        "- Choose exactly one emotion from the provided emotion options\n"
+        "- Return ONLY valid JSON\n"
+        "- Use DOUBLE quotes\n"
+        "- Do not return markdown\n"
+        "- Do not return any extra text outside the JSON object"
     )
 
     user_template = (
-        "Dialogue:\n"
-        "{context_text}\n\n"
-        "Target utterance:\n"
-        "{target_utterance}\n\n"
-        "Explain your reasoning in one or two sentences behind your decision and then choose one label from the list above.\n\n"
-        "Return your answer in this format:\n"
-        "Reasoning: <your reasoning>\n"
-        "Label: <one emotion label>"
+        "Input:\n"
+        "{structured_input}\n\n"
+        "Output format:\n"
+        "{{\n"
+        '    "reasoning": "...",\n'
+        '    "emotion": "..."\n'
+        "}}"
     )
 
     for dialogue_id, dialog in df_filtered.groupby("Dialogue_ID"):
@@ -169,13 +153,28 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
             if window_df.empty:
                 continue
 
-            formatted_context = format_context_for_prompt(window_df)
-            target_utterance = window_df.iloc[-1]["Utterance"]
-            true_label = window_df.iloc[-1]["Emotion"]
+            context_turns = []
+            for _, row in window_df.iloc[:-1].iterrows():
+                context_turns.append({
+                    "speaker": row["Speaker"],
+                    "utterance": row["Utterance"]
+                })
+
+            target_row = window_df.iloc[-1]
+            true_label = target_row["Emotion"]
+
+            structured_input_dict = {
+                "task": "Classify the emotion of the target utterance",
+                "emotion_options": VALID_EMOTIONS,
+                "context": context_turns,
+                "target_utterance": {
+                    "speaker": target_row["Speaker"],
+                    "utterance": target_row["Utterance"]
+                }
+            }
 
             user_msg = user_template.format(
-                context_text=formatted_context,
-                target_utterance=target_utterance
+                structured_input=json.dumps(structured_input_dict, indent=2)
             )
 
             messages = [
@@ -216,7 +215,7 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
             "window_size": meta["window_size"],
             "prediction": prediction,
             "label": meta["label"],
-            "prompt_type": "zero_shot",
+            "prompt_type": "structured_zero_shot",
             "model": "qwen2.5-7b-instruct-awq",
             "reasoning": reasoning,
             "accuracy": accuracy,
@@ -235,7 +234,7 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
 def main():
     meld_df = prepare_meld_dataframe()
 
-    output_file = "results/qwen_zero_shot_results.csv"
+    output_file = "results/qwen_zero_shot_structured_results.csv"
     window_sizes = [1, 3, 5, 7, 9, 11]
 
     run_vllm_zero_shot(
