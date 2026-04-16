@@ -192,10 +192,8 @@ def run_experiment(dataset, client, max_samples=None):
             structured_input=json.dumps(structured_input, indent=2)
         )
 
-        print("Prompt example:")
-        pprint.pprint(full_prompt)
-
-
+        # print("Prompt example:")
+        # pprint.pprint(full_prompt)
 
         raw_pred = query_gemini(client, full_prompt)
         # print(f"Raw prediction: {raw_pred}")
@@ -254,8 +252,15 @@ def evaluate_by_window(results):
         acc = sum(1 for r in items if r["prediction"] == r["label"]) / len(items)
         print(f"Window {window_size}: {acc:.4f}")
 
+# def save_results(results, filename):
+#     df = pd.DataFrame(results)
+#     df.to_csv(filename, index=False)
+#     print(f"Saved {len(results)} rows to {filename}")
+
 def save_results(results, filename):
     df = pd.DataFrame(results)
+    df = df.sort_values(by=["dialogue_id", "window_size"])
+
     df.to_csv(filename, index=False)
     print(f"Saved {len(results)} rows to {filename}")
 
@@ -311,6 +316,7 @@ def run_experiment_parallel(dataset, client, max_workers=5):
         return {
             "dialogue_id": sample["dialogue_id"],
             "window_size": sample["window_size"],
+            "input_text": sample["input_text"],
             "prediction": prediction,
             "label": sample["label"].lower(),
             "prompt_type": "least_to_most_structured",
@@ -358,9 +364,9 @@ def main():
 
     # Run experiment (start small!)
     print("Running experiment...")
-    results = run_experiment(dataset, client, max_samples=1)
+    # results = run_experiment(dataset, client, max_samples=1)
     results_parallel = run_experiment_parallel(dataset[:10], client, max_workers=5)
-    # save_results(results, RESULTS_FILE)
+    save_results(results_parallel, RESULTS_FILE)
 
 
     # #Evaluation Move to a different file

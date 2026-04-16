@@ -8,6 +8,7 @@ from collections import defaultdict
 import os
 from datetime import datetime
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 
@@ -199,6 +200,7 @@ def run_experiment(dataset, client, max_samples=None):
         results.append({
             "dialogue_id": sample["dialogue_id"],
             "window_size": sample["window_size"],
+            "input_text": sample["input_text"],
             "prediction": prediction,
             "label": sample["label"].lower(),
             "prompt_type": "least_to_most",
@@ -211,6 +213,45 @@ def run_experiment(dataset, client, max_samples=None):
 
         if i % 10 == 0:
             print(f"Processed {i} samples")
+
+    return results
+
+def run_experiment_parallel(dataset, client, max_workers=5):
+    results = []
+
+    def process_sample(sample):
+        dialogue_text = sample["input_text"]
+
+        full_prompt = prompt.format(dialogue_here=dialogue_text)
+
+        raw_pred = query_gemini(client, full_prompt)
+        prediction, reasoning = parse_llm_output(raw_pred)
+
+        return {
+            "dialogue_id": sample["dialogue_id"],
+            "window_size": sample["window_size"],
+            "input_text": sample["input_text"],
+            "prediction": prediction,
+            "label": sample["label"].lower(),
+            "prompt_type": "least_to_most_structured",
+            "model": "gemini",
+            "reasoning": reasoning,
+            "accuracy": prediction == sample["label"],
+            "prompt_word_count": len(full_prompt.split()),
+            "prompt_character_count": len(full_prompt),
+        }
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [executor.submit(process_sample, sample) for sample in dataset]
+
+        for i, future in enumerate(as_completed(futures)):
+            try:
+                results.append(future.result())
+            except Exception as e:
+                print("Error in thread:", e)
+
+            if i % 10 == 0:
+                print(f"Processed {i} samples")
 
     return results
 
@@ -284,13 +325,12 @@ if __name__ == "__main__":
     print(f"Total API calls to be made: {len(dataset)}")
     pprint.pprint(emotion_count)
 
-     
-
-
+    
     # Run experiment (start small!)
-    # print("Running experiment...")
+    print("Running experiment...")
     # results = run_experiment(dataset, client)
-    # save_results(results, RESULTS_FILE)
+    results_parallel = run_experiment_parallel(dataset, client, max_workers=5)
+    save_results(results_parallel, RESULTS_FILE)
 
 
     # #Evaluation Move to a different file
