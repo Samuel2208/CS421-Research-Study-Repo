@@ -2,12 +2,10 @@ import pandas as pd
 from collections import defaultdict, Counter
 import re
 
-# ---------------- LOAD DATA ----------------
 df = pd.read_csv("./results/least_to_most_results.csv")
 
 VALID_EMOTIONS = ["neutral", "joy", "sadness", "anger", "fear", "disgust", "surprise"]
 
-# ---------------- CLEAN TEXT ----------------
 stop_words = {
     "the","is","and","a","to","of","in","that","it","on","for",
     "with","as","was","but","be","at","by","an","this","are",
@@ -35,16 +33,13 @@ def get_last_utterance(row):
     last_line = row["input_text"].split("\n")[-1]
     return clean_utterance(last_line)
 
-# ---------------- FILTER VALID DATA ----------------
 df = df[df["prediction"] != "unknown"].copy()
 
-# ---------------- TRAIN / TEST SPLIT ----------------
 train_df = df.sample(frac=0.7, random_state=42)
 test_df = df.drop(train_df.index)
 
 print(f"Train size: {len(train_df)}, Test size: {len(test_df)}")
 
-# ---------------- BUILD LEXICONS ----------------
 true_lexicon = defaultdict(Counter)
 pred_lexicon = defaultdict(Counter)
 
@@ -62,7 +57,6 @@ for _, row in train_df.iterrows():
         true_lexicon[true_label][w] += 1
         pred_lexicon[pred_label][w] += 1
 
-# ---------------- PRINT TOP WORDS ----------------
 def print_top_words(lexicon, title):
     print(f"\n===== {title} =====")
     for emotion in VALID_EMOTIONS:
@@ -77,7 +71,6 @@ def print_top_words(lexicon, title):
 print_top_words(true_lexicon, "TRUE LEXICON")
 print_top_words(pred_lexicon, "PREDICTED LEXICON")
 
-# ---------------- WORD COMPARISON ----------------
 print("\n===== WORD COMPARISON =====")
 
 test_words = ["sorry", "no", "what", "love", "hate"]
@@ -87,7 +80,6 @@ for word in test_words:
     print("True:", {e: true_lexicon[e][word] for e in VALID_EMOTIONS})
     print("Pred:", {e: pred_lexicon[e][word] for e in VALID_EMOTIONS})
 
-# ---------------- LEXICON CLASSIFIER ----------------
 def lexicon_predict(words, lexicon):
     scores = defaultdict(int)
 
@@ -95,13 +87,12 @@ def lexicon_predict(words, lexicon):
         for emotion in lexicon:
             scores[emotion] += lexicon[emotion].get(w, 0)
 
-    # If all scores are zero → no signal
+    # If all scores are zero -> no signal
     if all(v == 0 for v in scores.values()):
         return "unknown"
 
     return max(scores, key=scores.get)
 
-# ---------------- EVALUATE ON TEST SET ----------------
 correct = 0
 total = 0
 unknown_count = 0
@@ -124,7 +115,6 @@ for _, row in test_df.iterrows():
 
     total += 1
 
-# ---------------- RESULTS ----------------
 if total > 0:
     accuracy = correct / total
     unknown_rate = unknown_count / total
