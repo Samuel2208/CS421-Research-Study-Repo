@@ -1,269 +1,827 @@
 dialogue_id,target_emotion,target_utterance
-0,neutral,"All right then, we'll have a definite answer for you on Monday, but I think I can say with some confidence, you'll fit in well here."
-2,neutral,Is it the Italian guy?
-4,sadness,"Listen, I'm ah, I'm sorry I've been so crazy and jealous and, it's just that I like you a lot, so..."
-6,anger,They didn't take any of my suggestions!
-9,neutral,"I'm hoping that when Bob doesn't show up, she will seek comfort in the open arms of the wry stranger at the next table."
+0,neutral,Absolutely. You can relax
+2,joy,"Um-mm, yeah right!"
+6,anger,"Or, call an ambulance."
+7,anger,"What?! What is with everybody? It's Thanksgiving, not...Truth-Day!"
+8,joy,Thank you. Thank you. Thank you! And
+9,anger,"Ok, pure evil , horny and alone . I've done this"
+11,joy,"Oh, do you need a hug? You don't have to bring me anything!"
 12,anger,Why did I have to start working out again? Damn you 15s!
-15,neutral,I started to realize that I was having feelings for someone else.
-20,neutral,"Yeah, that really calms me down."
-21,disgust,You have no idea how loud they are!
-26,sadness,"Man, this is gonna be kinda weird."
-30,fear,"Umm, but I think if you give me umm, one chance I can, I can change your mind."
-32,joy,You have to tell her!
-39,neutral,"Peel the onion. First of all, he's good looking."
-40,surprise,Hello? It's the deli again!
-41,neutral,Then y'haven't. You're burning your tomatoes.
-49,neutral,"Hey-hey-hey! So, how did it go with Dana? Any reason I should leave a block of time open say Thursday?"
+13,neutral,So much more.
+14,neutral,You don't think this is too fast.
+15,joy,"GO, GO, GO!"
+16,neutral,"Yeah, either that, or he has a really big cat."
+18,fear,"I know! Don't switch hands, okay?"
+22,neutral,"Breathe, breathe, breathe."
+23,surprise,"You see you can't tell which one is which either, dwha!!"
+24,fear,"What should I wear, now I'm all nervous."
+25,neutral,"No, I'm good."
+26,neutral,"No, we-we're gonna be like best friends, that's why it's gonna be weird."
+27,joy,"Okay, all right, all right, all right! Okay! Okay, here's something, here's something blue and new."
+28,sadness,"It's worth the pain. Y'know what, you know what? It's not."
+29,neutral,"Oh, that's not what you want..."
+31,neutral,"So umm, now do you have any of Matt Lauer's clothes here? Maybe? Just ones that haven't been cleaned yet?"
+33,neutral,We're just really¬Övery excited about this charity event that we have to go to.
+34,disgust,Hey lady! I don't care how much you want it! Okay?! I am
+35,joy,"Oh hey, don't thank me, thank yourself. You're the one who faced her fears and ultimately overcame them."
+37,disgust,And-and-and-and-and the toothpicks?
+38,surprise,Oh my God!
+39,anger,It does in mine!
+40,sadness,Oh come on!!
+41,surprise,"Of course, course one of 'em's Ma. What's the matter with you."
+42,surprise,"Hello, I am Guru Saj--Whoa!! That's supposed to be a duck right? ¬ëCause otherwise, this is waaay out of my league."
+45,neutral,"So, you're just Bing?"
+46,joy,No they didn't!
+47,neutral,"Well, we are great guys."
+50,neutral,"Hey, how you doin'?"
+51,anger,"You want me, you want me to quit my job so you can feel like you have a girlfriend?"
 52,neutral,"No, but let's come back to that later!"
-54,neutral,I'm not even scared to tell mom and dad.
-64,anger,Does calling it not mean anything anymore?!
+53,joy,No! I came here to tell you something else. I came here to tell you I still love you.
+54,anger,No! Seriously! What's wrong with you?!
+55,neutral,"Uh, it was very nice meeting you."
+56,joy,"Oh! Some guy. Some guy. 'Hey Jill, I saw you with some guy last night. Yes, he was"
+57,fear,I'm not-I'm not-I'm not gay!
+58,neutral,I think I left a donut up here.
+61,joy,"Now get on out of here, you!"
+62,neutral,But this is eleven. It's almost twice as hard up here.
+63,sadness,So¬óIf you wear that you'll make mine less special.
+64,neutral,"We are going to have a legitimate member of the clergy! And when I say legitimate I mean, gay and in control of his saliva!"
+65,joy,"Oh Ross, you're so great. [she playfully rubs his head and gets up]"
 66,neutral,"No you're not, you're wondering which cushion it is."
-81,anger,This is so typical. I'm always the last one to know everything.
-89,disgust,They rushed into this thing so fast it's ridiculous!
-94,joy,"You can have your own office, and a raise! Effective tomorrow."
-95,neutral,"Umm, why don't you give"
-99,anger,Shrill?! The wedding is back on!
-109,neutral,Oh! And don't let me leave without getting the name of that carpet guy.
-111,neutral,I did it anyway.
-119,neutral,You've been counting wrong.
-122,neutral,"Well, I mean, are you sure you want to go out with her?"
+67,anger,"She moved in with a guy who was secretly married to her and he said he didn't love her, but he really did, and it just blew up!"
+69,anger,"Ok, you weren't there."
+70,anger,Good for you!!
+72,neutral,"All right, y'know what, she's gonna think that I'm handing you a credit card, but what I'm really gonna do is hand you a library card."
+74,anger,"Oh no-no-no-no, I meant Chandler."
+76,sadness,You think it looked amazing?
+77,joy,Hello baby girl.
+78,surprise,Oh my God! Why is he jumping on those women!
+79,neutral,"All right, don't waste it, I mean its still food."
+80,neutral,"Well, at the Christmas party him and Santa did some definitely gay stuff!"
+81,surprise,Looks like I was second to last.
+82,neutral,"Okay, I think I need to do some shopping."
+83,neutral,"I guess you wouldn't believe me if I said I was Kurt Douglas, huh?"
+84,sadness,"Oh, wait, Joshua! Joshua! Yeah, well, that oughta do it."
+85,neutral,"Well yeah, but then I remembered I started it and there was this pep rally and I was, I was on top of the pyramid but anyway¬óumm, what is this book about?"
+86,joy,"Oh, me too."
+87,joy,"What a beautiful story. Hey, I'm fine by the way."
+88,neutral,"Okay If you guys have microphones in there too, I didn't mean"
+89,joy,"I'm telling ya, you're gonna be dancing at my wedding before you're dancing at there's."
+90,surprise,What the hell is this?!
+91,anger,"What, did you actually thought it would make me feel better to give me stuff that I can't use for another two months?!"
+92,neutral,"All right, what's my next present?"
+93,surprise,What?! What?!! What is it?!
+94,joy,"Sophie, get in here!"
+95,neutral,"Oh, it's easy. Yeah, I-I can do it with anything. Watch uh, Grandma's chicken salad"
+97,anger,That almost hit me in the face.
+98,neutral,"Well, if the magician can open my beer with his but cheeks, then all right."
+99,neutral,I'll be right with you.
+101,surprise,"Well then, what is it?!"
+102,neutral,"He's good with rear things, bring him in too."
+103,joy,Oh that's great! I was hiking along the foothills of Mount Tibidaybo
+104,joy,Oh we-we didn't.
+106,fear,"Uh-oh, I feel another one coming."
+107,neutral,"We're sorry for the inconvenience, and hope you'll accept this- -"
+108,neutral,"Oh that's not important. The point is, I really¬óI think everything's gonna be okay."
+109,joy,I think somebody needs another lap dance.
+110,joy,Hey! How was sailing?
+111,disgust,"Young! You're a man-child okay?! Now go get changed because everybody's ready and please, oh please, keep my underwear!"
+112,disgust,"The big deal is I don't want naked, greasy strangers in my apartment when I want to kick back with a puzzle¬óbeer! Cold beer."
+113,neutral,"Okay, but if he asks, I'm not going to lie."
+114,joy,Oh-ho! I bet the British version is gooooood!
+115,surprise,Oh my God.
+116,sadness,"No. The one in Atlantic City, Dad loves the slots. He says he's gonna double the college money my Grandma left me."
+117,neutral,"No it's not too soon, I had lunch at a eleven."
+118,joy,"I'm sorry you lost your money, but I won it fair and square."
+120,neutral,Weekend at Bernie's
+122,neutral,"Ho-ho, I will."
+123,anger,Oh oh oh! I RESPECTFULLY DISAGREE!!
 124,joy,"Hey, you guys! Look what I found in the giiiiiiift shop. Get up! Get up! Get up!"
-126,neutral,"See, this is a"
-130,surprise,Really? ¬ëCause I could kinda use the money.
-138,anger,"Well, I wouldn't know because I got so freaked out that I hung up the phone."
-145,disgust,"This morning, I caught him looking into our apartment."
-146,sadness,"She dumped me, I mean I totally trusted her and then one day it was ¬ëOkay, bye Pheebs' gone."
+125,surprise,That's Carol with your son!
+126,anger,Shut up! This place is a hole!
+127,disgust,"You're going to a clinic, and a pyjama store!"
+128,joy,Oh God Phoebe!! Oh that's it! That's it! Right there! Oh! Ooooh-oooh-ooooh
+130,joy,"Sure, no problem. Ooh¬óHey, donuts!"
+131,neutral,Yeah. You okay?
+132,neutral,"Oh. Okay, bye."
+133,fear,"Come on, pick up, pick up!"
+135,neutral,He wants to talk to you again.
+136,neutral,"So to sum up, I'm Professor Geller."
+137,neutral,That is how God intended it.
+138,surprise,Me and Chandler?!
+139,joy,Come on! Tests make us all better learners! Oh yeah! We should have essay questions!!
+140,surprise,Somebody went to college. Wow. What is it? I'm sorry.
+141,neutral,What does a guy have to
+143,neutral,"When they're hungry enough, they'll come in."
+144,joy,"Yeah, for you!"
+145,surprise,What are you looking at me for? I didn't know that.
+146,sadness,"Y'know what the saddest part is, when we were playing together, that was like the most fun I've ever had in like all my lives."
 147,anger,"Ok, ok, now what is wrong with my"
-153,anger,You don't play the oboe!
-155,neutral,"Sure! Uh, let me get it for ya."
-160,joy,"Oh well that?s great, so I guess this is ah, this is good bye then. Huh? Good bye."
-167,neutral,"I Really Loved When We Were Singing Partners, And I Shouldn't Have Left You That Way."
-168,anger,"Ross, I am a human doodle!!"
+148,sadness,"Aw, don't do that"
+149,joy,Absolutely. I love the way you kiss.
+150,sadness,Y'know this is actually not a great time for me.
+151,neutral,And as my wife I think you should grant me this favor.
+152,sadness,"I know you probably think that this is all about what I said the other day about you making love with your socks on, but it isn't... it isn't, it's about me, and I ju- Hi, machine cut me off again... anyway..."
+153,anger,I could play the oboe!
+157,joy,"Oh, you're so wonderful."
+158,neutral,"Hello sir, you know Monica."
+159,neutral,Don't spoil it.
+160,neutral,"Yeah, you bet."
+161,surprise,You don't trust him?
+164,joy,"Okay... okay, maybe I will..."
+165,joy,That all the pieces of my life are falling right into place!
+166,neutral,I just saw Janice.
+167,neutral,"Oh no, one of those ¬ëlook for the hidden meaning' songs."
+168,neutral,"Okay, there was"
+169,neutral,"No, it's okay. Some-some kid asked me to pick it up for him, but I don't"
 170,neutral,"It's okay. I suppose it could happen to anyone, not anyone I know, but... By the way I can still see it."
+172,neutral,"David, I'm pretending to"
 175,sadness,Yes. It's very difficult to appreciate a Thanksgiving dinner once you've seen it in reverse.
-179,neutral,You're not gonna speed anymore right?
-180,joy,Look how nervous he gets! We haven't slept together in years!
-182,neutral,She was kinda stupid.
-183,neutral,"I, I remember when you were just, like, King Friday in Mr. Roger's Ice is Nice."
-184,surprise,You are having a party tonight??
-185,surprise,What did you just say?
-189,surprise,He hooked up! He hooked up with someone.
+176,joy,"Ooh, look-look-look-look-look! I got Monica naked!"
+179,anger,I can handle the stick!!
+180,fear,That's funny. Does it-does it hurt? Does the labor hurt?
+181,neutral,I don't think so. Hello? When you get in there
+182,neutral,That is the new plan.
+183,joy,"Um, the matador. Ole, ha ha ha."
+184,anger,"OH! And the year before that, when you set up that nighttime tour of that button factory?"
+185,surprise,Oh.... my God.
+186,surprise,Okay. Oh! Oh no.
+187,joy,Thanks! You too.
+189,neutral,Ross you left you scarf in¬Ö Hey you guys.
+190,neutral,We'll just see.
+191,neutral,"Hey uh, would you two girls like to go for a drink?"
+193,neutral,You just got to get out of that jingle head sweetie.
+194,joy,"That's okay. All right, I'm gonna play song that's really, really sad. It's called Magician Box Mix Up."
+195,joy,"Honey, he's about to go hit on Isabella Rosselini. I'm just sorry we don't got popcorn."
 199,neutral,"Ahh, to be 13 again."
-202,neutral,"You're right, you're right I shouldn't freak out."
-207,joy,"Eh, he said, thank you very much, he thinks you look very pretty tonight, your hair, golden like the sun."
-208,joy,"Okay, bye! Oh my God!!"
-211,fear,"You tell her Jack, I can't do it."
+200,joy,I like it!
+201,joy,That! Let's talk about that.
+202,anger,"Phoebe, would you take a look at this mess!!!!"
+203,neutral,A dreamless sleep.
+204,sadness,"I take the uh dead flowers out of the vase... Oh, and, um, sometimes Artelle lets me put the little chocolate blobbies on the cookies."
+205,joy,"Oh, they're firemen guys."
+207,neutral,That would be great. Thank you.
+208,surprise,They're brother and sister!!!
+211,neutral,"We have it. Only now, we call it the beach house."
+212,surprise,Ow-ow-ow-ow! Oh my God!!!
+215,joy,Yes! Santa's coming!
+216,neutral,"But hey, it's not just me, I mean the scientists and the tour guides"
 218,neutral,"Yeah, when we're in the audience he doesn't talk to us, but he does wave."
-219,sadness,"And of course, the Indians."
-222,joy,They keep throwing these sexual harassment cases at me and I keep knocking them out of the park!
-223,neutral,"Y'know what, champ? I think I'll pass."
+219,anger,"Look umm, of all people, you do not want me to tell this story!"
+221,fear,They-they-they can smell fear.
+222,disgust,"Oh yeah. Boy, urine cuts"
+223,neutral,What's your point?
+224,joy,Yeah that would be great! Let me make sure I'm not doing anything Tuesday.
 225,neutral,So I'm gonna take off then!
-226,neutral,"Yeah, okay, at ease solider!"
-231,neutral,"Look, I cannot do this right now, okay, I've got a deadline, would you just go home, I'll talk to you later."
-236,neutral,Oh yeah? If you're gonna make me choose between you and the hat? I choose the hat.
-241,disgust,"Oh, ain't that nice? The three of you trying on slutty lingerie together."
-245,disgust,"No, a guy would be saying, ""I'm never gonna get to sleep with anyone else."""
-249,neutral,And this is what we do!
-252,neutral,Otherwise it's just cruel.
+229,neutral,"And, uh, I don't know if you got any of that, but I would really like a copy of the tape."
+230,joy,I'm really glad we came. You're so pretty. I love you.
+231,neutral,"Actually, that's our three hole punch."
+233,surprise,"What happened to Santa, Holiday Armadillo?"
+234,anger,"Oh, you really want to talk about getting people to like you huh, funny man?"
+235,neutral,"Now you do that, you're on TV."
+236,anger,"Okay, wait. All right, that's it, okay, I'm out of here. I am not going to be embarrassed anymore!"
+239,joy,Ba dum bumb cheshhh!
+240,neutral,"Oh, now... tomorrow do you guys wanna share a cab to the airport or should Mike and I just meet you there."
+241,disgust,"Why would you ruin it, who was that hurtin'?"
+242,sadness,"You-you-you didn't know that. Well, I guess my work here is done!"
+243,surprise,"Ross! Excuse me, pardon me, excuse me...."
+244,neutral,"So I though about what you said and I though about what he said and, well, his way I get to have sex tonight so."
+245,neutral,You'll have a last kiss.
+246,neutral,"Okay. Um¬ÖBut¬óOkay, yes Ross and I used to date. And yes we are gonna have a baby. But we are"
+247,joy,Not now! These are my Thanksgiving pants!
+248,anger,Chandler! Phoebe's hogging the game!
+249,joy,We can eat!
+252,neutral,"I mean, San Diego's all well and good, but if you give him to me, I'll start him off against a blind rabbit and give you twenty percent of the gains."
 253,neutral,"Oh! Well, you know what? It probably is."
-255,anger,"You know, you shouldn't even be here, it's a school night."
-256,anger,"Oh God, get out!"
+254,anger,Damn you Monica Geller hyphen Bing!
+258,joy,Fine! Maybe I will too!
 260,anger,"Well, are any of those people here?!"
-264,neutral,"Uh, it's an exact replica of Apollo 8."
-274,surprise,You slept with the stripper?
-275,anger,"Yes! Yes! Yes, you do want to know! This is unbelievable!"
-279,joy,"Oh Maria. You can't say no to her, she's like this lycra spandex covered gym¬Ötreat."
-285,neutral,"Oh uh-uh yeah, I think that‚Ä¶"
-287,neutral,Hi. She said yes.
-295,anger,"Okay, well my girl from the other night was special. She was a scientist too!"
-296,joy,"Okay, that's great. No, I'm- Oh."
-300,neutral,There is no father.
-301,disgust,"What are you talking about?! Mindy, the guy is the devil! He's Satan in a smock!"
-305,neutral,Relax. It's just Issac's D.J.-ing at the Philly. You should come.
-307,neutral,I am a good kisser.
-311,neutral,"And also, we don't know what to do with this."
-312,neutral,"I, I don't know."
+261,sadness,"All right, stop it. Now you're just doing it to freak me out."
+262,anger,"All right. Well, there you go. Stop it, stop it, stop it."
+263,joy,"I did, but that was really fun."
+264,neutral,"Because it says ""Captain Ross"" on the side and ""I hate Monica"" on the bottom."
+265,sadness,"I should just go on to happier things, okay? Umm, why don't you tell about your lovely wedding?"
+266,neutral,"Well actually uh, there was something we wanted to tell you about the wedding."
+267,neutral,"Um, it's going to be a small ceremony."
+268,neutral,We're not even sure why we're having it.
+269,surprise,"Oh¬Öwait¬Öyou two think of me as family?! Oh, I have to ask you something now and be honest; do you want me to sing"
+270,neutral,"Well, I brought the next best thing."
+272,anger,No-No! You need your sleep. Night-night! Shh!
+273,surprise,"Oh, I'm sorry. You wanna bite?"
+275,anger,I'm not listening to you!
+276,neutral,"All right, what are we havin'?"
+277,neutral,"Well, I said that I"
+279,fear,"Oh no, you'll have to come."
+280,neutral,Anybody gonna eat that?
+282,joy,And! Y'know what Jake says? That women's underwear is actually more comfortable. And he loves the way the silk feels against his skin.
+284,neutral,I don't know. A cowboy theme?
+285,neutral,"Y‚Äôknow, I don‚Äôt really know her."
+286,neutral,"Well, I have an appointment to see Dr. Robert Pillman, career counselor a-gogo. I added the ""a-gogo."""
+287,joy,"Yes! Way to go, man! Still got the egg, huh?"
+288,joy,"Oh-ho, and mine!"
+292,neutral,I got nothing.
+295,anger,"What are you still doin' here?! I told you, lobster ravioli!"
+296,neutral,"So, how ya doin?"
+299,neutral,I've got five bucks says you can't.
+301,sadness,And I hope Barry doesn't kill you and eat you in Aruba.
+302,neutral,"Okay, listen Robert..."
+303,neutral,"No, that is what the game is."
+304,anger,"Build the unit Cinderelly, lay the tile Cinderelly."
+305,joy,"All right, rock on."
+306,neutral,I guess it all started when Rachel got this new job.
+307,neutral,"Then you two can, can sneak into the cockpit, and things will start to heat up, and then a stewardess comes in¬Ö I've been watching too much porn."
+308,neutral,"Umm, okay I would like to talk to you about your toner needs."
+310,sadness,"No, but they stuck me in personal shopping. Which is just a"
+311,neutral,"Oh yeah, I definitely know her."
+312,sadness,Wanna play strip poker for practice?
+313,joy,It still doesn't work.
 314,neutral,"Wh¬óno, but y'know who did stop in here looking for ya, Tennille."
-317,neutral,"Phoebe he's right, that is the rule."
-320,neutral,"Or with the other two women, in the morning y'know I was just lying there and I couldn't wait to just go hang out with my friends, but with you I always y'know with a friend."
+315,joy,"Hey, you guys! Hey, Ross, quick question for ya. Are you ready to party?"
+316,neutral,"What is the name of your roommate who is very, very sorry and would do anything"
+317,anger,"Y'know boyfriends and girlfriends come and go, but this is for life!"
+319,disgust,My parents will be so happy.
 321,disgust,Oh no! Oh no! Oh no! Oh no! No! No! No!
-336,neutral,"So, how many have you sold so far?"
-337,neutral,"And then you said, ""Why do they call it a check?"
-338,neutral,"Well, we were going to do that after¬óI mean umm, next."
-342,neutral,You-you must choose Mr. Bing.
-344,joy,"Okay, I-I-I'll be right over."
+322,surprise,"Either that or she's just the best, most expensive date I ever had."
+323,sadness,Would you look at them. Am I ever gonna find a boyfriend again? I gonna die an old maid.
+324,neutral,"Y'know what, hold on, let me go get Chandler."
+325,neutral,"Uh Mr. Morse, can I speak to you for a moment?"
+326,neutral,"Ah, it's still not the time."
+327,neutral,"Okay, there's a"
+328,sadness,"I-I can't believe Jill's gone. I can't help it, I opened a gate."
+329,neutral,Then keep running.
+332,neutral,How¬ÖHow small are your feet?
+333,neutral,"Only the people in the white coats sit over there, and only the people in the blue blazers sit here."
+334,neutral,"No, I really did forget my purse."
+335,neutral,I wonder if its time for you to rejoin our team at the museum?
+336,joy,Me! On my computer.
+337,neutral,In-in three minutes.
+338,neutral,"You'll wear that. We'll be eating, and of course, you'll be wearing that."
+339,joy,Lean lean lean
+340,neutral,Let me see that.
+341,neutral,This one right here.
+342,neutral,I don't think the contestants are supposed to speak to each other.
+343,surprise,"Hello? Oh, hi Ross! See? Other people call me!"
+344,disgust,"Tell me about it, huh? Oh no-no-no, I'm not with her, she's just Monica! Ewwuck!"
+345,joy,Gone! I mean its amazing Pheebs. I feel so free and so graceful. Hey! Look out for the horse! Sorry!
+346,neutral,"Oh right, your allergies. All her, she hates you."
+348,neutral,"No, no, it was just our parents and 1 or 2 friends. It was a small wedding."
 349,surprise,Oh no!You guys aren't supposed to get divorced for 7 years!
-356,surprise,What is this? Fruit?
-361,joy,"Ooh-hoo. Very hot, very sexy. But ah, y'know she's too international, y'know she's never gonna be around."
-374,neutral,We don't care about where we stay.
-388,surprise,"Look at that, every inch of this stuff is glued down."
-392,neutral,"No, I don't think so."
-398,disgust,Oh he's like a...
-401,sadness,"Phoebe. Phoebe. Phoebe, yeah. She named me after you I guess."
-410,neutral,"No, no, no... why, because it might get weird for everyone else?"
-412,surprise,"Ahh, Gepeto, $5,000 dollars? Are you insane?"
-418,neutral,"I'm a doctor Cliff, not a mathematician."
-424,neutral,"And, at the end of the date, the other time, she-she said something that was¬óif she was kidding was very funny."
-431,anger,I just came from the park!
-434,neutral,"Hey, I thought I cheered you up."
-438,joy,"So um, who was she?"
-445,neutral,I don't believe this!!
-446,neutral,"So ah, we on for tomorrow?"
+350,neutral,I know. Thanks.
+351,joy,"I'm sorry. Dr. Green, Mona. Mona, Dr. Green."
+353,neutral,"Hey, Joey. So did you hear about the new guy?"
+354,neutral,You never know.
+355,neutral,That oughta do it.
+356,neutral,This will just be my batch.
+357,surprise,What? Mine aren't tinted.
+358,sadness,"Well tell that to them. Oh! You can't, their dead."
+359,sadness,Does that mean the same thing in England as it does in America?
+360,neutral,"You know, the guys are probably having a great time."
+361,neutral,"Yeah, ¬ëcause that's why you won't get Isabella Rosselini, geography."
+362,surprise,My God. Okay. Ha-ha-ha beat ya! Sucker!
+363,neutral,"No, honey, they're not, but don't worry, because we are going to find them, and until we do, we are all here for you, ok?"
+365,anger,There's no Rachel!
+366,neutral,"Oh, I'd like that."
+367,surprise,Don't get to excited because that's not gonna happen unless you get¬óNo way!
+368,joy,Presenting Sarah Tuttle's Private Very Special Spacecamp!
+370,surprise,Oh no! An asteroid!
+372,neutral,Intense and creepy.
+373,joy,"Good, and hey! My treat. But that's only because you're not eating anything, right?"
+374,neutral,We need the stuff.
+375,fear,I did not mean to touch that¬óI mean
+376,fear,Wow! Nice! Manly and also kind of a slut.
+377,anger,Move it! Move it! Move it!! Hey!!! I'm the teacher!!
+378,neutral,"So Phoebe, you ah, sounded kinda serious on the phone, is ah, is anything wrong?"
+381,neutral,Yeah. I can just go home and get back at him by myself.
+382,joy,My little sister Dina!
+383,surprise,Oww crushing bones!
+384,joy,"Well, maybe we will. Oh!"
+385,neutral,You have chalk on your face.
+387,sadness,"Ross, Joey. Joey, Ross."
+388,anger,"You know that's nice, y'know we could put it back there after the surgeons remove it from your colon!"
+389,joy,I'm coming already!!
+390,surprise,What the heck is that?
+392,joy,"All right, the seven of us miss you."
+394,neutral,"We're sorry honey, but we just assumed if you got married after you turned 30 you'd pay for it yourself."
+396,disgust,Because it's weird!
+397,neutral,Warm milk and
+400,sadness,"Uh, I just liked it better before it was better..."
+401,surprise,"Uh-huh. Wow! Well, look! There's Frank."
+402,neutral,Let's go watch it at your place.
+403,neutral,"Nah, Monica's watching some cooking show. Come on, I don't want to miss when they were skinny."
+404,neutral,Not so much.
+405,neutral,Better make it a spaceship so that you can get back to your
+407,neutral,Welcome back to our fall telethon. Now if you've been enjoying the performance of
+408,neutral,"Yeah. Yeah, that's what you need a good¬Öpill."
+409,surprise,"They were so ornate and beautiful, I mean look at that!"
+411,neutral,"Yeah, she's fired."
+412,surprise,Oh. What do you do?
+413,neutral,"Nope. Op, wait! There he goes."
+415,surprise,"Oh, I'm sorry. I forgot you had that whole Rachel thing."
+416,disgust,"OK, is there a mute button on this woman?"
+417,neutral,More than jewelry.
+419,neutral,"Chandler Muriel Bing. Boy, your parents never gave you a chance did they?"
+420,neutral,Didn't your dad used to call you Pumpkin?
+421,neutral,Okay what's up?
+422,neutral,Absolutely! Just fight all your natural instincts and you'll be great.
+425,surprise,"There was a pregnancy test in the garbage, and it's positive. Monica's pregnant. So I guess she won't be totally alone."
+426,sadness,"I'm sorry, I thought I could do it and I can't!"
+427,neutral,"Hey, you wanna do Joey a favor, maybe you go out with Joey."
+428,sadness,"So anyway, Rachel, I'm sorry you can't stay, but the rest of us have a"
+429,neutral,"Hey, it's Janice."
+431,disgust,Makes me wanna puke!
+432,neutral,Is she in there?
+433,neutral,Oh it's all right.
+436,surprise,What are they doing out here? The coast's all the way over there.
+437,neutral,Dude! What are yo¬óyou trying to kill me?!
+438,neutral,"Well, you seem fine."
+439,neutral,"Yeah! Hey, do Monica and Rachel work there?"
+440,neutral,"Hey, Rachel, isn't that stuff almost pure..."
+441,neutral,It's awfully pink.
+442,surprise,He knew we were trying to get rid of him. He knew! You think we could get a bathtub in our kitchen?
+443,surprise,"Um, Rachel I'm really sorry. That's okay, do you wanna get back together? Yeah, okay. Did anyone else hear that?!"
+444,neutral,"Yeah, they're not so bad."
+445,sadness,"Yes. Yes, he says I'm damaged goods."
+447,joy,"And then, and then, you turn to me and say, ¬ìNah, let's just hang out at your place.¬î Well, that was a nice move dumb ass."
 448,neutral,"Yeah, we should get a move on if we wanna make those dinner reservations."
-449,joy,Oh God you're right.
-450,joy,"I mean I'm-I'm crazy about Pete, and I know that we want the same things, and when I thought about saying yes, it made me really happy."
-455,sadness,"Um, ok, uh, oh god, um, when you and uh Ross first started going out, it was really hard for me, um, for many reasons, which I'm not gonna bore you with now, but um, I just, I see how happy he is, you know, and how good you guys are together, and um, Monica's always saying how nice you are, and god I hate it when she's right."
+450,neutral,So¬Ö It's really just about the math.
+451,anger,"Well, this is my sickness!"
+452,neutral,"Yeah well that's because uh¬ÖI stayed in my room. Yeah, you don't want to look in my hamper."
+453,surprise,Wait! Wait! Maybe she's a hooker
+454,anger,Fine! Then you tell Roger because he was really looking forward to this!
+455,disgust,Bye. What a manipulative bitch.
 456,anger,It was the ring!
-457,neutral,"All right Miss Green, everything looks fine... Yep, I think we're starting to see some real progress here."
+457,fear,"I'm twelve, I'm not stupid."
+458,surprise,Oh my God! What does
 459,anger,"A small puff of air, now come on!"
-463,neutral,Yeah and we'll drop it off downstairs so that we're not tempted.
-466,anger,"Oh yeah? Well, I'm rubber, you're glue, whatever¬ó¬ócan't do it. Listen, uh- gimme back my puck."
-474,joy,"No, what did, that was really sweet."
+460,joy,"No-no, it'll be fun! We can come back and we can haunt these guys!"
+461,neutral,"You've have lipstick right here . That's okay, it's mine, we just kissed."
+462,neutral,Power saw kinda got away from me there.
+463,neutral,"Momma's Little Bakery, Chicago, Illinois."
+464,anger,All you had to do was buy the card!
+465,surprise,"Oh! ...Hello, dear."
+467,neutral,I'm gonna go get one of those job things.
+468,surprise,"Phoebe, Sandra's mad at you too. It-it doesn't bother you?"
+469,joy,"Julie's cervix is dilated a seven centimeters, that's about four fingers. The doctor let me feel it myself."
+470,neutral,Have you felt Rachel's cervix Ross?
+472,fear,No Ross! Ross! Ross! My child has no father!
+475,neutral,I clunked your heads together!
 476,sadness,"Ohh, the-the Foster puppets!"
-477,neutral,Hey! Which one's my turkey burger?
-481,neutral,"I don't know, what were the names I just said?"
-482,surprise,There's a reset button?!
-486,fear,"When I had insurance I could get hit by a bus or catch on fire, y'know?"
-493,neutral,"Oh, we have some"
-503,anger,"Nobody move! Okay, you look that way; I'll look this way!"
+478,joy,The Mr. Bowmont's here!!!
+480,anger,He is so weird.
+481,surprise,What the hell are you cooking!
+483,surprise,"Yeah, is Sidney there? Oh, this is? Sidney's a woman."
+484,neutral,Any minute now.
+485,joy,"Hey, this- Heyy..."
+486,joy,look both ways before you cross the street.
+487,surprise,I can't believe Phoebe's gonna have her babies!
+489,neutral,So how'd it go?
+491,sadness,"You had a rough day, huh.. c'mere."
+492,neutral,Let's dry 'em again.
+493,anger,No you don't!
+494,neutral,"Okay, yeah. Triple A can pick us up."
+495,anger,Then why are you answering? Do you at least know what route we're on?
+496,neutral,So the going for help went well?
+497,sadness,"I'm not wrong! I wish I was. I'm sorry. Bet that barium enema doesn't sound so bad now, huh?"
+499,neutral,"Yeah uh, what am I gonna do?"
+501,neutral,How you doin'?
+502,joy,So does it really hurt as bad as they say?
+503,neutral,I think so too.
+504,anger,Cut me a real piece!
+505,neutral,"Oh, I'm sorry. I'm so rude. Does anyone want to come to the movies?"
 506,sadness,Then how come it is?
-508,surprise,"Oh, what did I say?"
-509,anger,And this is not the only hospital in this city and we have no problem to¬óWhoa!
-524,anger,"You keep the old ones in the back, that is so ageist."
-530,anger,"Otherwise, you're just mean!"
-531,sadness,"Obviously, I screwed up."
-532,neutral,Did Ross tell you not to let me go over there?
-536,neutral,I never let her eat.
-541,neutral,"Seriously, our sex life¬Ö I was thinking, maybe I don't know, we could try some-some new things."
-546,neutral,"Let's get started. Five, six, a-five six seven eight..."
-553,neutral,"Yeah, well you'd be better if you just loosened your hips a little."
-554,disgust,He's taking off her coat!
-561,disgust,"Oh my god, what were you thinking?"
+508,anger,"No! No! I-I can do it one more time! See? Look! Hmm, noodle soup. Damnit!"
+509,neutral,"Yeah, it couldn't hurt to look."
+510,surprise,"Wow, uh, anything else I should know?"
+511,sadness,"Well, I kind of... I kind of lost him."
+514,neutral,"Well, here's your phone doctor."
+515,neutral,"I don't know, Chandler is supposed to be passin' ¬ëem around..."
+516,sadness,"Okay, I'm sorry. I think I can walk the rest of the way now. Just-just give me my boots."
+517,joy,"Yeah, say my name. Say it! And now I'm going to cover you back up, and umm we're never doing this again."
+518,neutral,"Well, that was ah..."
+519,joy,"Nooo! No, that's not true. No, best time ever! Yeah, you rocked my world!"
+520,neutral,It's just my knitting that's all! Yes! I knit this. I'm very good.
+522,joy,"Please, don't play the music. Just uh one more."
+523,joy,"More coffee over here, please!"
+525,neutral,Yeah. I think you have to draw him out. And then- when you do- he's a preppy animal.
+526,neutral,We're just gonna be friends.
+527,disgust,I know. Use it.
+528,anger,Yeah. Oh I just wish we could not be married for a little bit! Y'know I just wish we could be like on a break!
+530,sadness,"Y'know I wanted to tell you yesterday, but I just, I kinda felt all floopy, and..."
+531,surprise,"Well, hello Rachel!"
+532,neutral,Fine ... mediocre porn
+533,neutral,"Okay. Uh, well can we, can we get you anything Mr. Zelner? Maybe some chocolates?"
+535,neutral,"I told you, we're adding new operators all the time. Could we concentrate on my training?"
+537,neutral,"Well, I was hoping after tonight that maybe I could you know"
+538,disgust,"You bought your sheets at a flea market? Ross come on, you gotta loosen the purse strings a little."
+539,sadness,So hot I cried myself to sleep last night.
+540,sadness,"I know, but, I made a huge mistake. I never should have broken up with her. Will you help me? Please?"
+541,joy,I love that idea!
+543,surprise,"Oh my gosh, Joshua!"
+544,neutral,Okay. Every time.
+546,disgust,Great. It's gym class all over again.
+547,joy,"Ooh, and it's so nice having this little sink here..."
+548,anger,"Walls are pretty thin, guys!"
+549,joy,"We already got the results back on that on, and they're not good."
+550,neutral,Hey! How's it goin'?
+551,neutral,That doesn't lock does it?
+553,anger,"Really, y'think so? I don't.."
+554,disgust,"Oh, this is just terrible."
+555,anger,"Okay, break-up's still on!"
+556,surprise,"My son? Pretty serious. Oh hey Katie! What uh, what are you doing here?"
+557,anger,Horny bitch. No! You're a horny bitch! Noooo! You're the horny bitch! No! You're a horny bitch!
+558,sadness,"Oh, between you telling him that I wanted to have a fling and me putting out on the first date¬óoh, he's so gonna get the wrong idea."
+559,neutral,"All of a sudden, the phone starts to ring."
+560,joy,Here we go! Here we go! Here we go! How you doin'?
+561,neutral,"Yeah. I'm thinking, if we put our heads together, between the two of us, we can break them up."
+563,joy,Oh! Thank you! Thank you! Thank you! Yes! Thank you!
+564,surprise,Wow! If only more people knew.
+565,joy,"Oh! Okay! You, Mister Right Place at the Right Time, call me!"
+566,joy,I want that place so much!!
+567,sadness,I was so sure that was gonna work!
 568,anger,Okay but what about y'know my pinchable butt and my bulging biceps¬óShe knows!
-571,disgust,"And yet, we're still poking him."
-572,neutral,"No-no, I'm¬ÖI'm sure no one was looking. Just want some privacy."
-590,anger,"No it's¬Ö Uh, my ex-wife Whitney is out there. I cannot deal with her right now. That woman is crazy!"
-592,neutral,So are you actually gonna see her again?
-596,fear,"He's got something plastic lodged in his throat, we've got to go to the hospital."
-604,neutral,"Absolutely, oh I promise. Tell her what?"
+569,surprise,Oh my God!
+570,neutral,"Okay, y'know what uh, actually, that's great. That helps a lot. Thanks."
+571,anger,"Hey, that's never gonna make it all the way over here, buddy!"
+572,anger,Don't you talk to my husband like that you stupid bastard!
+573,anger,"Y'know what? I can easily get out of this, but there is a chance you can get very, very hurt!"
+574,sadness,We're so stupid! Do you know what's going on in there? They're trying to take Joey!
+575,neutral,"Now, what exactly is in a cobb salad?"
+576,anger,What kind of scary-ass clowns came to your birthday?
+578,joy,"Well, I'm going to go into my new apartment now. Ehh!"
+579,joy,"Oh, hey guys!"
+580,neutral,"Yes, if the presents are hidden south for the winter."
+581,neutral,Or we could just follow your clever jokes ¬ñ any ideas?
+582,neutral,Didn't think so!
+584,fear,Just hear me out!
+585,sadness,"No, I can't get it out."
+589,sadness,I really wished they'd care just a little bit though.
+590,neutral,"Look, I don't think so Pheebs. All right, I'll do it. But just because you're a friend."
+591,neutral,"All right. Uhh, international."
+593,disgust,"Hey buddy, this is a family place, put the mouse back in the house."
+594,joy,I'm back baby! Ha-ha-ha!
+595,fear,"This doesn't mean anything, does it?"
+596,anger,Hey! It's Porsche!!
+598,neutral,I gotta go make a fake Ben.
+600,joy,And there's daddy!
+601,joy,"Yeah, drop it! Drop the towel! Please drop the¬ó¬ówowww."
+602,neutral,Huh. That's nice.
+603,neutral,"Okay, I understand why"
+604,neutral,"No I'm serious. I mean I'm intuitive, but my memory sucks."
 606,surprise,"So, are you one of the ones who fooled around with my dad?"
-607,neutral,"Well, it's not that big- ..well, that's true,.. Gee, y'know, no-one- no-one's ever put it like that before."
-611,neutral,Green. To the green.
-614,neutral,Oh but you could.
-615,anger,"And Monica, with that snort when she laughs?"
-623,surprise,"And-and another one had never been to a party before, so"
-625,anger,Ah yeah¬ówait a second now!
-626,neutral,Do you wanna come in for some lemonade?
-628,neutral,I'm gonna go find that guy's car and leave a note on the windshield.
-630,neutral,"No-no, it was the candles."
-632,sadness,Why not? I don‚Äôt want to do this alone! And he‚Äôs such a sweet guy and he loves me so much.
+608,neutral,"Hey Ross. This probably isn't the best time to bring it up, but you have to throw a party for Monica."
+609,neutral,"All this stuff takes up a lot of room. Hey how uh, how serious are you about keeping Ben in your life?"
+610,joy,"Look, I took it too far!"
+611,neutral,Ohhh... I'm fine.
+612,neutral,I went to any place that they made sandwiches!
+613,anger,I know! You see it is stuff like this which is why you're burning in hell!!
+615,anger,"Ohh-ho-hooohhh. The hair comes out, and the gloves come on."
+617,neutral,"Bing doesn't seem so weird now, does it?"
+618,joy,Ohhh! Wow! He kinda takes your breath away doesn't he?
+619,disgust,"Oh well that's what I thought about my first husband, now I'm lucky if my kid gets to spend the weekend with her father and the twins and little Ms. New Boobs."
+620,neutral,"And Tim I just wanna say, good luck here."
+621,surprise,"Wow! Sorry. So uh, how are the new people?"
+622,neutral,"Yeah. Yeah, I remember trying to steal a cardboard cutout of Evander Holyfield from a"
+623,joy,"So you might say, it's a magic ring."
+624,surprise,OH MY GOD!! I didn't really believe it until you just said it!!
+625,neutral,Okay. Can I borrow 94 dollars?
+626,neutral,What do you mean?
+627,neutral,Remember how you said you were really dense about poetry? Oh.
+629,neutral,"Yes. Uh, yes, I did. That was my friend, Eddie Moskowitz. Yeah, he likes it. Reaffirms his faith."
+630,neutral,"Well, I have to go now."
+631,surprise,Joey proposed to me.
+632,sadness,"No. No, I don‚Äôt. Could you be a dear and go tell him?"
+634,neutral,I gotta go!
+635,neutral,"Oh that's all right, I have it memorized. It's 1A."
+636,neutral,As I was saying¬Ö I should probably have the first of the three kids by the time I'm 35 which gives me five years.
 637,neutral,Yes. Yes. Just here and there .
-638,neutral,"Yeah, not as much as you used to love to play uncooked batter eater."
-640,joy,"Oh yes, well there's the coffee too. Rachel can carry two things at once!"
-645,neutral,Now don't worry! Everything's gonna be okay.
-646,neutral,If Phoebe were my maid of honor
-649,neutral,"Hey come on now, this is a real date."
-651,surprise,Uhhhh.... he's not even wearing a jockstrap!
-652,neutral,"Oh please, could she"
-655,joy,"Well I-I-I don't care how hot it is it's-it's uh, it's wrong."
-657,surprise,The best man? Wow!
-658,anger,"Oh, God, just do it! Call her! Stop being so testosteroney!"
-659,neutral,These people'll scooch down.
-665,neutral,"Okay, well y'know what, don't worry you guys, ¬ëcause I'm-I'm gonna do this as many times as it takes to get it right."
-672,anger,"What are you talking about, Ross, you just said that you read it twice!"
-673,neutral,I see. Have you considered therapy?
-676,surprise,What are you doing?
-678,neutral,I'm gonna get coffee.
-679,neutral,"No! Joey, you're going to be great!"
-680,neutral,"Umm, you'll just have to tell me how you like your eggs in the morning."
-682,neutral,You guys wanna get some coffee?
-689,neutral,"Good! ¬ëCause I've got a product report to read, it's like eight pages, I hope I don't fall asleep."
-699,disgust,"Okay lady, you're out of here."
-700,sadness,"All right. All right, I'll do it."
-707,anger,Set it down over there and then you can make a contribution!
-717,neutral,"Oh no! That really is nothing, she is"
-720,anger,"Um-hmm! Look, I-I-I don't know how much more of this I can take! Did you know he taped over my"
-722,neutral,How good is that?
+638,neutral,"Hey, it is unreasonable to expect a child to wait for a"
+639,surprise,Wait! You forgot your legs!
+640,neutral,"With them, under them, what's the difference? Eh, Rach?"
+641,fear,Did she call? You-you told her I was sick right? Always tell her I am sick!
+643,neutral,"Hey look, Phoebe. I, uh, I laid out the states geographically..."
+644,neutral,"Whatever dude, you kissed a guy."
+645,neutral,Not if you were here.
+646,joy,"Aww, and good luck to you too! What a nice lady!"
+647,neutral,"If you wanna give Joey a Christmas present that disrupts the entire building, why not get him something a little bit more subtle, like a wrecking ball, or a phial of small pox to release in the hallway?"
+648,neutral,Maybe on some level.
+649,anger,"No-no-no-no, he's not! No! Why are you trying to ruin the game? Come on!"
+650,joy,Oooooh. : Oh! I got an interview! I got an interview!
+651,neutral,...What did I ask?
+653,neutral,"Last time I do that, I promise."
+655,joy,Let's also get a hot plate!
+656,joy,"Rach, you're in a great place in your life. Come on, you've got a great job! Good friends"
+657,neutral,"So, does this come in another color or"
+658,neutral,"Yeah, well, does he look upset? Does he look like he was just told to shove anything?"
+659,joy,"And, Kristin, Kristin......does something that, funnily enough, wasn't even her major!"
+661,sadness,"Not like that, I won't! Kip would have liked the birds!"
+662,sadness,"Hey, it's not the first time I lost a girl to a cowboy spraying cologne. Bijan for men? Bijan for men?!"
+663,neutral,Hey Joey! Isn't that the girl that waved at you the other day?
+664,neutral,"Nothing, he's just really believes in that."
+665,anger,I know! Why don't you get drunk! That worked for a lot of girls in my high school.
+666,neutral,"Hey, guys, you know what Larry would say? He would say, ""See you ladle."""
+667,neutral,"No, we'll-we'll bring it back! Just put it under your dress."
+668,neutral,"Okay, one thing at a time."
+669,neutral,"Oh, I, uh- I went to Aruba."
+670,sadness,They've arrested Monica.
+672,joy,"Oh, sure! I'm sure."
+673,fear,"¬ëCause I kinda all ready told her uh, it was, it was already taken care of."
+674,neutral,"Well, that just leaves the big Green poker machine, who owes fifteen..."
+676,anger,"Yeah, well that's how mad I am!!"
+677,neutral,"Umm, Jo's a girl, it's short for Josephine."
+678,neutral,"You know, we don't really take advantage of living in the city."
+679,neutral,I'll be waiting.
+682,neutral,"Oh, look, he's closing his eyes again."
+683,joy,"Come on, they're gonna love you."
+684,neutral,So apparently we just don't pay for food anymore. Do you see what I see?
+685,neutral,Had the money in the wrong hand.
+686,surprise,Ugh! What grandmother?
+687,surprise,That mail guy had no idea there was something going on between us.
+688,neutral,"You've seen my huge stack of porn, right?"
+689,neutral,"Well ah, actually..."
+690,surprise,Oh my God!
+691,joy,I like her. She sees smart.
+692,neutral,"Oh it's OK. You were worth the wait, and I don't just mean tonight."
+693,anger,Why don't you tell me something I don't know!
+694,sadness,Oh does it matter?! All that matters is that you look so handsome.
+696,anger,I'm just gonna go over there and confront them right now!
+697,surprise,"Yeah, it is! Naked Ross!!"
+698,sadness,"I just, I feel, I-I just..."
+700,neutral,"Thank you. Hey-hey umm, uh, is there, is there any such thing as an annulment shower?"
+701,neutral,Making holiday candy for the neighbors.
+702,neutral,How much did ever really win before?
+703,neutral,I suddenly had the feeling that I was falling. But I'm not.
+704,anger,"I'm sorry, I'm sorry, you're right. Come on, do it, do it, go, come on!!!"
+705,neutral,"You know, I knew a girl in high school who did that. She was"
+707,neutral,"Uh, Phoebe we've been getting complaints and uh, we're gonna move you to a less high-profile spot."
+708,neutral,"Well, because we thought you knew!! It's so obvious! God, that would be like telling Monica, ""Hey, you like things clean."""
+709,joy,"Oh no, I can't go. I'm practicing; I got an audition to be the host of a new game show."
+713,joy,Look at this! There we go!
+714,anger,"See I-I wrote a book up there and instead of reading it people are-are-are well, rolling around in front of it."
+715,neutral,We are aware of the problem you are referring to.
+716,anger,And don't you follow me!
+717,anger,"Ohh! Phoebe, this is all your fault! Now he loves her, he's gonna marry her, and this is all your fault."
+718,neutral,"Oh yeah, but I can stay out as late as I want."
+719,joy,It's got ¬ëem!
+720,neutral,"Okay, so he's out of here."
+721,neutral,"Okay y'know what, because you said that, I'm not putting out tonight."
+722,joy,Yeah. With a bite! Gee-e-e-eez!
+723,fear,"Well, she walked in when I was looking at the ring brochures. You can understand that, right? Guys? Guys?"
+724,neutral,Waaay too special.
+725,joy,The silk? Feels really good!
+727,neutral,"Well, how can you be a tour guide, don't you have to be a dinosaur expert or something?"
 728,surprise,Yeah! Oh my God!
-730,surprise,"Whoa, whoa, whoa! Slow down, you go"
-736,joy,"I-I-I ah, I-I think I love you."
-739,joy,And-and-and I wrote a song for us!
-740,neutral,"Okay, grab¬Ögrab some empty boxes."
+729,joy,Yep. Pretty much.
+730,neutral,You got to tell me exactly what to do there.
+731,neutral,"Ok, when you walk in the museum, take the right, that's the antiquities wing."
+732,surprise,"Whoa, whoa, whoa, whoa, whoa! So, I walk in the door and make the right"
+733,joy,We're still married! Don't tell Rachel. See you later.
+734,joy,"Listen, drama critics they're nothing but, but people who couldn't make it as actors. You know what you should do?"
+735,neutral,I can promise not to tell her again.
+736,neutral,That's no problem.
+737,neutral,It is in the living room where there is also a light! And no one will kick you in the shin.
+738,surprise,I can't believe I still don't know what happened to the
+739,neutral,But you haven't even heard the chorus!
+740,joy,We'll-we'll take stuff from mine and whatever we can pass off as hers we'll-we'll put ¬ëem in there.
+741,surprise,What?! What?! He was trying to cheer me up! My pony was sick.
+742,joy,He's coming here for Thanksgiving!
+743,joy,"Guys, rules are good! Rules help control the fun! Ohhh!"
 745,anger,"Yes, it was! It was him! Uh huh! Okay, it was me!"
+746,neutral,"See Joe, that's why your parents told you not to jump on the bed."
+747,neutral,"I mean come on, you remember what's it's like to be 19 and in love."
+748,joy,Oh yes! Thank you very much! Oh that's-that's actually how the French drink it.
+749,joy,"If you get this one, we buy everybody here a steak dinner!"
+751,surprise,"We're really gonna do this, huh?"
 752,surprise,How hot is this?!
+753,joy,"Look Ben, it's a toy that protects U.S. oil interests overseas!"
+754,anger,Down at the docks again?
+755,neutral,"Charla, 278. Sorry, dear, but still good."
+756,neutral,I'll call you back.
+758,anger,That's my job!
+759,joy,Can I be that guy?
+760,anger,"Oh no-no-no, that's not¬óNo-no-no!"
+761,neutral,"There we go.You know what, if we were in prison, you guys would be, like, my bitches."
+762,neutral,"I ah, I better not do any, I don't know, lunges."
+763,joy,That's a great idea! We can
+766,neutral,"Oh, I'm flaky. I'll say anything."
 767,neutral,"Nothing, nothing. Lee-lo, the laundry's done."
-770,anger,"Oh, who should I blame? The nice bell man who had to drag out luggage to 10 different rooms?"
-775,neutral,The ride broke down.
-777,neutral,"Oh, she does want to."
+768,neutral,I think it just fell off.
+770,fear,"I said, ""Geez, relax Monnnnn."""
+771,neutral,"Had the beef-tips, huh?"
+772,neutral,"Yeah, sure, sure I can bring some sandwiches."
+773,neutral,Men are here.
+774,surprise,"Hey, how, how did you do that?"
+776,neutral,"Oh, okay, yeah. I put your stuff in her room, and her stuff in your room."
 782,neutral,I dropped a cup.
-791,joy,"I'm not gonna be able to do that for so long, and it's so much fun!"
-792,surprise,I can't believe you married him.
-797,sadness,"I mean, what am I gonna do without you?"
-806,neutral,So are you ever gonna tell whoever it is?
-809,joy,"Okay, get ready to owe me!"
-810,neutral,"So, can I get some candy?"
-812,joy,My boyfriend really does have good taste!
-820,neutral,"Yeah, there's this guy from Chicago who's supposed to be the next Martin Scorcese, all right?"
-821,surprise,"Y'know how before you said it might be weird, the whole student teacher thing, and to be frank I thought it would be too, but it's not."
-823,neutral,"I think, that if you really like this guy, you should just trust him."
-827,fear,God. Do think it really doesn't hurt? ¬ëCause how can they do that?
-832,sadness,Were you so late because you were burring this woman?
+783,sadness,Uh-huh. Good luck.
+784,sadness,"Look at that woman sitting by the pool getting tan... so leathery and wrinkled, I'm so"
+785,anger,What about my children Drake?! Huh!? No!! No!! No! God!
+786,anger,I don‚Äôt know! Maybe she‚Äôs crazy!
+788,neutral,"Well, I'm off to bed!"
+789,surprise,"Aww, like I could hurt you. Are you making fun of my size? Don't make fun of me because of my size!"
+790,surprise,"Oh, Joey! Sorry!"
+794,anger,"You spend half your life in the bathroom, why don't you ever go out the bloody window!"
+795,neutral,No touch! No touch!
+796,neutral,I‚Äôll call you from Tulsa.
+797,sadness,Who's gonna take me to the
+800,neutral,"That's good, have a seat."
+801,anger,Let go of my hand!
+802,neutral,"Uh, middle balcony."
+803,anger,That means nothing to me. Come on!
+804,sadness,"Okay, I'm sorry."
+806,joy,"So, Rachel Green will you marry me?"
+807,anger,If I can't have it you can't have it!
+808,joy,I love you!
+809,fear,"See? Now, that's why only the little fake men are supposed to do all the kicking."
+810,neutral,Mm! Night Gar'!
+811,joy,Is that my ass?
+813,neutral,"Hello, Mrs. Chatracus."
+814,joy,"All right everyone, lift! And slide!!"
+815,neutral,"Well, I'm not gonna talk because"
+816,neutral,"Chandler, you call me when this goes in the pooper."
+817,neutral,Good. I should really start wearing hats!
+818,neutral,"Well, you do realise the odds of that happening are a little slimmer if they never get to meet the guy.."
+819,joy,That's right! You lose sucker!! Please still marry me.
+820,joy,Grandma's gonna have to get in line.
+822,neutral,"Oh no wait, I'm sorry, that's 'pretty dumb.'"
+823,surprise,"Oh, that's what I would do, forget mine."
+824,joy,"Ooh, let's see it!"
+825,neutral,"So uh, how you doin'?"
+826,sadness,I-I wasn't in that.
+827,neutral,They have the best stuff in there.
+828,anger,"Hey, hey, hey, that's not the rule and you know it."
+829,anger,"Ok, are they listening?"
+830,sadness,My bed's so boring.
+831,joy,Well neither do I!
+832,joy,"Done! I did it! Heh, who's stupid now?"
+833,neutral,"If you listen very carefully, I think its"
+834,neutral,I don't know. Me neither.
 835,neutral,Okay. 1¬Ö2¬Ö3¬óGo! I'm gonna kill myself!
-839,disgust,And shame on all of you!
-840,neutral,"Oh, I don't make them a lot because I don't think it's fair to the other cookies"
-843,neutral,It's gonna be okay.
-844,anger,"I'm Ted, and I just moved here a month ago, and New York really scares me."
+838,surprise,Oh God. So-so you're making porn movies.
+839,disgust,Especially you with that!
+840,sadness,Paolo made a pass at me.
+842,surprise,His new girlfriend!
+843,neutral,"And-and you don't need, you don't need this custom-made, empire-waisted, duchess, satin gown; you can wear off the rack."
+844,fear,And I need to flip the light switch on and off 17 times before I leave a room or my family will die.
 845,joy,Good to have you aboard Bing!
+846,neutral,Works on you.
+847,joy,"Ok, no, no, you hang up. You, you, y¬ó"
 848,surprise,"OK, I need to lie down."
 849,joy,"Y'know, I don't really know you well enough for you to do that."
-853,anger,"Because! Because, it-it-it's¬Ö It'd be like you having this guitar and-and never playing it. Okay, this guitar"
+850,joy,Okay! You get the vacuum cleaner and I'll get the furniture polish!
+851,neutral,"Okay. Yeah. Yeah, I'll grab this one."
+852,sadness,"You know... You're gonna be really, really hard to get over."
+853,anger,Okay Ross! Please don't die!
+854,neutral,"No! No! No! No! No! I-I-I-I¬óI need to, I need to lie down."
+855,fear,That thing was a hazard! I'm very safety conscious.
+856,joy,"Yeah, I thought so too but, she said the casting people had some problems with me."
 857,joy,"Thanks guys! I really appreciate this, y'know, but you don't have to rub my butt."
-858,neutral,"Look, you guys have been to every play I've ever been in, have I ever had chemistry on stage?"
-869,anger,"And before you know it, she's with him."
-874,sadness,I can't believe I'm hearing this!
-884,disgust,"Well, I'm upset¬ófor you. I mean, having sex with an endless line of beautiful women must be very unfulfilling for you."
-886,joy,"Oh this, well I'm glad you asked."
-887,anger,That's why I'm here.
-888,neutral,"And that big bloke with the beard, he has got a trick hip."
-902,joy,Don't you see? Everyone's looking at me! The plan's working! I didn't even have to take off my top yet!
-905,joy,"Chandler, I gotta tell you, I love your mom's books!"
-907,anger,You apologize to the tree right now or I am calling for backup. Backup! Backup!!
-908,neutral,Joey where's the pipe that was holding the door open?
-910,neutral,"..I dunno, a little too Alan?"
-913,joy,"Okay, but be careful okay, because I wanna get our security deposit back."
-916,neutral,"Now I-I know what you're thinking, fun was fine for you like ten years ago y'know, but you're-you're not getting any younger."
-918,sadness,"In fact¬óyes, I'm, I'm sorry."
-923,neutral,I don't know exactly.
-930,neutral,"Dude, you didn't say"
-932,neutral,Alright . I think it's a big mistake but it's your decision.
-936,sadness,"You're going because you hope he's gonna say, ""Yeah, I love you too, Rach."
-939,sadness,I just don‚Äôt know! It just doesn‚Äôt feel right.
-941,neutral,"Things that move me. The, the shadow of a tree, a child laughing, or this lip."
-945,joy,And you can go back to enjoying your little hamburger.
-947,neutral,"Well umm, they both have a egg yolk and butter base, but a bearnaise has shallots, shirvel, and most importantly tarragon."
-949,neutral,In that case should I make sure it's on real good?
-950,joy,Maybe I should get another pair!
-956,neutral,I think this can go somewhere.
-961,neutral,"Oh. Are you sure you don't want to come? Tom Hanks, Meg Ryan, they get mail and stuff."
+859,neutral,"Umm, nothing. I mean, I'm getting married next week."
+861,neutral,"Not just restaurants, from our house."
+862,neutral,In the hall.
+864,anger,I'm Monica's maid of honor. Okay? Don't try to blue pin me!
+865,neutral,"Okay, you're fine."
+866,sadness,Ohh. And I don't even have a date.
+867,anger,Yeah that! You know I hate practical jokes! They're mean and they're stupid and-and I don't want my son learning them!
+868,neutral,Ms. Monroe¬Ö Oh there you go.
+869,neutral,He paints quite a picture doesn't he?
+870,neutral,"Hey guys, what are you doing?"
+871,sadness,I knew I shouldn't have mentioned it! That's what I wanted to name my kid!
+872,neutral,"And you would read alone in your room, and your puzzles..."
+873,anger,"Oh, I'm still mad at them but I also now that they bring happiness to lots of kids who's moms didn't kill themselves, so by supporting them, I'm doing a good thing, but I'm not"
+874,neutral,"Yeah umm, they're called wallets."
+876,surprise,"Oh. Oh, did-did-did I wake you?"
+877,joy,"Oh, you're such a gentleman. Come on! We're going to my place!"
+878,neutral,"Yeah, we talked and Monica made me see that I over reacted a little bit and some things in life are more important."
+879,neutral,I got asked out twice today when I was at lunch¬Öby guys.
+880,joy,"Oh, did you not want people to know that?"
+881,joy,But I'm not gay. And I especially wouldn't want you to think I was gay.
+883,neutral,"Yeah, she's gay."
+885,anger,One! No ten! You said ten! You can't take that back!
+886,neutral,What's the second part of your plan?
+887,neutral,That-that's a no.
+888,joy,The Red Ross! Okay.
+890,surprise,Ross got married again¬óNooooooo!!!!!!!!!
+891,joy,Oh hey you guys!
+892,sadness,"The front page? You really do live in your own little world, don't ya?"
+893,joy,So I can do it?
+894,joy,Ah-ha! Too cocky!
+895,neutral,Oh! We could have done that.
+896,neutral,"Well, he may not be my soul mate, but a girl's gotta eat."
+897,neutral,"Oh-no, he's right."
+898,disgust,"What, are you crazy? When a blind man gets his sight back, does he walk around like this?"
+899,neutral,Y'know those are a delicacy in India.
+901,sadness,"Well she, she wouldn't do that, she's with, she's with me."
+902,joy,"Oh-ho, I think it's nice."
+904,anger,See? I'm doing it. I am totally doing it. I lost it.
+905,joy,"C'mon, Chandler, I love your mom. I think she's a blast."
+906,surprise,Oh! That's why. I'm sorry!
+907,neutral,"Okay, cancel backup! Cancel backup!"
+908,surprise,Oh no! No! No!
+910,joy,I personally could have a gallon of Alan.
+911,disgust,"Yeah, this was a stupid idea."
+912,neutral,"That was just the pants on the couch. Umm, hey, do you, do you mind if I use your bathroom?"
+913,neutral,"Uh yeah, right here."
+914,neutral,"Weeeell, it's rum, and-"
+916,sadness,"I'm sorry, so umm, so where are we?"
+917,joy,They taste so good.
+918,neutral,"I know you really wanted me to name the baby Joey, but eh, so, I'm-I'm, I'm gonna, I'm gonna name the baby Chandler."
+920,neutral,"Thanks, any suggestions?"
+921,anger,"Yeah, so do you."
+922,neutral,And a small piece of chocolate.
+923,joy,But I do know that it's some time tomorrow.
+924,sadness,You do attract some stinkers.
+926,surprise,Oh my God! You're pregnant!
+927,surprise,Oh my God!¬óEh! Well
+928,neutral,"So, you wanna get a hamburger or something?"
+930,anger,What are you talking about? Bitch.
+931,disgust,I don't care if you are my brother.
+932,neutral,I'm smarter than
+934,surprise,"This is Chandler Bing! This is Chandler Bing! Yes, the groom¬óNo! Not the groom!!"
+936,joy,"I do! I do! I do! I do! Ugh, like I can really chase you. I'm carrying a litter."
+937,neutral,Now as for the hydrosaurs
+938,neutral,"Well ah, actually I kinda need to talk to you too."
+939,neutral,I can‚Äôt say that I‚Äôm surprised.
+940,neutral,I think on some levels she already knows.
+941,joy,"How would that go? Well, it didn't rhyme, but I liked it."
+942,neutral,"Oh, no. But it's just a two hour ferry ride to Nova Scotia."
+943,neutral,"No, just a Friday night."
+944,anger,Would she? You ate my candy bar!
+945,neutral,Do you want my pickle?
+946,surprise,I can't believe you did that!
+948,neutral,"Ok, say no more."
+950,neutral,"Oh yeah, me too. Y'know if this shirt is dirty. Yep."
+952,neutral,"Hey, how you doin'?"
+955,anger,Ball? There is no ball.
+956,neutral,"Yeah, okay, I'll see you later."
+957,sadness,"Oh, was it awful?"
+958,sadness,"Well, it was loong."
+959,joy,"Okay, I'll be up in, 18 pages. Front and back. Very exciting."
+960,neutral,How long is this gonna take? ¬ëCause I got another critic to go yell at.
+962,neutral,"And if not, we got to do it on a bucket."
+963,disgust,You slept with somebody three hours after you thought you broke up. I mean bullets have left guns slower!
+964,neutral,"Yeah, I know. It's ridiculous! I can't see you either."
+965,surprise,"Amy Welch? Wow! I haven't seen her since... So, Monica about ready?"
+968,joy,If he goes first he can!
+969,neutral,Here you go.
+970,neutral,"Y'know I gotta tell ya, sometimes I just¬óI don't get Chandler."
+971,anger,All the time!
 972,neutral,"Well I'm, I'm a little slow. Just as our children would be."
-973,sadness,Do you think breaking up with him was a huge mistake?
+973,disgust,"Okay, this isn't working. I'm still awake and now I have to pee."
+974,neutral,See you later Rach.
+975,neutral,Can I ask you somethin'?
+976,fear,"Oh, no no no no. Oh no no no no. I have to do this to her?"
+977,neutral,"Yeah. Either that, or you just turned him on and sent him off to a stripper."
+979,neutral,"Yes, and we'd appreciate it if no one told him yet."
+980,sadness,Where in Cuba?
+981,surprise,What?! You kissed!
+982,joy,Damn! I am good at Cups!
+983,anger,Hey! Don't you hang up on me! I'll marry you and me right now! I have the power!
+984,joy,Great! Problem solved!
+986,joy,Then all the lying and the secrets would finally be over!
+987,neutral,"It's a tradition, like the parade. If the parade decided it was gay, moved out, and abandoned its entire family."
+988,neutral,It'll be okay Joe.
 989,fear,Go! Go! Go! Go! Go! Go! Go! Go! Go! Go!
-991,joy,"Well, hats off to the chef."
-996,anger,This is our wedding I'm talking about.
+993,neutral,I'm sending back all this stuff that Chandler bought out of guilt.
+994,anger,"Were you, or were you not on a gay cruise?"
+995,neutral,"Hey, if they have a ball maybe you can stick razor blades in it and teach them a new game, Gonna Need Stitches Ball."
+996,sadness,"No, wait! Emily! No, wait, stop! Emily, please¬ó"
+998,surprise,Oww! Big ring!
+999,neutral,"But um, we just refer to you as Bobo the Sperm Guy."
+1000,neutral,Check this out. Can I have this?
 1001,neutral,How much do you think I can get for my kidney?
-1005,anger,"Hey, buddy! Are you familiar with Section 11-B of the Health Code that requires all refuse material out the"
-1009,joy,And-and a power tie?
+1002,joy,Heads up Ross! Score! You suck!
+1003,surprise,"Okay, here's your penis!"
+1004,neutral,"Thank you, it's my mom's. So this is the kitchen."
+1005,disgust,"Now, if after dinner you still really need to bust someone, I know a hot dog vendor who picks his nose."
+1006,neutral,"God, what a mess."
+1007,neutral,That word was swans.
+1008,neutral,"Oh, sure, Valentine's is our busiest night of the year."
+1009,sadness,Hello? Who are we spying on?
 1010,joy,"Yeah well, if ah, if that's the rule this weekend... No!"
-1011,anger,"Hey, it's my list."
+1011,neutral,"Okay honey, you do realize she only spins like that on ice."
 1012,joy,Oh cool! You made him cry!
-1016,fear,"Listen Ross, we ran out of gas, and we don't know where we are, so we can't get a tow truck."
-1017,joy,"Okay, I¬óit's the best thing I've ever had wrapped around me, including Phil Huntley!"
-1019,neutral,"Right, calm down, O'Mally. I'll slip him some money."
-1022,surprise,"Okay, look I'm sorry, I went in there to take a nap and I know I shouldn't have, but you got porn!"
-1024,joy,Very good! Okay. G.
-1025,fear,"This is the only dessert and if I screw it up everybody's gonna be like ¬ìOh, remember that Thanksgiving when Rachel screwed up the trifle?¬î"
-1026,anger,"Oh, y'know I-I can't hear that enough."
-1029,neutral,"And then you say to person, I bet you can't roll this quarter from your forehead to your chin without it leaving your face."
+1013,anger,No! You don't know the system! There'll be nobody messing with the system!
+1014,neutral,I know. I know.
+1015,neutral,"Petrie, right, right. Okay, some people gonna be working"
+1016,neutral,"Yeah, you're right."
+1017,joy,He was fine!
+1018,surprise,What happened to you two?
+1020,neutral,"No, I've just always wanted to do that. Can you help me clean this up?"
+1021,neutral,Is there any chance you didn't see that?
+1022,joy,You got porn!
+1023,surprise,How did you know about that?!
+1024,sadness,"Ooh, sorry! No-no-no, so close though, but¬óbye-bye!"
+1025,neutral,"Oh, uh, can it wait a second Joey? I have to tell my parents something. No it can't? Okay."
+1026,anger,Well it's not flexed right now!
+1027,disgust,"Fine. Okay, enjoy your concert."
+1028,joy,"Oh. Oh, that's great!"
+1029,joy,"Yeah, I-I-I-I'm funny Ben, but I'm not stupid. Okay?"
+1030,neutral,"Oh no. I feel it isn't really anybody's business, y'know."
+1031,joy,Bing! You got those numbers for me?
 1032,neutral,"Yeah, they still wear underwear."
-1038,disgust,"When I first moved to the city, I went out a couple of times with this girl, really hot, great kisser, but she had the biggest Adam's apple."
+1033,surprise,And people will think you own a Porsche because you're wearing the clothes?
+1034,surprise,Oh! It's you. Hi.
+1035,joy,Yes! Shame about you man.
+1036,sadness,Thanks. Congratulations on your big break.
+1037,neutral,"Oh, you're busy, that's ok, I'll get it. Anybody else want one?"
+1038,joy,"That was a good one. For a second there, I was like, ""whoa."""
