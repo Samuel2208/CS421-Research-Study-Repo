@@ -27,13 +27,11 @@ def parse_llm_output(raw_pred):
 def main():
     print("Loading model into VRAM...")
     llm = LLM(
-        model="google/gemma-4-E4B-it", 
-        quantization="fp8",
-        max_model_len=4096,                   
-        gpu_memory_utilization=0.90,
-        enable_prefix_caching=True,           
-        limit_mm_per_prompt={"image": 0, "audio": 0}, 
-        trust_remote_code=True
+        model="Qwen/Qwen2.5-7B-Instruct-AWQ", 
+        quantization="awq",
+        max_model_len=4096,
+        gpu_memory_utilization=0.85,
+        enable_prefix_caching=True
     )
     tokenizer = llm.get_tokenizer()
     
@@ -151,7 +149,7 @@ def main():
             "prediction": prediction,
             "label": meta["label"],
             "prompt_type": "least_to_most_structured",
-            "model": "gemma-4-E4B-it",
+            "model": "qwen2.5-7b-instruct-awq",
             "reasoning": reasoning,
             "accuracy": accuracy,
             "prompt_word_count": meta["prompt_word_count"],
@@ -166,9 +164,9 @@ def main():
          "prompt_word_count", "prompt_character_count"] 
     ]
 
-    output_filename = "gemma_least_to_most_structured_results.csv"
-    # results_df.to_csv(output_filename, index=False)
-    lexicon_analysis.export_lexicons("gemma_least_to_most_structured")
+    output_filename = "qwen_least_to_most_structured_results.csv"
+    results_df.to_csv(output_filename, index=False)
+    # lexicon_analysis.export_lexicons("qwen_least_to_most_structured")
     print(f"Finished! Results saved to {output_filename}")
 
 if __name__ == "__main__":

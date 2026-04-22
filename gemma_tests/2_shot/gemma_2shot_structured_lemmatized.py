@@ -2,10 +2,11 @@ import pandas as pd
 import re
 import json
 from vllm import LLM, SamplingParams
-import re
 import os
 import sys
 from pathlib import Path
+import spacy
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
 sys.path.append(str(REPO_DIR))
@@ -51,6 +52,12 @@ def main():
     emotion_col = "Emotion"
     utterance_index_col = "Utterance_ID"
     speaker_col = "Speaker"
+
+    print("Lemmatizing utterances...")
+    nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"]) 
+    df[utterance_col] = df[utterance_col].astype(str).apply(
+        lambda text: " ".join([token.lemma_ for token in nlp(text)])
+    )
 
     df = df.sort_values([dialog_id_col, utterance_index_col])
 
@@ -178,7 +185,7 @@ def main():
                 "label": actual_emotion,
                 "prompt_character_count": len(formatted_prompt),
                 "prompt_word_count": len(formatted_prompt.split()),
-                "target_utterance": window_utterances[-1]
+                "target_utterance": utterances[-1]
             })
 
     print(f"Running inference on {len(prompts)} prompts simultaneously...")
@@ -215,9 +222,9 @@ def main():
          "prompt_word_count", "prompt_character_count"] 
     ]
 
-    output_filename = "gemma_2_shot_structured_results.csv"
+    output_filename = "gemma_2_shot_structured_lemmatized_results.csv"
     results_df.to_csv(output_filename, index=False)
-    # lexicon_analysis.export_lexicons("gemma_2_shot_structured")
+    # lexicon_analysis.export_lexicons("qwen_2_shot_structured")
     print(f"Finished! Results saved to {output_filename}")
 
 if __name__ == "__main__":

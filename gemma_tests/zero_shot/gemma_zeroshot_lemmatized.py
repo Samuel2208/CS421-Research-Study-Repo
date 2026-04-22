@@ -1,31 +1,22 @@
 from pathlib import Path
 import os
-import json
 import pandas as pd
 import re
 from vllm import LLM, SamplingParams
-import re
-import os
 import sys
-from pathlib import Path
+import spacy
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
 sys.path.append(str(REPO_DIR))
 from utils import lexicon_analysis
 
-BASE_DIR = Path(__file__).resolve().parent
-REPO_DIR = BASE_DIR.parent.parent
 DATASET_DIR = REPO_DIR / "Dataset"
 SUBSET_PATH = DATASET_DIR / "MELD_filtered_dialogues.csv"
 
-VALID_EMOTIONS = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
-
-# Load the reduced MELD subset CSV file into a pandas DataFrame.
 def load_meld_subset(path=SUBSET_PATH):
     return pd.read_csv(path)
 
-
-# Fix broken text encodings in MELD utterances, especially apostrophe contractions.
 def clean_text(text):
     if pd.isna(text):
         return text
@@ -54,8 +45,6 @@ def clean_text(text):
 
     return text
 
-
-# Load the reduced MELD subset, keep only needed columns, sort dialogue order, and clean utterances.
 def prepare_meld_dataframe(path=SUBSET_PATH):
     df = load_meld_subset(path)
 
@@ -63,30 +52,49 @@ def prepare_meld_dataframe(path=SUBSET_PATH):
     meld_df = meld_df.sort_values(["Dialogue_ID", "Utterance_ID"]).reset_index(drop=True)
     meld_df["Utterance"] = meld_df["Utterance"].apply(clean_text)
 
+    nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
+    meld_df["Utterance"] = meld_df["Utterance"].astype(str).apply(
+        lambda text: " ".join([token.lemma_ for token in nlp(text)])
+    )
+
     return meld_df
 
+def format_context_for_prompt(context_df):
+    if context_df is None or context_df.empty:
+        return ""
 
-# Extract JSON from vLLM output and split it into reasoning and label
+    lines = []
+
+    for _, row in context_df.iterrows():
+        speaker = row["Speaker"]
+        utterance = row["Utterance"]
+        lines.append(f"{speaker}: {utterance}")
+
+    return "\n".join(lines)
+
 def parse_vllm_response(response_text):
-    match = re.search(r'\{.*\}', response_text.strip(), re.DOTALL)
-    json_str = match.group(0) if match else response_text.strip()
+    reasoning = ""
+    prediction = "INVALID"
 
-    try:
-        data = json.loads(json_str)
-        prediction = str(data.get("emotion", "INVALID")).strip().lower()
-        reasoning = str(data.get("reasoning", "")).strip()
-    except json.JSONDecodeError:
-        prediction = "INVALID"
-        reasoning = "JSON Parsing Error"
+    if not response_text:
+        return reasoning, prediction
 
-    if prediction == "INVALID" or prediction not in VALID_EMOTIONS:
-        prediction = normalize_prediction(prediction)
+    lines = response_text.strip().splitlines()
+
+    for line in lines:
+        lower_line = line.lower().strip()
+
+        if lower_line.startswith("reasoning:"):
+            reasoning = line.split(":", 1)[1].strip()
+
+        elif lower_line.startswith("label:"):
+            prediction = line.split(":", 1)[1].strip().lower()
+
+    if prediction == "INVALID":
+        prediction = normalize_prediction(response_text)
 
     return reasoning, prediction
 
-
-# Use this in case we get lengthy results that aren't one word. 
-# Normalize raw response so it matches one of the valid MELD labels.
 def normalize_prediction(prediction):
     valid_labels = {"anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"}
 
@@ -104,8 +112,6 @@ def normalize_prediction(prediction):
 
     return "INVALID"
 
-
-# Run zero-shot experiments over selected dialogues and window sizes using vLLM batched inference.
 def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None):
     print("Loading model into VRAM...")
     llm = LLM(
@@ -133,58 +139,37 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
     print("Building prompts...")
 
     system_instruction = (
-        "You are given structured dialogue data.\n\n"
-        "Classify the emotion of the target utterance.\n\n"
-        "IMPORTANT:\n"
-        "- Use the dialogue context only if it helps interpret the target utterance\n"
-        "- Focus on the emotional meaning of the target utterance\n"
-        "- Choose exactly one emotion from the provided emotion options\n"
-        "- Return ONLY valid JSON\n"
-        "- Use DOUBLE quotes\n"
-        "- Do not return markdown\n"
-        "- Do not return any extra text outside the JSON object"
+        "You are an emotion classification assistant.\n\n"
+        "Your task is to classify the emotion of the target utterance in the dialogue below.\n\n"
+        "Choose exactly one label from this list:\n"
+        "anger, disgust, fear, joy, neutral, sadness, surprise"
     )
 
     user_template = (
-        "Input:\n"
-        "{structured_input}\n\n"
-        "Output format:\n"
-        "{{\n"
-        '    "reasoning": "...",\n'
-        '    "emotion": "..."\n'
-        "}}"
+        "Dialogue:\n"
+        "{context_text}\n\n"
+        "Target utterance:\n"
+        "{target_utterance}\n\n"
+        "Explain your reasoning in one or two sentences behind your decision and then choose one label from the list above.\n\n"
+        "Return your answer in this format:\n"
+        "Reasoning: <your reasoning>\n"
+        "Label: <one emotion label>"
     )
 
     for dialogue_id, dialog in df_filtered.groupby("Dialogue_ID"):
         for window_size in window_sizes:
-            # Efficiently grab the last `window_size` items
             window_df = dialog.tail(window_size).reset_index(drop=True)
             
             if window_df.empty:
                 continue
 
-            context_turns = []
-            for _, row in window_df.iloc[:-1].iterrows():
-                context_turns.append({
-                    "speaker": row["Speaker"],
-                    "utterance": row["Utterance"]
-                })
-
-            target_row = window_df.iloc[-1]
-            true_label = target_row["Emotion"]
-
-            structured_input_dict = {
-                "task": "Classify the emotion of the target utterance",
-                "emotion_options": VALID_EMOTIONS,
-                "context": context_turns,
-                "target_utterance": {
-                    "speaker": target_row["Speaker"],
-                    "utterance": target_row["Utterance"]
-                }
-            }
+            formatted_context = format_context_for_prompt(window_df)
+            target_utterance = window_df.iloc[-1]["Utterance"]
+            true_label = window_df.iloc[-1]["Emotion"]
 
             user_msg = user_template.format(
-                structured_input=json.dumps(structured_input_dict, indent=2)
+                context_text=formatted_context,
+                target_utterance=target_utterance
             )
 
             messages = [
@@ -205,7 +190,7 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
                 "label": true_label,
                 "prompt_character_count": len(formatted_prompt),
                 "prompt_word_count": len(formatted_prompt.split()),
-                "target_utterance": target_row["Utterance"]
+                "target_utterance": target_utterance
             })
 
     print(f"Running batched inference on {len(prompts)} prompts simultaneously...")
@@ -226,28 +211,26 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
             "window_size": meta["window_size"],
             "prediction": prediction,
             "label": meta["label"],
-            "prompt_type": "structured_zero_shot",
+            "prompt_type": "zero_shot",
             "model": "gemma-4-E4B-it",
             "reasoning": reasoning,
             "accuracy": accuracy,
             "prompt_word_count": meta["prompt_word_count"],
             "prompt_character_count": meta["prompt_character_count"]
         })
-        # lexicon_analysis.process_utterance(meta["target_utterance"], prediction)
 
     results_df = pd.DataFrame(results)
     
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     
     results_df.to_csv(output_file, index=False)
-    # lexicon_analysis.export_lexicons("gemma_zero_shot_structured")
     print(f"Finished! Results saved to {output_file}")
 
 
 def main():
     meld_df = prepare_meld_dataframe()
 
-    output_file = "results/gemma_zero_shot_structured_results.csv"
+    output_file = "results/gemma_zero_shot_lemmatized_results.csv"
     window_sizes = [1, 3, 5, 7, 9, 11]
 
     run_vllm_zero_shot(

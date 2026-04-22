@@ -1,37 +1,30 @@
 import pandas as pd
 import re
+import json
 from vllm import LLM, SamplingParams
-import re
 import os
 import sys
 from pathlib import Path
+import spacy
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
 sys.path.append(str(REPO_DIR))
 from utils import lexicon_analysis
 
-def parse_text_output(raw_pred):
-    """Extracts reasoning and emotion from plain text output."""
-    reasoning = ""
-    prediction = ""
-
-    reasoning_match = re.search(r"Reasoning:\s*(.*)", raw_pred, re.IGNORECASE)
-    label_match = re.search(r"Label:\s*(.*)", raw_pred, re.IGNORECASE)
-
-    if reasoning_match:
-        reasoning = reasoning_match.group(1).strip()
-
-    if label_match:
-        prediction = label_match.group(1).strip().lower()
-
-    if prediction == "":
-        # Fallback if the model didn't format it perfectly
-        prediction = raw_pred.lower()
-
-    return prediction, reasoning
+def parse_llm_output(raw_pred):
+    """Safely extracts JSON reasoning and emotion from the LLM output."""
+    clean_pred = re.sub(r'```json|```', '', raw_pred).strip()
+    try:
+        data = json.loads(clean_pred)
+        emotion = data.get("emotion", "unknown").lower()
+        reasoning = data.get("reasoning", "")
+        return emotion, reasoning
+    except Exception:
+        return "unknown", clean_pred
 
 def main():
-    print("Loading Gemma 4 into VRAM (16GB optimized)...")
+    print("Loading model into VRAM...")
     llm = LLM(
         model="google/gemma-4-E4B-it", 
         quantization="fp8",
@@ -43,11 +36,8 @@ def main():
     )
     tokenizer = llm.get_tokenizer()
     
-    # 256 is usually enough for a couple of sentences of reasoning + label
-    sampling_params = SamplingParams(temperature=0.0, max_tokens=256)
+    sampling_params = SamplingParams(temperature=0.0, max_tokens=512)
 
-    # Load Dataset
-    print("Loading dataset...")
     meld_path = "../../Dataset/MELD_filtered_dialogues.csv"
     df = pd.read_csv(meld_path)
 
@@ -57,51 +47,49 @@ def main():
     utterance_index_col = "Utterance_ID"
     speaker_col = "Speaker"
 
-    df = df.sort_values([dialog_id_col, utterance_index_col])
+    print("Lemmatizing utterances...")
+    nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"]) 
+    df[utterance_col] = df[utterance_col].astype(str).apply(
+        lambda text: " ".join([token.lemma_ for token in nlp(text)])
+    )
 
-    N = 268
-    dialog_ids = df[dialog_id_col].unique()[:N]
-    
-    df_filtered = df[df[dialog_id_col].isin(dialog_ids)]
+    df = df.sort_values([dialog_id_col, utterance_index_col])
+    dialog_ids = df[dialog_id_col].unique()
 
     prompts = []
     metadata = []
 
     print("Building prompts...")
-
+    
     system_instruction = (
-        "You are an emotion classification assistant.\n"
-        "Your task is to classify the emotion of the target utterance in the dialogue below.\n"
-        "Choose exactly one label from this list: anger, disgust, fear, joy, neutral, sadness, surprise.\n\n"
-        "Here are some examples:\n\n"
-        "Example 1:\n"
-        "Dialogue:\n"
-        "1: A: Hey, how are you?\n"
-        "2: B: I'm good, thanks! How about you?\n"
-        "3: A: Doing well, just a bit tired.\n"
-        "Target utterance:\nA: Doing well, just a bit tired.\n"
-        "Label: neutral\n\n"
-        "Example 2:\n"
-        "Dialogue:\n"
-        "1: A: Did you hear what happened yesterday?\n"
-        "2: B: No, what happened?\n"
-        "3: A: It was unbelievable!\n"
-        "Target utterance:\nA: It was unbelievable!\n"
-        "Label: surprise\n"
+        "You are an emotion classification assistant. "
+        "Your task is to determine the emotion of the LAST utterance in the given dialogue."
     )
 
-    user_template = (
-        "Now, classify the following:\n\n"
+    user_instruction_template = (
+        "Follow these steps internally:\n"
+        "1. Summarize each utterance briefly.\n"
+        "2. Describe how the emotions evolve.\n"
+        "3. Analyze the final utterance in context.\n"
+        "4. Choose the final emotion from:\n"
+        "[neutral, joy, sadness, anger, fear, disgust, surprise]\n\n"
+        "IMPORTANT:\n"
+        "- Return ONLY valid JSON\n"
+        "- Do NOT include markdown (no ``` or ```json)\n"
+        "- Do NOT include any extra text\n"
+        "- Use DOUBLE quotes (\") for all keys and values\n\n"
+        "Output format:\n"
+        "{{\n"
+        "    \"reasoning\": \"brief explanation\",\n"
+        "    \"emotion\": \"...\"\n"
+        "}}\n\n"
         "Dialogue:\n"
-        "{dialogue_context}\n\n"
-        "Target utterance:\n{target_utterance}\n\n"
-        "Explain your reasoning in one or two sentences behind your decision and then choose one label from the list above.\n\n"
-        "Return your answer in this exact format:\n"
-        "Reasoning: <your reasoning>\n"
-        "Label: <one emotion label>"
+        "{dialogue}"
     )
 
-    for dialog_id, dialog in df_filtered.groupby(dialog_id_col):
+    for dialog_id in dialog_ids:
+        dialog = df[df[dialog_id_col] == dialog_id]
+
         utterances = dialog[utterance_col].tolist()
         speakers = dialog[speaker_col].tolist()
         actual_emotion = dialog[emotion_col].iloc[-1]
@@ -111,14 +99,9 @@ def main():
 
         for n in range(1, max_len + 1, 2):
             context = combined[-n:]
+            dialogue_text = "\n".join(context)
             
-            dialogue_text = "\n".join([f"{i+1}: {utt}" for i, utt in enumerate(context)])
-            target_text = context[-1]
-            
-            user_msg = user_template.format(
-                dialogue_context=dialogue_text,
-                target_utterance=target_text
-            )
+            user_msg = user_instruction_template.format(dialogue=dialogue_text)
 
             messages = [
                 {"role": "system", "content": system_instruction},
@@ -138,7 +121,7 @@ def main():
                 "label": actual_emotion,
                 "prompt_character_count": len(formatted_prompt),
                 "prompt_word_count": len(formatted_prompt.split()),
-                "target_utterance": target_text
+                "target_utterance": utterances[-1]
             })
 
     print(f"Running inference on {len(prompts)} prompts simultaneously...")
@@ -151,7 +134,8 @@ def main():
         raw_output = output.outputs[0].text.strip()
         meta = metadata[i]
 
-        prediction, reasoning = parse_text_output(raw_output)
+        prediction, reasoning = parse_llm_output(raw_output)
+
         accuracy = prediction == meta["label"].lower()
 
         results.append({
@@ -159,7 +143,7 @@ def main():
             "window_size": meta["window_size"],
             "prediction": prediction,
             "label": meta["label"],
-            "prompt_type": "few_shot_reverse_window",
+            "prompt_type": "least_to_most",
             "model": "gemma-4-E4B-it",
             "reasoning": reasoning,
             "accuracy": accuracy,
@@ -175,9 +159,9 @@ def main():
          "prompt_word_count", "prompt_character_count"] 
     ]
 
-    output_filename = "gemma_2_shot_results.csv"
+    output_filename = "gemma_least_to_most_lemmatized_results.csv"
     results_df.to_csv(output_filename, index=False)
-    # lexicon_analysis.export_lexicons("gemma_2_shot")
+    # lexicon_analysis.export_lexicons("qwen_least_to_most")
     print(f"Finished! Results saved to {output_filename}")
 
 if __name__ == "__main__":

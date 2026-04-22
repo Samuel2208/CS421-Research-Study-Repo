@@ -4,28 +4,22 @@ import json
 import pandas as pd
 import re
 from vllm import LLM, SamplingParams
-import re
-import os
 import sys
-from pathlib import Path
+import spacy
+
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
 sys.path.append(str(REPO_DIR))
 from utils import lexicon_analysis
 
-BASE_DIR = Path(__file__).resolve().parent
-REPO_DIR = BASE_DIR.parent.parent
 DATASET_DIR = REPO_DIR / "Dataset"
 SUBSET_PATH = DATASET_DIR / "MELD_filtered_dialogues.csv"
 
 VALID_EMOTIONS = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
 
-# Load the reduced MELD subset CSV file into a pandas DataFrame.
 def load_meld_subset(path=SUBSET_PATH):
     return pd.read_csv(path)
 
-
-# Fix broken text encodings in MELD utterances, especially apostrophe contractions.
 def clean_text(text):
     if pd.isna(text):
         return text
@@ -54,8 +48,6 @@ def clean_text(text):
 
     return text
 
-
-# Load the reduced MELD subset, keep only needed columns, sort dialogue order, and clean utterances.
 def prepare_meld_dataframe(path=SUBSET_PATH):
     df = load_meld_subset(path)
 
@@ -63,10 +55,13 @@ def prepare_meld_dataframe(path=SUBSET_PATH):
     meld_df = meld_df.sort_values(["Dialogue_ID", "Utterance_ID"]).reset_index(drop=True)
     meld_df["Utterance"] = meld_df["Utterance"].apply(clean_text)
 
+    nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
+    meld_df["Utterance"] = meld_df["Utterance"].astype(str).apply(
+        lambda text: " ".join([token.lemma_ for token in nlp(text)])
+    )
+
     return meld_df
 
-
-# Extract JSON from vLLM output and split it into reasoning and label
 def parse_vllm_response(response_text):
     match = re.search(r'\{.*\}', response_text.strip(), re.DOTALL)
     json_str = match.group(0) if match else response_text.strip()
@@ -84,9 +79,6 @@ def parse_vllm_response(response_text):
 
     return reasoning, prediction
 
-
-# Use this in case we get lengthy results that aren't one word. 
-# Normalize raw response so it matches one of the valid MELD labels.
 def normalize_prediction(prediction):
     valid_labels = {"anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"}
 
@@ -104,8 +96,6 @@ def normalize_prediction(prediction):
 
     return "INVALID"
 
-
-# Run zero-shot experiments over selected dialogues and window sizes using vLLM batched inference.
 def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None):
     print("Loading model into VRAM...")
     llm = LLM(
@@ -157,7 +147,6 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
 
     for dialogue_id, dialog in df_filtered.groupby("Dialogue_ID"):
         for window_size in window_sizes:
-            # Efficiently grab the last `window_size` items
             window_df = dialog.tail(window_size).reset_index(drop=True)
             
             if window_df.empty:
@@ -240,14 +229,13 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     
     results_df.to_csv(output_file, index=False)
-    # lexicon_analysis.export_lexicons("gemma_zero_shot_structured")
+    # lexicon_analysis.export_lexicons("qwen_zero_shot_structured")
     print(f"Finished! Results saved to {output_file}")
-
 
 def main():
     meld_df = prepare_meld_dataframe()
 
-    output_file = "results/gemma_zero_shot_structured_results.csv"
+    output_file = "results/gemma_zero_shot_structured_lemmatized_results.csv"
     window_sizes = [1, 3, 5, 7, 9, 11]
 
     run_vllm_zero_shot(
@@ -256,7 +244,6 @@ def main():
         window_sizes=window_sizes,
         max_dialogues=None
     )
-
 
 if __name__ == "__main__":
     main()

@@ -109,13 +109,11 @@ def normalize_prediction(prediction):
 def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None):
     print("Loading model into VRAM...")
     llm = LLM(
-        model="google/gemma-4-E4B-it", 
-        quantization="fp8",
-        max_model_len=4096,                   
-        gpu_memory_utilization=0.90,
-        enable_prefix_caching=True,           
-        limit_mm_per_prompt={"image": 0, "audio": 0}, 
-        trust_remote_code=True
+        model="Qwen/Qwen2.5-7B-Instruct-AWQ", 
+        quantization="awq",
+        max_model_len=4096,
+        gpu_memory_utilization=0.85,
+        enable_prefix_caching=True
     )
     tokenizer = llm.get_tokenizer()
     
@@ -227,7 +225,7 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
             "prediction": prediction,
             "label": meta["label"],
             "prompt_type": "structured_zero_shot",
-            "model": "gemma-4-E4B-it",
+            "model": "qwen2.5-7b-instruct-awq",
             "reasoning": reasoning,
             "accuracy": accuracy,
             "prompt_word_count": meta["prompt_word_count"],
@@ -240,14 +238,14 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     
     results_df.to_csv(output_file, index=False)
-    # lexicon_analysis.export_lexicons("gemma_zero_shot_structured")
+    # lexicon_analysis.export_lexicons("qwen_zero_shot_structured")
     print(f"Finished! Results saved to {output_file}")
 
 
 def main():
     meld_df = prepare_meld_dataframe()
 
-    output_file = "results/gemma_zero_shot_structured_results.csv"
+    output_file = "results/qwen_zero_shot_structured_results.csv"
     window_sizes = [1, 3, 5, 7, 9, 11]
 
     run_vllm_zero_shot(

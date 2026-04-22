@@ -143,7 +143,7 @@ def main():
             "prompt_word_count": meta["prompt_word_count"],
             "prompt_character_count": meta["prompt_character_count"]
         })
-        lexicon_analysis.process_utterance(meta["target_utterance"], prediction)
+        # lexicon_analysis.process_utterance(meta["target_utterance"], prediction)
 
     results_df = pd.DataFrame(results)
     results_df = results_df[
@@ -154,7 +154,7 @@ def main():
 
     output_filename = "gemma_least_to_most_results.csv"
     results_df.to_csv(output_filename, index=False)
-    lexicon_analysis.export_lexicons("gemma_least_to_most")
+    # lexicon_analysis.export_lexicons("gemma_least_to_most")
     print(f"Finished! Results saved to {output_filename}")
 
 if __name__ == "__main__":
