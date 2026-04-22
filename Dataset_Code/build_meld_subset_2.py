@@ -52,25 +52,12 @@ def main():
     df = df.sort_values(["Dialogue_ID", "Utterance_ID"]).reset_index(drop=True)
     df["Utterance"] = df["Utterance"].apply(clean_text)
 
-    dialogue_counts = df.groupby("Dialogue_ID").size().reset_index(name="num_utterances")
+    # Get target rows only
+    target_rows = df.groupby("Dialogue_ID").tail(1).copy()
 
-    # Keep only dialogues that have at least 12 utterances.
-    eligible_dialogues = dialogue_counts[dialogue_counts["num_utterances"] >= 12]
-    print("Number of eligible dialogues (>= 12 utterances):", len(eligible_dialogues))
-
-    df = df[df["Dialogue_ID"].isin(eligible_dialogues["Dialogue_ID"])].copy()
-
-    df["turn_index"] = df.groupby("Dialogue_ID").cumcount()
-
-    # Keep only rows 0 through 11 (the first 12 utterances).
-    df = df[df["turn_index"] <= 11].copy()
-
-    # Get target rows only (row index 11).
-    target_rows = df[df["turn_index"] == 11].copy()
-
-    # >3 words in the target utterance.
+    # >2 words in the target utterance
     target_rows["target_word_count"] = target_rows["Utterance"].apply(count_words)
-    target_rows = target_rows[target_rows["target_word_count"] > 3].copy()
+    target_rows = target_rows[target_rows["target_word_count"] > 2].copy()
 
     emotions = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
     target_rows = target_rows[target_rows["Emotion"].isin(emotions)].copy()
