@@ -59,8 +59,9 @@ def main():
 
     df = df.sort_values([dialog_id_col, utterance_index_col])
 
-    N = 268
-    dialog_ids = df[dialog_id_col].unique()[:N]
+    dialog_ids = df[dialog_id_col].unique()
+    N = len(dialog_ids)
+    print(f"Processing all {N} dialogues...")
     
     df_filtered = df[df[dialog_id_col].isin(dialog_ids)]
 

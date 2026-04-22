@@ -18,6 +18,21 @@ TESTS=(
     "gemma_tests:zero_shot:gemma_zero_shot_structured.py:gemma_zero_shot_structured_results.csv:false"
     "gemma_tests:zero_shot:gemma_zeroshot_lemmatized.py:gemma_zero_shot_lemmatized_results.csv:false"
     "gemma_tests:zero_shot:gemma_zeroshot.py:gemma_zero_shot_results.csv:false"
+
+    "qwen2_tests:zero_shot:qwen_zero_shot_structured_lemmatized_dd.py:qwen_zero_shot_structured_lemmatized_dailydialog_results.csv:false"
+    "qwen2_tests:zero_shot:qwen_zero_shot_structured_dd.py:qwen_zero_shot_structured_dailydialog_results.csv:false"
+    "qwen2_tests:zero_shot:qwen_zeroshot_lemmatized_dd.py:qwen_zero_shot_lemmatized_dailydialog_results.csv:false"
+    "qwen2_tests:zero_shot:qwen_zeroshot_dd.py:qwen_zero_shot_dailydialog_results.csv:false"
+
+    "qwen3_tests:zero_shot:qwen_zero_shot_structured_lemmatized_dd.py:qwen3_zero_shot_structured_lemmatized_dailydialog_results.csv:false"
+    "qwen3_tests:zero_shot:qwen_zero_shot_structured_dd.py:qwen3_zero_shot_structured_dailydialog_results.csv:false"
+    "qwen3_tests:zero_shot:qwen_zeroshot_lemmatized_dd.py:qwen3_zero_shot_lemmatized_dailydialog_results.csv:false"
+    "qwen3_tests:zero_shot:qwen_zeroshot_dd.py:qwen3_zero_shot_dailydialog_results.csv:false"
+    
+    "gemma_tests:zero_shot:gemma_zero_shot_structured_lemmatized_dd.py:gemma_zero_shot_structured_lemmatized_dailydialog_results.csv:false"
+    "gemma_tests:zero_shot:gemma_zero_shot_structured_dd.py:gemma_zero_shot_structured_dailydialog_results.csv:false"
+    "gemma_tests:zero_shot:gemma_zeroshot_lemmatized_dd.py:gemma_zero_shot_lemmatized_dailydialog_results.csv:false"
+    "gemma_tests:zero_shot:gemma_zeroshot_dd.py:gemma_zero_shot_dailydialog_results.csv:false"
     
     # Least-to-Most Tests
     "qwen2_tests:least_to_most:qwen_least_to_most.py:qwen_least_to_most_results.csv:true"
@@ -35,6 +50,21 @@ TESTS=(
     "gemma_tests:least_to_most:gemma_least_to_most_structured_lemmatized.py:gemma_least_to_most_structured_lemmatized_results.csv:true"
     "gemma_tests:least_to_most:gemma_least_to_most_lemmatized.py:gemma_least_to_most_lemmatized_results.csv:true"
     
+    "qwen2_tests:least_to_most:qwen_least_to_most_dd.py:qwen_least_to_most_dailydialog_results.csv:true"
+    "qwen2_tests:least_to_most:qwen_least_to_most_structured_dd.py:qwen_least_to_most_structured_dailydialog_results.csv:true"
+    "qwen2_tests:least_to_most:qwen_least_to_most_structured_lemmatized_dd.py:qwen_least_to_most_structured_lemmatized_dailydialog_results.csv:true"
+    "qwen2_tests:least_to_most:qwen_least_to_most_lemmatized_dd.py:qwen_least_to_most_lemmatized_dailydialog_results.csv:true"
+
+    "qwen3_tests:least_to_most:qwen_least_to_most_dd.py:qwen3_least_to_most_dailydialog_results.csv:true"
+    "qwen3_tests:least_to_most:qwen_least_to_most_structured_dd.py:qwen3_least_to_most_structured_dailydialog_results.csv:true"
+    "qwen3_tests:least_to_most:qwen_least_to_most_structured_lemmatized_dd.py:qwen3_least_to_most_structured_lemmatized_dailydialog_results.csv:true"
+    "qwen3_tests:least_to_most:qwen_least_to_most_lemmatized_dd.py:qwen3_least_to_most_lemmatized_dailydialog_results.csv:true"
+
+    "gemma_tests:least_to_most:gemma_least_to_most_dd.py:gemma_least_to_most_dailydialog_results.csv:true"
+    "gemma_tests:least_to_most:gemma_least_to_most_structured_dd.py:gemma_least_to_most_structured_dailydialog_results.csv:true"
+    "gemma_tests:least_to_most:gemma_least_to_most_structured_lemmatized_dd.py:gemma_least_to_most_structured_lemmatized_dailydialog_results.csv:true"
+    "gemma_tests:least_to_most:gemma_least_to_most_lemmatized_dd.py:gemma_least_to_most_lemmatized_dailydialog_results.csv:true"
+
     # 2-Shot Tests
     "qwen2_tests:2_shot:qwen_2shot.py:qwen_2_shot_results.csv:true"
     "qwen2_tests:2_shot:qwen_2shot_structured.py:qwen_2_shot_structured_results.csv:true"
@@ -50,6 +80,21 @@ TESTS=(
     "gemma_tests:2_shot:gemma_2shot_structured.py:gemma_2_shot_structured_results.csv:true"
     "gemma_tests:2_shot:gemma_2shot_structured_lemmatized.py:gemma_2_shot_structured_lemmatized_results.csv:true"
     "gemma_tests:2_shot:gemma_2shot_lemmatized.py:gemma_2_shot_lemmatized_results.csv:true"
+
+    "qwen2_tests:2_shot:qwen_2shot_dd.py:qwen_2_shot_dailydialog_results.csv:true"
+    "qwen2_tests:2_shot:qwen_2shot_structured_dd.py:qwen_2_shot_structured_dailydialog_results.csv:true"
+    "qwen2_tests:2_shot:qwen_2shot_structured_lemmatized_dd.py:qwen_2_shot_structured_lemmatized_dailydialog_results.csv:true"
+    "qwen2_tests:2_shot:qwen_2shot_lemmatized_dd.py:qwen_2_shot_lemmatized_dailydialog_results.csv:true"
+
+    "qwen3_tests:2_shot:qwen_2shot_dd.py:qwen3_2_shot_dailydialog_results.csv:true"
+    "qwen3_tests:2_shot:qwen_2shot_structured_dd.py:qwen3_2_shot_structured_dailydialog_results.csv:true"
+    "qwen3_tests:2_shot:qwen_2shot_structured_lemmatized_dd.py:qwen3_2_shot_structured_lemmatized_dailydialog_results.csv:true"
+    "qwen3_tests:2_shot:qwen_2shot_lemmatized_dd.py:qwen3_2_shot_lemmatized_dailydialog_results.csv:true"
+
+    "gemma_tests:2_shot:gemma_2shot_dd.py:gemma_2_shot_dailydialog_results.csv:true"
+    "gemma_tests:2_shot:gemma_2shot_structured_dd.py:gemma_2_shot_structured_dailydialog_results.csv:true"
+    "gemma_tests:2_shot:gemma_2shot_structured_lemmatized_dd.py:gemma_2_shot_structured_lemmatized_dailydialog_results.csv:true"
+    "gemma_tests:2_shot:gemma_2shot_lemmatized_dd.py:gemma_2_shot_lemmatized_dailydialog_results.csv:true"
 
 )
 

@@ -4,7 +4,6 @@ from vllm import LLM, SamplingParams
 import os
 import sys
 from pathlib import Path
-import spacy
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
@@ -12,7 +11,6 @@ sys.path.append(str(REPO_DIR))
 from utils import lexicon_analysis
 
 def parse_text_output(raw_pred):
-    """Extracts reasoning and emotion from plain text output."""
     reasoning = ""
     prediction = ""
 
@@ -26,7 +24,6 @@ def parse_text_output(raw_pred):
         prediction = label_match.group(1).strip().lower()
 
     if prediction == "":
-        # Fallback if the model didn't format it perfectly
         prediction = raw_pred.lower()
 
     return prediction, reasoning
@@ -34,33 +31,25 @@ def parse_text_output(raw_pred):
 def main():
     print("Loading model into VRAM...")
     llm = LLM(
-        model="Qwen/Qwen2.5-7B-Instruct-AWQ", 
+        model="QuantTrio/Qwen3.5-4B-AWQ",
         quantization="awq",
-        max_model_len=4096,
-        gpu_memory_utilization=0.85,
-        enable_prefix_caching=True
+        gpu_memory_utilization=0.90,
+        max_model_len=4096, 
+        enable_prefix_caching=True,
+        language_model_only=True
     )
     tokenizer = llm.get_tokenizer()
     
-    # 256 is usually enough for a couple of sentences of reasoning + label
     sampling_params = SamplingParams(temperature=0.0, max_tokens=256)
 
-    # Load Dataset
     print("Loading dataset...")
-    meld_path = "../../Dataset/MELD_filtered_dialogues.csv"
-    df = pd.read_csv(meld_path)
+    dd_path = "../../Dataset/DailyDialog_filtered_dialogues.csv"
+    df = pd.read_csv(dd_path)
 
     dialog_id_col = "Dialogue_ID"
     utterance_col = "Utterance"
     emotion_col = "Emotion"
     utterance_index_col = "Utterance_ID"
-    speaker_col = "Speaker"
-
-    print("Lemmatizing utterances...")
-    nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"]) 
-    df[utterance_col] = df[utterance_col].astype(str).apply(
-        lambda text: " ".join([token.lemma_ for token in nlp(text)])
-    )
 
     df = df.sort_values([dialog_id_col, utterance_index_col])
 
@@ -109,7 +98,7 @@ def main():
 
     for dialog_id, dialog in df_filtered.groupby(dialog_id_col):
         utterances = dialog[utterance_col].tolist()
-        speakers = dialog[speaker_col].tolist()
+        speakers = ["A" if i % 2 == 0 else "B" for i in range(len(utterances))]
         actual_emotion = dialog[emotion_col].iloc[-1]
 
         combined = [f"{spk}: {utt}" for spk, utt in zip(speakers, utterances)]
@@ -166,13 +155,12 @@ def main():
             "prediction": prediction,
             "label": meta["label"],
             "prompt_type": "few_shot_reverse_window",
-            "model": "qwen2.5-7b-instruct-awq",
+            "model": "Qwen3.5-4B-AWQ",
             "reasoning": reasoning,
             "accuracy": accuracy,
             "prompt_word_count": meta["prompt_word_count"],
             "prompt_character_count": meta["prompt_character_count"]
         })
-        # lexicon_analysis.process_utterance(meta["target_utterance"], prediction)
 
     results_df = pd.DataFrame(results)
     results_df = results_df[
@@ -181,9 +169,8 @@ def main():
          "prompt_word_count", "prompt_character_count"] 
     ]
 
-    output_filename = "qwen_2_shot_lemmatized_results.csv"
+    output_filename = "qwen3_2_shot_dailydialog_results.csv"
     results_df.to_csv(output_filename, index=False)
-    # lexicon_analysis.export_lexicons("qwen_2_shot")
     print(f"Finished! Results saved to {output_filename}")
 
 if __name__ == "__main__":
