@@ -26,8 +26,8 @@ def parse_json_output(raw_pred):
 def main():
     print("Loading Gemma 4 into VRAM (16GB optimized)...")
     llm = LLM(
-        model="QuantTrio/Qwen3.5-4B-AWQ",
-        quantization="awq",
+        model="surogate/Qwen3.5-4B-FP8",
+        quantization="fp8",
         gpu_memory_utilization=0.90,
         max_model_len=4096, 
         enable_prefix_caching=True,
@@ -192,7 +192,7 @@ def main():
             "prediction": prediction,
             "label": meta["label"],
             "prompt_type": "few_shot_structured_json",
-            "model": "Qwen3.5-4B-AWQ",
+            "model": "Qwen3.5-4B-FP8",
             "reasoning": reasoning,
             "accuracy": accuracy,
             "prompt_word_count": meta["prompt_word_count"],

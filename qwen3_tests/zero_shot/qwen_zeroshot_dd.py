@@ -74,8 +74,8 @@ def normalize_prediction(prediction):
 
 def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None):
     llm = LLM(
-        model="QuantTrio/Qwen3.5-4B-AWQ",
-        quantization="awq",
+        model="surogate/Qwen3.5-4B-FP8",
+        quantization="fp8",
         gpu_memory_utilization=0.90,
         max_model_len=4096, 
         enable_prefix_caching=True,
@@ -122,7 +122,7 @@ def run_vllm_zero_shot(dataframe, output_file, window_sizes, max_dialogues=None)
         results.append({
             "dialogue_id": meta["d_id"], "window_size": meta["window_size"],
             "prediction": prediction, "label": meta["label"], "accuracy": prediction == meta["label"].lower(),
-            "reasoning": reasoning, "model": "Qwen3.5-4B-AWQ"
+            "reasoning": reasoning, "model": "Qwen3.5-4B-FP8"
         })
     results_df = pd.DataFrame(results)
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)

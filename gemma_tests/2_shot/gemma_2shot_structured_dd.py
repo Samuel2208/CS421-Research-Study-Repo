@@ -5,7 +5,6 @@ from vllm import LLM, SamplingParams
 import os
 import sys
 from pathlib import Path
-import spacy
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_DIR = BASE_DIR.parent.parent
@@ -47,12 +46,6 @@ def main():
     utterance_col = "Utterance"
     emotion_col = "Emotion"
     utterance_index_col = "Utterance_ID"
-
-    print("Lemmatizing utterances...")
-    nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"]) 
-    df[utterance_col] = df[utterance_col].astype(str).apply(
-        lambda text: " ".join([token.lemma_ for token in nlp(text)])
-    )
 
     df = df.sort_values([dialog_id_col, utterance_index_col])
 
@@ -215,7 +208,7 @@ def main():
          "prompt_word_count", "prompt_character_count"] 
     ]
 
-    output_filename = "gemma_2_shot_structured_lemmatized_dailydialog_results.csv"
+    output_filename = "gemma_2_shot_structured_dailydialog_results.csv"
     results_df.to_csv(output_filename, index=False)
     print(f"Finished! Results saved to {output_filename}")
 

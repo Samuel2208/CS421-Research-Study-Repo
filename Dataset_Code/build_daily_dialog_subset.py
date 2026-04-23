@@ -1,3 +1,7 @@
+"""
+Note: we are using my (Ibrahim) machine for running these tests, dailydialog has a LOT of data. We honestly thought we were fine on compute based on MELD, but turns out we were wrong! No more time left in the semester to actually reach out to get the compute power, so we are heavily filtering this dataset to get a reasonable amount of data that will run in a reasonable amount of time.
+"""
+
 from pathlib import Path
 import pandas as pd
 import re
@@ -75,11 +79,10 @@ def unroll_dataset(df):
         utts = parse_dialog(row['dialog'])
         emos = parse_emotions(row['emotion'])
         
-        # Only process if arrays align
-        if len(utts) == len(emos) and len(utts) > 0:
+        if len(utts) == len(emos) and len(utts) >= 11:
             for u_idx, (u, e) in enumerate(zip(utts, emos)):
                 rows.append({
-                    "Dialogue_ID": idx, # Automatically generated from the row number!
+                    "Dialogue_ID": idx, 
                     "Utterance_ID": u_idx,
                     "Utterance": clean_text(u),
                     "Emotion": EMOTION_MAP.get(e, "unknown")
@@ -96,13 +99,23 @@ def main():
     # Get target rows only (the LAST utterance of each dialogue)
     target_rows = df.groupby("Dialogue_ID").tail(1).copy()
 
-    # >2 words in the target utterance
+    # >3 words in the target utterance
     target_rows["target_word_count"] = target_rows["Utterance"].apply(count_words)
-    target_rows = target_rows[target_rows["target_word_count"] > 2].copy()
+    target_rows = target_rows[target_rows["target_word_count"] > 3].copy()
 
     valid_emotions = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
     target_rows = target_rows[target_rows["Emotion"].isin(valid_emotions)].copy()
 
+    valid_emotions = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
+    target_rows = target_rows[target_rows["Emotion"].isin(valid_emotions)].copy()
+
+    # Randomly select 80% of the neutral rows and drop them 
+    neutral_to_drop = target_rows[target_rows["Emotion"] == "neutral"].sample(frac=0.8, random_state=42).index
+    target_rows = target_rows.drop(neutral_to_drop)
+
+    print("\nAvailable target rows by emotion (All valid dialogues):")
+    print(target_rows["Emotion"].value_counts())
+    
     print("\nAvailable target rows by emotion (All valid dialogues):")
     print(target_rows["Emotion"].value_counts())
 
