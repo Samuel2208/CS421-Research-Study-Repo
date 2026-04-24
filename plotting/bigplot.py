@@ -10,43 +10,52 @@ ROOT_DIR = BASE_DIR.parent
 # NOVEL_APROACH = "lemmatized"
 NOVEL_APROACH = "structured_lemmatized"
 
-# LLM_NAME = "Gemma"
-# LLM_DIRECTORY = "gemma_tests"
+LLM_NAME = "Gemma"
+LLM_DIRECTORY = "gemma_tests"
 
-LLM_NAME = "Qwen2"
-LLM_DIRECTORY = "qwen2_tests"
+# LLM_NAME = "Qwen2"
+# LLM_DIRECTORY = "qwen2_tests"
+
+LLM_DISPLAY = LLM_NAME if LLM_NAME == "Gemma" else LLM_NAME.lower()[:-1]
 
 
+COLORS = ['C0', 'C1', 'C2']
 files = [
     {
         "name": f"{LLM_NAME} Zero-Shot",
+        "method": 0,
         "aproach": "Baseline",
-        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_zero_shot_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_DISPLAY}_zero_shot_dailydialog_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} {NOVEL_APROACH} Zero-Shot",
+        "method": 0,
         "aproach": NOVEL_APROACH,
-        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_zero_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_DISPLAY}_zero_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} 2-Shot",
+        "method": 1,
         "aproach": "Baseline",
-        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_2_shot_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_DISPLAY}_2_shot_dailydialog_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} {NOVEL_APROACH} 2-Shot",
+        "method": 1,
         "aproach": NOVEL_APROACH,
-        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_2_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_DISPLAY}_2_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} Least-to-Most",
+        "method": 2,
         "aproach": "Baseline",
-        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_NAME.lower()[:-1]}_least_to_most_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_DISPLAY}_least_to_most_dailydialog_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} {NOVEL_APROACH} Least-to-Most",
+        "method": 2,
         "aproach": NOVEL_APROACH,
-        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_NAME.lower()[:-1]}_least_to_most_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_DISPLAY}_least_to_most_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
     }
 ]
 
@@ -106,7 +115,7 @@ files = [
 # ]
 
 
-SAVE_DIR = BASE_DIR / "final-new-plots"
+SAVE_DIR = BASE_DIR / "final-new-color-plots"
 SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -174,14 +183,17 @@ for file_info in files:
             metric_df["metric_value"],
             marker="o",
             label=file_info["name"],
-            linestyle="--"
+            linestyle="--",
+            color = COLORS[file_info["method"]]
         )
     else:
         plt.plot(
             metric_df["group_value"],
             metric_df["metric_value"],
             marker="o",
-            label=file_info["name"]
+            label=file_info["name"],
+            color = COLORS[file_info["method"]]
+
         )
 
 add_min_max_labels_by_window(method_dfs)
@@ -213,14 +225,16 @@ for file_info in files:
             metric_df["metric_value"],
             marker="o",
             label=file_info["name"],
-            linestyle="--"
+            linestyle="--",
+            color = COLORS[file_info["method"]]
         )
     else:
         plt.plot(
             metric_df["group_value"],
             metric_df["metric_value"],
             marker="o",
-            label=file_info["name"]
+            label=file_info["name"],
+            color = COLORS[file_info["method"]]
         )
 
 add_min_max_labels_by_window(method_dfs)
