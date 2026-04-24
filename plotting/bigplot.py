@@ -6,30 +6,47 @@ BASE_DIR = Path(__file__).resolve().parent
 ROOT_DIR = BASE_DIR.parent
 
 #exchange the paths as needed for the gemma and qwen tests
+# NOVEL_APROACH = "structured"
+# NOVEL_APROACH = "lemmatized"
+NOVEL_APROACH = "structured_lemmatized"
+
+# LLM_NAME = "Gemma"
+# LLM_DIRECTORY = "gemma_tests"
+
+LLM_NAME = "Qwen2"
+LLM_DIRECTORY = "qwen2_tests"
+
+
 files = [
     {
-        "name": "Gemma Zero-Shot",
-        "path": ROOT_DIR / "gemma_tests" / "zero_shot" / "results" / "gemma_zero_shot_results_evaluation.csv"
+        "name": f"{LLM_NAME} Zero-Shot",
+        "aproach": "Baseline",
+        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_zero_shot_dailydialog_results_evaluation.csv"
     },
     {
-        "name": "Gemma Structured Zero-Shot",
-        "path": ROOT_DIR / "gemma_tests" / "zero_shot" / "results" / "gemma_zero_shot_structured_results_evaluation.csv"
+        "name": f"{LLM_NAME} {NOVEL_APROACH} Zero-Shot",
+        "aproach": NOVEL_APROACH,
+        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_zero_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
     },
     {
-        "name": "Gemma 2-Shot",
-        "path": ROOT_DIR / "gemma_tests" / "2_shot" / "results" / "gemma_2_shot_results_evaluation.csv"
+        "name": f"{LLM_NAME} 2-Shot",
+        "aproach": "Baseline",
+        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_2_shot_dailydialog_results_evaluation.csv"
     },
     {
-        "name": "Gemma Structured 2-Shot",
-        "path": ROOT_DIR / "gemma_tests" / "2_shot" / "results" / "gemma_2_shot_structured_results_evaluation.csv"
+        "name": f"{LLM_NAME} {NOVEL_APROACH} 2-Shot",
+        "aproach": NOVEL_APROACH,
+        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_NAME.lower()[:-1]}_2_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
     },
     {
-        "name": "Gemma Least-to-Most",
-        "path": ROOT_DIR / "gemma_tests" / "least_to_most" / "results" / "gemma_least_to_most_results_evaluation.csv"
+        "name": f"{LLM_NAME} Least-to-Most",
+        "aproach": "Baseline",
+        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_NAME.lower()[:-1]}_least_to_most_dailydialog_results_evaluation.csv"
     },
     {
-        "name": "Gemma Structured Least-to-Most",
-        "path": ROOT_DIR / "gemma_tests" / "least_to_most" / "results" / "gemma_least_to_most_structured_results_evaluation.csv"
+        "name": f"{LLM_NAME} {NOVEL_APROACH} Least-to-Most",
+        "aproach": NOVEL_APROACH,
+        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_NAME.lower()[:-1]}_least_to_most_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
     }
 ]
 
@@ -89,7 +106,7 @@ files = [
 # ]
 
 
-SAVE_DIR = BASE_DIR / "final-plots"
+SAVE_DIR = BASE_DIR / "final-new-plots"
 SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -151,25 +168,34 @@ for file_info in files:
     metric_df = load_metric_by_window(file_info["path"], "accuracy")
     method_dfs.append(metric_df)
 
-    plt.plot(
-        metric_df["group_value"],
-        metric_df["metric_value"],
-        marker="o",
-        label=file_info["name"]
-    )
+    if file_info["aproach"] == "Baseline":
+        plt.plot(
+            metric_df["group_value"],
+            metric_df["metric_value"],
+            marker="o",
+            label=file_info["name"],
+            linestyle="--"
+        )
+    else:
+        plt.plot(
+            metric_df["group_value"],
+            metric_df["metric_value"],
+            marker="o",
+            label=file_info["name"]
+        )
 
 add_min_max_labels_by_window(method_dfs)
 
 plt.xlabel("Window Size")
 plt.ylabel("Accuracy")
-plt.title("Gemma Accuracy by Window Size Across Prompting Methods")
+plt.title(f"{LLM_NAME} Accuracy by Window Size Across Prompting Methods - {NOVEL_APROACH} vs Baseline")
 plt.xticks([1, 3, 5, 7, 9, 11])
-plt.ylim(0.30, 0.6)
+# plt.ylim(0.30, 0.6)
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.savefig(SAVE_DIR / "gemma_accuracy_by_window_all_methods.png")
-plt.show()
+plt.savefig(SAVE_DIR / LLM_NAME.lower() / f"{LLM_NAME.lower()}_{NOVEL_APROACH.lower()}_accuracy_by_window_all_methods.png")
+# plt.show()
 
 
 # macro f1 by window size across prompting methods
@@ -181,22 +207,31 @@ for file_info in files:
     metric_df = load_metric_by_window(file_info["path"], "macro_f1")
     method_dfs.append(metric_df)
 
-    plt.plot(
-        metric_df["group_value"],
-        metric_df["metric_value"],
-        marker="o",
-        label=file_info["name"]
-    )
+    if file_info["aproach"] == "Baseline":
+        plt.plot(
+            metric_df["group_value"],
+            metric_df["metric_value"],
+            marker="o",
+            label=file_info["name"],
+            linestyle="--"
+        )
+    else:
+        plt.plot(
+            metric_df["group_value"],
+            metric_df["metric_value"],
+            marker="o",
+            label=file_info["name"]
+        )
 
 add_min_max_labels_by_window(method_dfs)
 
 plt.xlabel("Window Size")
 plt.ylabel("Macro F1")
-plt.title("Gemma Macro F1 by Window Size Across Prompting Methods")
+plt.title(f"{LLM_NAME} Macro F1 by Window Size Across Prompting Methods - {NOVEL_APROACH} vs Baseline")
 plt.xticks([1, 3, 5, 7, 9, 11])
-plt.ylim(0.10, 0.55)
+# plt.ylim(0.10, 0.55)
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.savefig(SAVE_DIR / "gemma_macro_f1_by_window_all_methods.png")
+plt.savefig(SAVE_DIR / LLM_NAME.lower() / f"{LLM_NAME.lower()}_{NOVEL_APROACH.lower()}_macro_f1_by_window_all_methods.png")
 plt.show()

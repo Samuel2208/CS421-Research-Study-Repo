@@ -1,0 +1,119 @@
+Loading data...
+Train size: 234, Test size: 100
+
+Building lexicons...
+
+===== TRUE LEXICON =====
+
+Top words for neutral:
+[('have', 15), ('some', 11), ('were', 8), ('next', 7), ('how', 6), ('many', 6), ('sold', 6), ('far', 6), ('also', 6), ('dont', 6)]
+
+Top words for joy:
+[('god', 9), ('ióits', 6), ('best', 6), ('thing', 6), ('ive', 6), ('ever', 6), ('had', 6), ('wrapped', 6), ('around', 6), ('including', 6)]
+
+Top words for sadness:
+[('phoebe', 12), ('its', 10), ('because', 9), ('gonna', 9), ('were', 8), ('yes', 6), ('very', 6), ('difficult', 6), ('appreciate', 6), ('thanksgiving', 6)]
+
+Top words for anger:
+[('well', 6), ('girl', 6), ('from', 6), ('other', 6), ('night', 6), ('special', 6), ('scientist', 6), ('too', 6), ('monica', 5), ('snort', 5)]
+
+Top words for fear:
+[('can', 13), ('umm', 10), ('think', 8), ('cant', 8), ('get', 7), ('when', 7), ('got', 6), ('give', 5), ('one', 5), ('chance', 5)]
+
+Top words for disgust:
+[('into', 9), ('hes', 8), ('taking', 6), ('off', 6), ('her', 6), ('coat', 6), ('lady', 6), ('youre', 6), ('out', 6), ('here', 6)]
+
+Top words for surprise:
+[('whoa', 12), ('down', 8), ('what', 6), ('ahh', 5), ('gepeto', 5), ('5000', 5), ('dollars', 5), ('insane', 5), ('andand', 4), ('another', 4)]
+
+===== PREDICTED LEXICON =====
+
+Top words for neutral:
+[('umm', 12), ('were', 12), ('have', 11), ('some', 11), ('can', 8), ('what', 8), ('its', 7), ('hes', 7), ('dont', 7), ('know', 7)]
+
+Top words for joy:
+[('ive', 10), ('had', 9), ('phoebe', 9), ('have', 8), ('been', 7), ('ióits', 6), ('best', 6), ('thing', 6), ('ever', 6), ('wrapped', 6)]
+
+Top words for sadness:
+[('cant', 6), ('tell', 5), ('her', 5), ('jack', 5), ('god', 4), ('youre', 4), ('right', 4), ('then', 3), ('how', 3), ('come', 3)]
+
+Top words for anger:
+[('when', 8), ('into', 7), ('too', 7), ('well', 7), ('youre', 6), ('back', 6), ('can', 5), ('enjoying', 5), ('little', 5), ('hamburger', 5)]
+
+Top words for fear:
+[('only', 3), ('dessert', 3), ('screw', 3), ('everybodys', 3), ('gonna', 3), ('ìoh', 3), ('remember', 3), ('thanksgiving', 3), ('when', 3), ('rachel', 3)]
+
+Top words for disgust:
+[('yes', 2), ('its', 2), ('very', 2), ('difficult', 2), ('appreciate', 2), ('thanksgiving', 2), ('dinner', 2), ('once', 2), ('youve', 2), ('seen', 2)]
+
+Top words for surprise:
+[('god', 11), ('whoa', 9), ('what', 8), ('not', 5), ('only', 5), ('hospital', 5), ('city', 5), ('have', 5), ('problem', 5), ('toówhoa', 5)]
+
+===== WORD COMPARISON =====
+
+Auto-selected words: ['have', 'its', 'how', 'were', 'can', 'what', 'hes', 'when', 'god', 'youre', 'well', 'umm', 'dont', 'had', 'get']
+
+Word: have
+True: {'neutral': 15, 'joy': 5, 'sadness': 0, 'anger': 5, 'fear': 0, 'disgust': 4, 'surprise': 0}
+Pred: {'neutral': 11, 'joy': 8, 'sadness': 1, 'anger': 4, 'fear': 0, 'disgust': 0, 'surprise': 5}
+
+Word: its
+True: {'neutral': 0, 'joy': 0, 'sadness': 10, 'anger': 4, 'fear': 0, 'disgust': 5, 'surprise': 4}
+Pred: {'neutral': 7, 'joy': 4, 'sadness': 2, 'anger': 5, 'fear': 0, 'disgust': 2, 'surprise': 3}
+
+Word: how
+True: {'neutral': 6, 'joy': 5, 'sadness': 3, 'anger': 0, 'fear': 3, 'disgust': 4, 'surprise': 0}
+Pred: {'neutral': 6, 'joy': 5, 'sadness': 3, 'anger': 4, 'fear': 0, 'disgust': 0, 'surprise': 3}
+
+Word: were
+True: {'neutral': 8, 'joy': 0, 'sadness': 8, 'anger': 0, 'fear': 0, 'disgust': 4, 'surprise': 0}
+Pred: {'neutral': 12, 'joy': 3, 'sadness': 1, 'anger': 1, 'fear': 0, 'disgust': 0, 'surprise': 3}
+
+Word: can
+True: {'neutral': 0, 'joy': 5, 'sadness': 0, 'anger': 0, 'fear': 13, 'disgust': 0, 'surprise': 0}
+Pred: {'neutral': 8, 'joy': 2, 'sadness': 0, 'anger': 5, 'fear': 0, 'disgust': 0, 'surprise': 3}
+
+Word: what
+True: {'neutral': 6, 'joy': 0, 'sadness': 0, 'anger': 0, 'fear': 0, 'disgust': 6, 'surprise': 6}
+Pred: {'neutral': 8, 'joy': 0, 'sadness': 0, 'anger': 2, 'fear': 0, 'disgust': 0, 'surprise': 8}
+
+Word: hes
+True: {'neutral': 0, 'joy': 0, 'sadness': 5, 'anger': 0, 'fear': 3, 'disgust': 8, 'surprise': 0}
+Pred: {'neutral': 7, 'joy': 1, 'sadness': 0, 'anger': 4, 'fear': 1, 'disgust': 0, 'surprise': 3}
+
+Word: when
+True: {'neutral': 4, 'joy': 0, 'sadness': 0, 'anger': 5, 'fear': 7, 'disgust': 0, 'surprise': 0}
+Pred: {'neutral': 1, 'joy': 3, 'sadness': 1, 'anger': 8, 'fear': 3, 'disgust': 0, 'surprise': 0}
+
+Word: god
+True: {'neutral': 0, 'joy': 9, 'sadness': 0, 'anger': 0, 'fear': 3, 'disgust': 4, 'surprise': 0}
+Pred: {'neutral': 0, 'joy': 0, 'sadness': 4, 'anger': 1, 'fear': 0, 'disgust': 0, 'surprise': 11}
+
+Word: youre
+True: {'neutral': 0, 'joy': 5, 'sadness': 5, 'anger': 0, 'fear': 0, 'disgust': 6, 'surprise': 0}
+Pred: {'neutral': 4, 'joy': 1, 'sadness': 4, 'anger': 6, 'fear': 0, 'disgust': 0, 'surprise': 1}
+
+Word: well
+True: {'neutral': 4, 'joy': 2, 'sadness': 0, 'anger': 6, 'fear': 0, 'disgust': 3, 'surprise': 0}
+Pred: {'neutral': 5, 'joy': 3, 'sadness': 0, 'anger': 7, 'fear': 0, 'disgust': 0, 'surprise': 0}
+
+Word: umm
+True: {'neutral': 4, 'joy': 0, 'sadness': 0, 'anger': 0, 'fear': 10, 'disgust': 0, 'surprise': 0}
+Pred: {'neutral': 12, 'joy': 2, 'sadness': 0, 'anger': 0, 'fear': 0, 'disgust': 0, 'surprise': 0}
+
+Word: dont
+True: {'neutral': 6, 'joy': 5, 'sadness': 0, 'anger': 0, 'fear': 3, 'disgust': 0, 'surprise': 0}
+Pred: {'neutral': 7, 'joy': 5, 'sadness': 1, 'anger': 0, 'fear': 1, 'disgust': 0, 'surprise': 0}
+
+Word: had
+True: {'neutral': 0, 'joy': 6, 'sadness': 0, 'anger': 0, 'fear': 4, 'disgust': 0, 'surprise': 4}
+Pred: {'neutral': 1, 'joy': 9, 'sadness': 0, 'anger': 4, 'fear': 0, 'disgust': 0, 'surprise': 0}
+
+Word: get
+True: {'neutral': 6, 'joy': 0, 'sadness': 0, 'anger': 0, 'fear': 7, 'disgust': 0, 'surprise': 0}
+Pred: {'neutral': 7, 'joy': 0, 'sadness': 1, 'anger': 4, 'fear': 1, 'disgust': 0, 'surprise': 0}
+
+===== LEXICON MODEL RESULTS =====
+Accuracy: 0.8300
+Unknown rate: 0.0100
+Coverage: 0.9900
