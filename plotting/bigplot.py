@@ -10,11 +10,16 @@ ROOT_DIR = BASE_DIR.parent
 # NOVEL_APROACH = "lemmatized"
 NOVEL_APROACH = "structured_lemmatized"
 
-LLM_NAME = "Gemma"
-LLM_DIRECTORY = "gemma_tests"
+# DATASET = "_dailydialog"
+DATASET = "" #MELD
 
-# LLM_NAME = "Qwen2"
-# LLM_DIRECTORY = "qwen2_tests"
+
+
+# LLM_NAME = "Gemma"
+# LLM_DIRECTORY = "gemma_tests"
+
+LLM_NAME = "Qwen2"
+LLM_DIRECTORY = "qwen2_tests"
 
 LLM_DISPLAY = LLM_NAME if LLM_NAME == "Gemma" else LLM_NAME.lower()[:-1]
 
@@ -25,37 +30,37 @@ files = [
         "name": f"{LLM_NAME} Zero-Shot",
         "method": 0,
         "aproach": "Baseline",
-        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_DISPLAY}_zero_shot_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_DISPLAY}_zero_shot{DATASET}_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} {NOVEL_APROACH} Zero-Shot",
         "method": 0,
         "aproach": NOVEL_APROACH,
-        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_DISPLAY}_zero_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "zero_shot" / "results" / f"{LLM_DISPLAY}_zero_shot_{NOVEL_APROACH.lower()}{DATASET}_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} 2-Shot",
         "method": 1,
         "aproach": "Baseline",
-        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_DISPLAY}_2_shot_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_DISPLAY}_2_shot{DATASET}_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} {NOVEL_APROACH} 2-Shot",
         "method": 1,
         "aproach": NOVEL_APROACH,
-        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_DISPLAY}_2_shot_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "2_shot" / "results" / f"{LLM_DISPLAY}_2_shot_{NOVEL_APROACH.lower()}{DATASET}_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} Least-to-Most",
         "method": 2,
         "aproach": "Baseline",
-        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_DISPLAY}_least_to_most_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_DISPLAY}_least_to_most{DATASET}_results_evaluation.csv"
     },
     {
         "name": f"{LLM_NAME} {NOVEL_APROACH} Least-to-Most",
         "method": 2,
         "aproach": NOVEL_APROACH,
-        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_DISPLAY}_least_to_most_{NOVEL_APROACH.lower()}_dailydialog_results_evaluation.csv"
+        "path": ROOT_DIR / LLM_DIRECTORY / "least_to_most" / "results" / f"{LLM_DISPLAY}_least_to_most_{NOVEL_APROACH.lower()}{DATASET}_results_evaluation.csv"
     }
 ]
 
@@ -115,7 +120,7 @@ files = [
 # ]
 
 
-SAVE_DIR = BASE_DIR / "final-new-color-plots"
+SAVE_DIR = BASE_DIR / "MELD-plots"
 SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -200,7 +205,7 @@ add_min_max_labels_by_window(method_dfs)
 
 plt.xlabel("Window Size")
 plt.ylabel("Accuracy")
-plt.title(f"{LLM_NAME} Accuracy by Window Size Across Prompting Methods - {NOVEL_APROACH} vs Baseline")
+plt.title(f"{LLM_NAME} Accuracy by Window Size Across Prompting Methods - {NOVEL_APROACH} vs Baseline - {DATASET if DATASET else 'MELD'}")
 plt.xticks([1, 3, 5, 7, 9, 11])
 # plt.ylim(0.30, 0.6)
 plt.legend()
@@ -241,7 +246,7 @@ add_min_max_labels_by_window(method_dfs)
 
 plt.xlabel("Window Size")
 plt.ylabel("Macro F1")
-plt.title(f"{LLM_NAME} Macro F1 by Window Size Across Prompting Methods - {NOVEL_APROACH} vs Baseline")
+plt.title(f"{LLM_NAME} Macro F1 by Window Size Across Prompting Methods - {NOVEL_APROACH} vs Baseline - {DATASET if DATASET else 'MELD'}")
 plt.xticks([1, 3, 5, 7, 9, 11])
 # plt.ylim(0.10, 0.55)
 plt.legend()
