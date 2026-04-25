@@ -1,0 +1,9 @@
+Enter CSV path: target_emotion
+neutral     365
+joy         157
+anger        94
+surprise     91
+sadness      68
+disgust      28
+fear         23
+Name: count, dtype: int64
