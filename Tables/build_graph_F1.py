@@ -67,7 +67,7 @@ def create_f1_comparison_graph(csv_filepath):
     plt.legend(title='Model / Table', loc='best')
     plt.tight_layout()
     
-    plt.savefig('f1_comparison_graph_cleaned.png', dpi=300)
+    plt.savefig('f1_comparison_graph.png', dpi=300)
     print("Graph saved as 'f1_comparison_graph.png'")
     plt.show()
 
